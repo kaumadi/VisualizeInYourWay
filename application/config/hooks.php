@@ -10,6 +10,14 @@
 |
 */
 
+//edited
+$hook['post_controller_constructor'] = array(
+		'class'    => 'Statistics',
+		'function' => 'log_activity',
+		'filename' => 'statistics.php',
+		'filepath' => 'hooks'
+);
+
 
 
 /* End of file hooks.php */
