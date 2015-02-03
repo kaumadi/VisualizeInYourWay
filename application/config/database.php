@@ -49,9 +49,10 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
+$db['default']['port'] = '3306';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '1234';
-$db['default']['database'] = '';
+$db['default']['database'] = 'visualizeinyourway';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
