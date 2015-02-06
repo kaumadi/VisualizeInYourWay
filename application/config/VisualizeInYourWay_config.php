@@ -10,7 +10,8 @@ $config['LOGIN_OPTION']	= 1;
 
 //User Types
 $config['ADMIN']= 1;
-$config['Users']= 3;
+$config['COMPANY_OWNER']= 2;
+$config['EMPLOYEE']=3;
 $config['ALL']= 4;
 
 $config['MAILBOX']             = "{203.143.14.246:143/notls}";
