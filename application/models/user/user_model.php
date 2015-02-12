@@ -2,16 +2,12 @@
 
 class User_model extends CI_Model {
 
-    var $user_code;
-    var $user_no;
-    var $user_fname;
-    var $user_lname;
+    var $user_id;
+    var $user_name;
     var $user_password;
     var $user_email;
-    var $user_type;
-    var $user_bday;
-    var $user_contact;
     var $user_job;
+    var $user_company_name;
     var $user_avatar;
     var $user_cover_image;
     var $account_activation_code;
@@ -25,36 +21,21 @@ class User_model extends CI_Model {
     function __construct() {
         parent::__construct();
     }
-    public function get_user_code() {
-        return $this->user_code;
+
+    public function get_user_id() {
+        return $this->user_id;
     }
 
-    public function set_user_code($user_code) {
-        $this->user_code = $user_code;
+    public function set_user_id($user_id) {
+        $this->user_id = $user_id;
     }
 
-    public function get_user_no() {
-        return $this->user_no;
+    public function get_user_name() {
+        return $this->user_name;
     }
 
-    public function set_user_no($user_no) {
-        $this->user_no = $user_no;
-    }
-
-    public function get_user_fname() {
-        return $this->user_fname;
-    }
-
-    public function set_user_fname($user_fname) {
-        $this->user_fname = $user_fname;
-    }
-
-    public function get_user_lname() {
-        return $this->user_lname;
-    }
-
-    public function set_user_lname($user_lname) {
-        $this->user_lname = $user_lname;
+    public function set_user_name($user_name) {
+        $this->user_name = $user_name;
     }
 
     public function get_user_password() {
@@ -73,36 +54,20 @@ class User_model extends CI_Model {
         $this->user_email = $user_email;
     }
 
-    public function get_user_type() {
-        return $this->user_type;
-    }
-
-    public function set_user_type($user_type) {
-        $this->user_type = $user_type;
-    }
-
-    public function get_user_bday() {
-        return $this->user_bday;
-    }
-
-    public function set_user_bday($user_bday) {
-        $this->user_bday = $user_bday;
-    }
-
-    public function get_user_contact() {
-        return $this->user_contact;
-    }
-
-    public function set_user_contact($user_contact) {
-        $this->user_contact = $user_contact;
-    }
-
     public function get_user_job() {
         return $this->user_job;
     }
 
     public function set_user_job($user_job) {
         $this->user_job = $user_job;
+    }
+
+    public function get_user_company_name() {
+        return $this->user_company_name;
+    }
+
+    public function set_user_company_name($user_company_name) {
+        $this->user_company_name = $user_company_name;
     }
 
     public function get_user_avatar() {
@@ -176,8 +141,5 @@ class User_model extends CI_Model {
     public function set_updated_date($updated_date) {
         $this->updated_date = $updated_date;
     }
-
-
-    
 
 }

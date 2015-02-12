@@ -16,7 +16,7 @@
                                     var btnUpload = $('#upload');
                                     var status = $('#status');
                                     new AjaxUpload(btnUpload, {
-                                        action: '<?PHP echo site_url(); ?>/employee/employee_profile_controller/upload_employee_cover_pic',
+                                        action: '<?PHP echo site_url(); ?>/user/employee_profile_controller/upload_employee_cover_pic',
                                         name: 'uploadfile',
                                         onSubmit: function(file, ext) {
                                             if (!(ext && /^(jpg|png|jpeg|gif)$/.test(ext))) {
