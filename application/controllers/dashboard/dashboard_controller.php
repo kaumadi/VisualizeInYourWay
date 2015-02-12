@@ -24,12 +24,12 @@ class Dashboard_controller extends CI_Controller {
 
         parent::__construct();
 
-        if (!$this->session->userdata('EMPLOYEE_LOGGED_IN')) {
+        if (!$this->session->userdata('USER_LOGGED_IN')) {
             redirect(site_url() . '/login/login_controller');
         } else {
 
-            $this->load->model('employee/employee_model');
-            $this->load->model('employee/employee_service');
+            $this->load->model('user/user_model');
+            $this->load->model('user/user_service');
 
             $this->load->model('access_controll/access_controll_model');
             $this->load->model('access_controll/access_controll_service');
@@ -37,12 +37,12 @@ class Dashboard_controller extends CI_Controller {
     }
 
     function index() {
-        $employee_service = new Employee_service();
+        $user_service = new User_service();
 
-        $data['company'] = $this->session->userdata('EMPLOYEE_COMPANY_NAME');
-        $this->session->set_userdata('LCS_SYSTEM', 3);
-        $this->session->set_userdata('LCS_PARENT_SYSTEM', 7);
-        $data['employees'] = $employee_service->get_employees_by_company_id($this->session->userdata('EMPLOYEE_COMPANY_CODE'));
+//        $data['company'] = $this->session->userdata('USER_COMPANY_NAME');
+//        $this->session->set_userdata('LCS_SYSTEM', 3);
+//        $this->session->set_userdata('LCS_PARENT_SYSTEM', 7);
+//        $data['users'] = $user_service->get_users_by_company_id($this->session->userdata('USER_COMPANY_CODE'));
 
         $partials = array('content' => 'dashboard/dashboard_view');
         $this->template->load('template/main_template', $partials, $data);

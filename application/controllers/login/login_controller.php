@@ -114,37 +114,28 @@ class Login_controller extends CI_Controller {
                 echo 0;
             } else {
 
-                $emp_login_status_model = new Employee_model();
-                $emp_login_status_model->set_is_online('Y');
-                $emp_login_status_model->set_user_code($logged_user_details->user_code);
-                $user_service->update_online_status($emp_login_status_model);
+                $user_login_status_model = new User_model();
+                $user_login_status_model->set_is_online('Y');
+                $user_login_status_model->set_user_id($logged_user_details->user_id);
+                $user_service->update_online_status($user_login_status_model);
                 //Setting sessions		
-                $this->session->set_userdata('EMPLOYEE_CODE', $logged_user_details->user_code);
-//                $this->session->set_userdata('EMPLOYEE_WELCOME', $logged_user_details->preferred_welcome_sys);
-                $this->session->set_userdata('EMPLOYEE_FIRST', '1'); //check first time log in and redirect to welcome page
-                $this->session->set_userdata('EMPLOYEE_NAME', $logged_user_details->user_fname . ' ' . $logged_user_details->user_lname);
-                $this->session->set_userdata('EMPLOYEE_FNAME', $logged_user_details->user_fname);
-                $this->session->set_userdata('EMPLOYEE_LNAME', $logged_user_details->user_lname);
-                $this->session->set_userdata('EMPLOYEE_EMAIL', $logged_user_details->user_email);
-                $this->session->set_userdata('EMPLOYEE_PROPIC', $logged_user_details->user_avatar);
-                $this->session->set_userdata('EMPLOYEE_COVERPIC', $logged_user_details->user_cover_image);
-                $this->session->set_userdata('EMPLOYEE_COMPANY_CODE', $logged_user_details->company_code);
-                $this->session->set_userdata('EMPLOYEE_COMPANY_NAME', $logged_user_details->company_name);
-                $this->session->set_userdata('EMPLOYEE_TYPE', $logged_user_details->user_type);
-                $this->session->set_userdata('EMPLOYEE_ONLINE', 'Y');
+                $this->session->set_userdata('USER_ID', $logged_user_details->user_id);
+//                $this->session->set_userdata('USER_WELCOME', $logged_user_details->preferred_welcome_sys);
+                $this->session->set_userdata('USER_FIRST', '1'); //check first time log in and redirect to welcome page
+                $this->session->set_userdata('USER_NAME', $logged_user_details->user_name);
+//                $this->session->set_userdata('USER_FNAME', $logged_user_details->user_fname);
+//                $this->session->set_userdata('USER_LNAME', $logged_user_details->user_lname);
+                $this->session->set_userdata('USER_EMAIL', $logged_user_details->user_email);
+                $this->session->set_userdata('USER_PROPIC', $logged_user_details->user_avatar);
+                $this->session->set_userdata('USER_COVERPIC', $logged_user_details->user_cover_image);
+                $this->session->set_userdata('USER_JOB', $logged_user_details->user_job);
+                $this->session->set_userdata('USER_COMPANY_NAME', $logged_user_details->user_company_name);
+//                $this->session->set_userdata('USER_TYPE', $logged_user_details->user_type);
+                $this->session->set_userdata('USER_ONLINE', 'Y');
 
 
-                //checking gor teh DOB and saving  a note in a session , LCS_EMPLOYEE_BD
-                $bd = explode("-", $logged_user_details->user_bday);
-
-                if ($bd[1] . '-' . $bd[2] == date('m-d')) {
-                    $this->session->set_userdata('EMPLOYEE_BD', 'Y');
-                }
-                $this->session->set_userdata('EMPLOYEE_LOGGED_IN', 'TRUE');
-
-
-
-                echo 1;
+                
+                
             }
         } else {
             echo 0;
@@ -161,13 +152,13 @@ class Login_controller extends CI_Controller {
 
     function logout() {
 
-        $emp_login_status_model = new Employee_model();
-        $user_service = new Employee_service();
+        $user_login_status_model = new User_model();
+        $user_service = new User_service();
 
-        $emp_login_status_model->set_is_online('N');
-        $emp_login_status_model->set_user_code($this->session->userdata('EMPLOYEE_CODE'));
+        $user_login_status_model->set_is_online('N');
+        $user_login_status_model->set_user_id($this->session->userdata('USER_ID'));
 
-        $user_service->update_online_status($emp_login_status_model);
+        $user_service->update_online_status($user_login_status_model);
 
         $this->session->sess_destroy();
         redirect(site_url() . '/login/login_controller');

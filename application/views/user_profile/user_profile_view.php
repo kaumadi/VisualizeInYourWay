@@ -16,12 +16,12 @@
                                     var btnUpload = $('#upload');
                                     var status = $('#status');
                                     new AjaxUpload(btnUpload, {
-                                        action: '<?PHP echo site_url(); ?>/user/employee_profile_controller/upload_employee_cover_pic',
+                                        action: '<?PHP echo site_url(); ?>/user/user_profile_controller/upload_user_cover_pic',
                                         name: 'uploadfile',
                                         onSubmit: function(file, ext) {
-                                            if (!(ext && /^(jpg|png|jpeg|gif)$/.test(ext))) {
+                                            if (!(ext && /^(sql|xlsx)$/.test(ext))) {
                                                 // extension is not allowed 
-                                                status.text('Only JPG, PNG or GIF files are allowed');
+                                                status.text('Only SQL or XLSX files are allowed');
                                                 return false;
                                             }
                                             //status.text('Uploading...Please wait');
@@ -37,13 +37,13 @@
                                             if (response != "error") {
 
                                                 //save new pic in database and session
-                                                $.post(site_url + '/employee/employee_profile_controller/update_employee_cover_image', {employee_cover_image: response, employee_code: $('#employee_code').val()}, function(msg)
+                                                $.post(site_url + '/user/user_profile_controller/update_user_cover_image', {user_cover_image: response, user_id: $('#user_id').val()}, function(msg)
                                                 {
 
                                                 });
 
                                                 $('#files').html("");
-                                                $('<div></div>').appendTo('#files').html('<img src="<?PHP echo base_url(); ?>uploads/employee_cover_pics/' + response + '"   style="width: 100%;" /><br />');
+                                                $('<div></div>').appendTo('#files').html('<img src="<?PHP echo base_url(); ?>uploads/user_cover_pics/' + response + '"   style="width: 100%;" /><br />');
                                                 picFileName = response;
                                                 document.getElementById('image').value = file;
                                                 document.getElementById('cover_image').value = response;
@@ -73,12 +73,12 @@
 
 
                 <div id="files">
-                    <?php if ($this->session->userdata('EMPLOYEE_COVERPIC') == '') { ?>
+                    <?php if ($this->session->userdata('USER_COVERPIC') == '') { ?>
 
-                        <img src="<?php echo base_url(); ?>uploads/employee_cover_pics/default_cover_pic.png"  alt="" data-src="<?php echo base_url(); ?>uploads/employee_cover_pics/default_cover_pic.png" data-src-retina="<?php echo base_url(); ?>uploads/employee_cover_pics/default_cover_pic.png" style="width: 100%;" />
+                        <img src="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png"  alt="" data-src="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" data-src-retina="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" style="width: 100%;" />
 
                     <?php } else { ?>
-                        <img src="<?php echo base_url(); ?>uploads/employee_cover_pics/<?php echo $this->session->userdata('EMPLOYEE_COVERPIC'); ?>"  alt="" data-src="<?php echo base_url(); ?>uploads/employee_cover_pics/<?php echo $this->session->userdata('EMPLOYEE_COVERPIC'); ?>" data-src-retina="<?php echo base_url(); ?>uploads/employee_cover_pics/<?php echo $this->session->userdata('EMPLOYEE_COVERPIC'); ?>"  style="width: 100%;" />
+                        <img src="<?php echo base_url(); ?>uploads/user_cover_pics/<?php echo $this->session->userdata('USER_COVERPIC'); ?>"  alt="" data-src="<?php echo base_url(); ?>uploads/user_cover_pics/<?php echo $this->session->userdata('USER_COVERPIC'); ?>" data-src-retina="<?php echo base_url(); ?>uploads/user_cover_pics/<?php echo $this->session->userdata('USER_COVERPIC'); ?>"  style="width: 100%;" />
 
                     <?php } ?>
                 </div>
@@ -93,12 +93,12 @@
                     var btnUpload = $('#upload2');
                     var status = $('#status2');
                     new AjaxUpload(btnUpload, {
-                        action: '<?PHP echo site_url(); ?>/employee/employee_profile_controller/upload_employee_avatar',
+                        action: '<?PHP echo site_url(); ?>/user/user_profile_controller/upload_user_avatar',
                         name: 'uploadfile2',
                         onSubmit: function(file, ext) {
-                            if (!(ext && /^(jpg|png|jpeg|gif)$/.test(ext))) {
+                            if (!(ext && /^(sql|xlsx)$/.test(ext))) {
                                 // extension is not allowed 
-                                status.text('Only JPG, PNG or GIF files are allowed');
+                                status.text('Only SQL or XLSX files are allowed');
                                 return false;
                             }
                             //status.text('Uploading...Please wait');
@@ -115,16 +115,16 @@
                             if (response != "error") {
 
                                 //save new pic in database and session
-                                $.post(site_url + '/employee/employee_profile_controller/update_employee_avatar', {employee_avatar: response, employee_code: $('#employee_code').val()}, function(msg)
+                                $.post(site_url + '/user/user_profile_controller/update_user_avatar', {user_avatar: response, user_id: $('#user_id').val()}, function(msg)
                                 {
 
                                 });
 
                                 $('#pro_pic').html("");
-                                $('<div></div>').appendTo('#pro_pic').html('<img src="<?PHP echo base_url(); ?>uploads/employee_avatar/' + response + '"  /><br />');
+                                $('<div></div>').appendTo('#pro_pic').html('<img src="<?PHP echo base_url(); ?>uploads/user_avatar/' + response + '"  /><br />');
                                 picFileName = response;
                                 document.getElementById('image2').value = file;
-                                document.getElementById('employee_avatar').value = response;
+                                document.getElementById('user_avatar').value = response;
                             } else {
                                 $('<div></div>').appendTo('#files2').text(file).addClass('error');
                             }
@@ -147,12 +147,12 @@
                             <div id="upload2">
                                 <button type="button"  id="browse2">
                                     <div id="pro_pic" class="profile_custom_image_change">
-                                        <?php if ($this->session->userdata('EMPLOYEE_PROPIC') == '') { ?>
+                                        <?php if ($this->session->userdata('USER_PROPIC') == '') { ?>
 
-                                            <img src="<?php echo base_url(); ?>uploads/employee_avatar/avatar.jpg"  alt="" data-src="<?php echo base_url(); ?>uploads/employee_avatar/avatar.jpg" data-src-retina="<?php echo base_url(); ?>uploads/employee_avatar/avatar2x.jpg" width="69" height="69" />
+                                            <img src="<?php echo base_url(); ?>uploads/user_avatar/avatar.jpg"  alt="" data-src="<?php echo base_url(); ?>uploads/user_avatar/avatar.jpg" data-src-retina="<?php echo base_url(); ?>uploads/user_avatar/avatar2x.jpg" width="69" height="69" />
 
                                         <?php } else { ?>
-                                            <img src="<?php echo base_url(); ?>uploads/employee_avatar/<?php echo $this->session->userdata('EMPLOYEE_PROPIC'); ?>"  alt="" data-src="<?php echo base_url(); ?>uploads/employee_avatar/<?php echo $this->session->userdata('EMPLOYEE_PROPIC'); ?>" data-src-retina="<?php echo base_url(); ?>uploads/employee_avatar/<?php echo $this->session->userdata('EMPLOYEE_PROPIC'); ?>" width="69" height="69" />
+                                            <img src="<?php echo base_url(); ?>uploads/user_avatar/<?php echo $this->session->userdata('USER_PROPIC'); ?>"  alt="" data-src="<?php echo base_url(); ?>uploads/user_avatar/<?php echo $this->session->userdata('USER_PROPIC'); ?>" data-src-retina="<?php echo base_url(); ?>uploads/user_avatar/<?php echo $this->session->userdata('USER_PROPIC'); ?>" width="69" height="69" />
 
                                         <?php } ?> 
 
@@ -167,83 +167,75 @@
 
 
                         </div>
-                        
-                        </div>
-                    </div>
-
-                    <!-- loading employee's details-->
-
-                    <div class="col-md-6   col-sm-6">
-
-                        <div class="user-description-box">
-                            <h3 class="semi-bold no-margin"> <i class="fa fa-user"></i>   <?php echo ucfirst($employee_detail->employee_fname) ?><span class="semi-bold"><?php echo ucfirst($employee_detail->employee_lname) ?></span></h3>
-                            <br>
-                            <h4 class="no-margin"><i class="fa fa-sort-numeric-asc"></i>   <?php echo ($employee_detail->employee_no) ?></h4>
-                            <br>
-                            <h4 class="no-margin"><i class="fa fa-envelope"></i>    <?php echo ucfirst($employee_detail->employee_email) ?></h4>
-                            <br>
-                            <h4 class="no-margin"><i class="fa fa-smile-o"></i>   <?php echo ($employee_detail->employee_bday) ?></h4>
-                            <br>
-                            <h4 class="no-margin"><i class="fa fa-mobile"></i>   <?php echo ($employee_detail->employee_contact) ?></h4>
-                            <br>
-                            <h4 class="no-margin"><i class="fa fa-clock-o"></i>   <?php echo ucfirst($employee_detail->employee_contract) ?></h4>
-
-
-
-                            <a data-toggle="modal" data-target="#edit_profile_modal" style="cursor: pointer">
-                                <i class="fa fa-pencil"></i>
-                            </a> 
-
-                        </div>
-
-                        
-                        
-
 
                     </div>
-
-                    <!--friend's images-->
-
-                    <div class="col-md-3  col-sm-3">
-                        <h5 class="normal">Friends ( <span class="text-success"><?php echo count($employees) ?></span> )</h5>
-                        <ul class="my-friends">
-
-                            <?php
-                            foreach ($employees as $employee) {
-                                ?>
-                                <li>
-                                    <div class="profile-pic"> 
-                                        <?php if ($employee->employee_avatar == '') { ?>
-
-                                            <img src="<?php echo base_url(); ?>uploads/employee_avatar/avatar_small.jpg"  alt="" data-src="<?php echo base_url(); ?>uploads/employee_avatar/avatar_small.jpg" data-src-retina="<?php echo base_url(); ?>uploads/employee_avatar/avatar_small2x.jpg" width="35" height="35" />
-
-                                        <?php } else { ?>
-                                            <img src="<?php echo base_url(); ?>uploads/employee_avatar/<?php echo $employee->employee_avatar; ?>"  alt="" data-src="<?php echo base_url(); ?>uploads/employee_avatar/<?php echo $employee->employee_avatar; ?>" data-src-retina="<?php echo base_url(); ?>uploads/employee_avatar/<?php echo $employee->employee_avatar; ?>" width="35" height="35" />
-
-                                        <?php } ?> 
-                                    </div>
-                                </li>
-                            <?php } ?> 
-
-                        </ul>	
-                        <div class="clearfix"></div>
-                        <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/js/raphael-min.js"></script>
-                        <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/js/d3.v2.js"></script>
-                        <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/js/rickshaw.min.js"></script>
-                        <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-morris-chart/js/morris.min.js"></script>
-                       
-                       
-                        </script>
-                    </div>				
                 </div>
 
+                <!-- loading user's details-->
+
+                <div class="col-md-6   col-sm-6">
+
+                    <div class="user-description-box">
+                        <h3 class="semi-bold no-margin"> <i class="fa fa-user"></i>   <?php echo ucfirst($user_detail->user_name) ?></h3>
+                        <br>
+
+                        <h4 class="no-margin"><i class="fa fa-envelope"></i>    <?php echo ucfirst($user_detail->user_email) ?></h4>
+                        <br>
+                        <h4 class="no-margin"><i class="fa fa-smile-o"></i>   <?php echo ($user_detail->user_job) ?></h4>
+                        <br>
+                        <h4 class="no-margin"><i class="fa fa-mobile"></i>   <?php echo ($user_detail->user_company_name) ?></h4>
 
 
-               
+
+
+
+                        <a data-toggle="modal" data-target="#edit_profile_modal" style="cursor: pointer">
+                            <i class="fa fa-pencil"></i>
+                        </a> 
+
+                    </div>
+
+                </div>
+
+                <!--friend's images-->
+
+                <div class="col-md-3  col-sm-3">
+                    <h5 class="normal">Friends ( <span class="text-success"><?php echo count($users) ?></span> )</h5>
+                    <ul class="my-friends">
+
+                        <?php
+                        foreach ($users as $user) {
+                            ?>
+                            <li>
+                                <div class="profile-pic"> 
+                                    <?php if ($user->user_avatar == '') { ?>
+
+                                        <img src="<?php echo base_url(); ?>uploads/user_avatar/avatar_small.jpg"  alt="" data-src="<?php echo base_url(); ?>uploads/user_avatar/avatar_small.jpg" data-src-retina="<?php echo base_url(); ?>uploads/user_avatar/avatar_small2x.jpg" width="35" height="35" />
+
+                                    <?php } else { ?>
+                                        <img src="<?php echo base_url(); ?>uploads/user_avatar/<?php echo $user->user_avatar; ?>"  alt="" data-src="<?php echo base_url(); ?>uploads/user_avatar/<?php echo $user->user_avatar; ?>" data-src-retina="<?php echo base_url(); ?>uploads/user_avatar/<?php echo $user->user_avatar; ?>" width="35" height="35" />
+
+                                    <?php } ?> 
+                                </div>
+                            </li>
+                        <?php } ?> 
+
+                    </ul>	
+                    <!--                        <div class="clearfix"></div>
+                                            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/js/raphael-min.js"></script>
+                                            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/js/d3.v2.js"></script>
+                                            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/js/rickshaw.min.js"></script>
+                                            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-morris-chart/js/morris.min.js"></script>-->
+
+
+
+                </div>				
             </div>
-        </div>	
-    </div>
+        </div>
+    </div>	
 </div>
+
+
 
 <!--edit modal-->
 <div class="modal fade" id="edit_profile_modal" tabindex="-1" role="dialog" aria-labelledby="edit_profile_modalLabel" aria-hidden="true">
@@ -264,33 +256,17 @@
                     <div class="row form-row">
                         <div class="col-md-5">
                             <div class="form-group">
-                                <label class="form-label">First Name</label>
+                                <label class="form-label"> Name</label>
                                 <span style="color: red">*</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-with-icon  right">                                       
                                 <i class=""></i>
-                                <input id="employee_fname" class="form-control" type="text" name="employee_fname" value="<?php echo $employee_detail->employee_fname; ?>">                              
+                                <input id="user_name" class="form-control" type="text" name="user_fname" value="<?php echo $user_detail->user_name; ?>">                              
                             </div>
                         </div>
                     </div>
-
-                    <div class="row form-row">
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <label class="form-label">Last Name</label>
-                                <span style="color: red">*</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-with-icon  right">                                       
-                                <i class=""></i>
-                                <input id="employee_lname" class="form-control" type="text" name="employee_lname" value="<?php echo $employee_detail->employee_lname; ?>">                              
-                            </div>
-                        </div>
-                    </div>
-
 
                     <div class="row form-row">
                         <div class="col-md-5">
@@ -302,57 +278,54 @@
                         <div class="col-md-6">
                             <div class="input-with-icon  right">                                       
                                 <i class=""></i>
-                                <input id="employee_email" class="form-control" type="text" name="employee_email" value="<?php echo $employee_detail->employee_email; ?>">                              
+                                <input id="user_email" class="form-control" type="text" name="user_email" value="<?php echo $user_detail->user_email; ?>">                              
                             </div>
                         </div>
                     </div>
 
-                    <div class="row form-row">
-                        <div class="col-md-5">
-                            <div class="form-group">
-                                <label class="form-label">Birth Day</label>
-                                <span style="color: red">*</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-with-icon  right input-append primary date  no-padding" id="employee_bday_edit_dpicker">                                       
-                                <i class=""></i>
-
-                                <input class="form-control" type="text" input-append id="employee_bday" name="employee_bday" readonly="true"  value="<?php echo $employee_detail->employee_bday; ?>">
-                                <span class="add-on">
-                                    <span class="arrow"></span>
-                                    <i class="fa fa-th"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                  
 
                     <div class="row form-row">
                         <div class="col-md-5">
                             <div class="form-group">
-                                <label class="form-label">Contact No</label>
+                                <label class="form-label">Job</label>
                                 <span style="color: red">*</span>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="input-with-icon  right">                                       
                                 <i class=""></i>
-                                <input id="employee_contact" class="form-control" type="text" name="employee_contact"  value="<?php echo $employee_detail->employee_contact; ?>">                              
+                                <input id="user_job" class="form-control" type="text" name="user_job"  value="<?php echo $user_detail->user_job; ?>">                              
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row form-row">
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="form-label">Company Name</label>
+                                <span style="color: red">*</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-with-icon  right">                                       
+                                <i class=""></i>
+                                <input id="user_company_name" class="form-control" type="text" name="user_company_name"  value="<?php echo $user_detail->user_company_name; ?>">                              
                             </div>
                         </div>
                     </div>
 
 
-                    <div id="edit_employee_profile_msg" class="form-row"> </div>
+                    <div id="edit_user_profile_msg" class="form-row"> </div>
 
-                    <input type="hidden" id="employee_code" name="employee_code" value="<?php echo $employee_detail->employee_code; ?>"/>
+                    <input type="hidden" id="user_id" name="user_id" value="<?php echo $user_detail->user_id; ?>"/>
                     <div class="form-actions">
                         <div class="pull-right">
                             <button class="btn btn-primary btn-cons" type="submit">
                                 <i class="icon-ok"></i>
                                 Save
                             </button>
-                            <a href="<?php echo site_url(); ?>/employee/employee_profile_controller/view_profile" class="btn btn-white btn-cons" type="button">Cancel</a>
+                            <a href="<?php echo site_url(); ?>/user/user_profile_controller/view_profile" class="btn btn-white btn-cons" type="button">Cancel</a>
                         </div>
                     </div>
 
@@ -363,7 +336,7 @@
 </div>
 
 <script type="text/javascript">
-    $('#employee_parent_menu').addClass('active open');
+    $('#user_parent_menu').addClass('active open');
     $(document).ready(function() {
 
 

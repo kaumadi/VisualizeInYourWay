@@ -1,40 +1,27 @@
 
- 
 
-//edit employee bday datepicker
-$('#employee_bday_edit_dpicker').datepicker({
-    format: "yyyy-mm-dd",
-    autoclose: true,
-    todayHighlight: true
-});
 
-   //edit employee profile Form
+
+
+//edit user profile Form
 $('#edit_profile_form').validate({
     focusInvalid: false,
     ignore: "",
     rules: {
-        employee_fname:{
+        user_name: {
             required: true
-           },
-        employee_lname:{
-            required: true
-         },
-       
-        employee_email: {
+        },
+        user_email: {
             required: true,
-            email:true
+            email: true
         },
-        
-        employee_bday: {
+        user_job: {
             required: true
         },
-        employee_contact: {
-            required: true,
-            number:true
-        },
-        
+        user_company_name: {
+            required: true
 
-
+},
     },
     invalidHandler: function(event, validator) {
         //display error alert on form submit    
@@ -57,15 +44,15 @@ $('#edit_profile_form').validate({
         parent.removeClass('error-control').addClass('success-control');
     }, submitHandler: function(form)
     {
-        $.post(site_url + '/employee/employee_profile_controller/edit_employee', $('#edit_profile_form').serialize(), function(msg)
+        $.post(site_url + '/user/user_profile_controller/edit_user', $('#edit_profile_form').serialize(), function(msg)
         {
-            
+
             if (msg == 1) {
-                $("#edit_employee_profile_msg").html('<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Success: The <a class="link" >details </a>has been updated.</div>');
+                $("#edit_user_profile_msg").html('<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Success: The <a class="link" >details </a>has been updated.</div>');
                 edit_profile_form.reset();
-                window.location = site_url + '/employee/employee_profile_controller/view_profile'; //Redirect to the main profile view after editing
+                window.location = site_url + '/user/user_profile_controller/view_profile'; //Redirect to the main profile view after editing
             } else {
-                $("#edit_employee_profile_msg").html('<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Error: The <a class="link" href="#">details </a>has failed.</div>');
+                $("#edit_user_profile_msg").html('<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Error: The <a class="link" href="#">details </a>has failed.</div>');
             }
         });
 
@@ -75,19 +62,19 @@ $('#edit_profile_form').validate({
 
 
 
-   
 
 
- /*
-  * Hover image js function
-  */
- $(document).ready(function () {
-                $(document).on('mouseenter', '.divbutton', function () {
-                    $(this).find(":button").show();
-                }).on('mouseleave', '.divbutton', function () {
-                    $(this).find(":button").hide();
-                });
-            });
+
+/*
+ * Hover image js function
+ */
+$(document).ready(function() {
+    $(document).on('mouseenter', '.divbutton', function() {
+        $(this).find(":button").show();
+    }).on('mouseleave', '.divbutton', function() {
+        $(this).find(":button").hide();
+    });
+});
 
 
  
