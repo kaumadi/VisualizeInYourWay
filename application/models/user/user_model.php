@@ -6,13 +6,12 @@ class User_model extends CI_Model {
     var $user_name;
     var $user_password;
     var $user_email;
-    var $user_job;
-    var $user_company_name;
     var $user_avatar;
     var $user_cover_image;
     var $account_activation_code;
+    var $user_job;
+    var $user_company_name;
     var $is_online;
-    var $del_ind;
     var $added_by;
     var $added_date;
     var $updated_by;
@@ -54,21 +53,7 @@ class User_model extends CI_Model {
         $this->user_email = $user_email;
     }
 
-    public function get_user_job() {
-        return $this->user_job;
-    }
-
-    public function set_user_job($user_job) {
-        $this->user_job = $user_job;
-    }
-
-    public function get_user_company_name() {
-        return $this->user_company_name;
-    }
-
-    public function set_user_company_name($user_company_name) {
-        $this->user_company_name = $user_company_name;
-    }
+   
 
     public function get_user_avatar() {
         return $this->user_avatar;
@@ -93,6 +78,22 @@ class User_model extends CI_Model {
     public function set_account_activation_code($account_activation_code) {
         $this->account_activation_code = $account_activation_code;
     }
+    
+     public function get_user_job() {
+        return $this->user_job;
+    }
+
+    public function set_user_job($user_job) {
+        $this->user_job = $user_job;
+    }
+
+    public function get_user_company_name() {
+        return $this->user_company_name;
+    }
+
+    public function set_user_company_name($user_company_name) {
+        $this->user_company_name = $user_company_name;
+    }
 
     public function get_is_online() {
         return $this->is_online;
@@ -100,14 +101,6 @@ class User_model extends CI_Model {
 
     public function set_is_online($is_online) {
         $this->is_online = $is_online;
-    }
-
-    public function get_del_ind() {
-        return $this->del_ind;
-    }
-
-    public function set_del_ind($del_ind) {
-        $this->del_ind = $del_ind;
     }
 
     public function get_added_by() {
@@ -143,3 +136,4 @@ class User_model extends CI_Model {
     }
 
 }
+?>

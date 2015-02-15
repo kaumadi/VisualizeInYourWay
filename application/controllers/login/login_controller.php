@@ -34,7 +34,7 @@ class Login_controller extends CI_Controller {
 
     function index() {
         if ($this->session->userdata('USER_LOGGED_IN')) {
-            redirect(base_url() . 'index.php/dashboard/dashboard_controller/');
+            redirect(base_url() . 'dashboard/dashboard_controller/');
 
         } else {
 
@@ -104,6 +104,7 @@ class Login_controller extends CI_Controller {
         /* Remove Imap authenticate error login with some machine */
        
         if ($logged_user_result) {// change
+          
             $logged_user_details = $user_service->authenticate_user($user_model);
 
 
@@ -126,7 +127,7 @@ class Login_controller extends CI_Controller {
 //                $this->session->set_userdata('USER_FNAME', $logged_user_details->user_fname);
 //                $this->session->set_userdata('USER_LNAME', $logged_user_details->user_lname);
                 $this->session->set_userdata('USER_EMAIL', $logged_user_details->user_email);
-                $this->session->set_userdata('USER_PROPIC', $logged_user_details->user_avatar);
+               $this->session->set_userdata('USER_PROPIC', $logged_user_details->user_avatar);
                 $this->session->set_userdata('USER_COVERPIC', $logged_user_details->user_cover_image);
                 $this->session->set_userdata('USER_JOB', $logged_user_details->user_job);
                 $this->session->set_userdata('USER_COMPANY_NAME', $logged_user_details->user_company_name);

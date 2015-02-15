@@ -52,19 +52,19 @@ class User_service extends CI_Model {
 
     function authenticate_user($user_model) {
 
-        $data = array('user_email' => $user_model->get_user_email() /* , 'Password'=>$user_model->get_user_password() */, 'user.del_ind' => '1', 'company.del_ind' => '1');
+        $data = array('user_email' => $user_model->get_user_email() , 'user_Password'=>$user_model->get_user_password() );
 
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where($data);
         $query = $this->db->get();
-
+       
         return $query->row();
     }
 
     function authenticate_user_with_password($user_model) {
 
-        $data = array('user_email' => $user_model->get_user_email(), 'user_password' => $user_model->get_user_password(), 'user.del_ind' => '1');
+        $data = array('user_email' => $user_model->get_user_email(), 'user_password' => $user_model->get_user_password());
 
         $this->db->select('*');
         $this->db->from('user');
@@ -79,7 +79,7 @@ class User_service extends CI_Model {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('user.user_email', $user_model->get_user_email());
-        $this->db->where('del_ind', '1');
+        //$this->db->where('del_ind', '1');
         $query = $this->db->get();
         foreach ($query->result() as $user) {
 //            $server = $emp->mail_server;

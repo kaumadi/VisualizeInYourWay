@@ -11,7 +11,7 @@ $(document).ready(function() {
                 required: true
             },
             txtpassword: {
-                required: true,
+                required: true
             }
         },
         invalidHandler: function(event, validator) {
