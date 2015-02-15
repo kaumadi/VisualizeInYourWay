@@ -229,7 +229,7 @@
                         </tr>
                         <tr>
                           <td style="text-align:left;">
-                          <?phpecho date('Y-m-d H:i:s');?>
+                          <?php echo date('Y-m-d H:i:s');?>
                           </td>
                         </tr>
                       </table>
