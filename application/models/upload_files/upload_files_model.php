@@ -4,14 +4,15 @@ class Upload_files_model extends CI_Model {
 
     var $file_id;
     var $file_name;
-    var $file_desc;
+    var $file_description;
+    var $del_ind;
     var $added_by;
     var $added_date;
 
     function __construct() {
         parent::__construct();
     }
-    
+
     public function get_file_id() {
         return $this->file_id;
     }
@@ -20,8 +21,12 @@ class Upload_files_model extends CI_Model {
         return $this->file_name;
     }
 
-    public function get_file_desc() {
-        return $this->file_desc;
+    public function get_file_description() {
+        return $this->file_description;
+    }
+
+    public function get_del_ind() {
+        return $this->del_ind;
     }
 
     public function get_added_by() {
@@ -40,8 +45,12 @@ class Upload_files_model extends CI_Model {
         $this->file_name = $file_name;
     }
 
-    public function set_file_desc($file_desc) {
-        $this->file_desc = $file_desc;
+    public function set_file_description($file_description) {
+        $this->file_description = $file_description;
+    }
+
+    public function set_del_ind($del_ind) {
+        $this->del_ind = $del_ind;
     }
 
     public function set_added_by($added_by) {
@@ -52,7 +61,4 @@ class Upload_files_model extends CI_Model {
         $this->added_date = $added_date;
     }
 
-
-    
 }
-    
