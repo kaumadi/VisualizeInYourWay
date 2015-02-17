@@ -2,11 +2,11 @@ var base_url = js_base_url;
 var site_url = js_site_url;
 
 
-//////////////////project//////////////////////////////////////////////////////////////
+//////////////////upload_files//////////////////////////////////////////////////////////////
 $(document).ready(function() {
-    //project table
-    var project_table = $('#project_table').dataTable({
-        "sDom": "<'row'<'col-md-6'l <'toolbar project_table_tbar'>><'col-md-6'f>r>t<'row'<'col-md-12'p i>>",
+    //upload_files table
+    var upload_files_table = $('#upload_files_table').dataTable({
+        "sDom": "<'row'<'col-md-6'l <'toolbar upload_files_table_tbar'>><'col-md-6'f>r>t<'row'<'col-md-12'p i>>",
         "oTableTools": {
             "aButtons": [
                 {
@@ -23,51 +23,31 @@ $(document).ready(function() {
         }
     });
 
-    $(".project_table_tbar").html('<div class="table-tools-actions"><a class="btn btn-primary" style="margin-left:12px" href="' + site_url + '/project/project_controller/add_project_view"   id="add_project_btn" >Add New Project</a></div>');
+    $(".upload_files_table_tbar").html('<div class="table-tools-actions"><a class="btn btn-primary" style="margin-left:12px" href="' + site_url + '/upload_files/upload_files_controller/add_upload_files_view"   id="add_upload_files_btn" >Add New File</a></div>');
 
-    $('#project_table_wrapper .dataTables_filter input').addClass("input-medium ");
-    $('#project_table_wrapper .dataTables_length select').addClass("select2-wrapper span12");
+    $('#upload_files_table_wrapper .dataTables_filter input').addClass("input-medium ");
+    $('#upload_files_table_wrapper .dataTables_length select').addClass("select2-wrapper span12");
     $(".select2-wrapper").select2({minimumResultsForSearch: -1});
 
     //HTML5 editor
-    $('#project_description').wysihtml5();
+    $('#upload_files_description').wysihtml5();
 
 
-    //add project form start date datepicker
-    $('#project_start_date_dpicker').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true,
-         startDate: '+1d'
-    });
+    
 
-    //add project form start date datepicker
-    $('#project_end_date_dpicker').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true,
-//        minDate: "0M", // maxDate:"-1M"
-//        greaterThan: "#project_start_date_dpicker"
-    });
+   
 
-    //add project Form
-    $('#add_project_form').validate({
+    //add upload_files Form
+    $('#add_upload_files_form').validate({
         focusInvalid: false,
         ignore: "",
         rules: {
-            project_name: {
+            file_name: {
                 required: true
             },
-            project_vendor: {
-                required: true
-            },
-            project_start_date: {
-                required: true
-            },
-            project_end_date: {
-                required: true
-            },
-            project_description: {
+            
+           
+            file_description: {
                 required: true
             }
 
@@ -95,14 +75,14 @@ $(document).ready(function() {
 
         }, submitHandler: function(form)
         {
-            $.post(site_url + '/project/project_controller/add_new_project', $('#add_project_form').serialize(), function(msg)
+            $.post(site_url + '/upload_files/upload_files_controller/add_new_upload_files', $('#add_upload_files_form').serialize(), function(msg)
             {
                 if (msg == 1) {
-                    $("#add_project_msg").html('<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Success: The <a class="link" >project </a>has been added.</div>');
-                    add_project_form.reset();
-                    window.location = site_url + '/project/project_controller/manage_projects';
+                    $("#add_upload_files_msg").html('<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Success: The <a class="link" > File </a>has been added.</div>');
+                    add_upload_files_form.reset();
+                    window.location = site_url + '/upload_files/upload_files_controller/manage_upload_files';
                 } else {
-                    $("#add_project_msg").html('<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Error: The <a class="link" href="#">project </a>has failed.</div>');
+                    $("#add_upload_files_msg").html('<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Error: The <a class="link" href="#"> File </a>has failed.</div>');
                 }
             });
 
@@ -111,35 +91,25 @@ $(document).ready(function() {
     });
 });
 
-//edit project form start date datepicker
-$('#project_start_date_edit_dpicker').datepicker({
-    format: "yyyy-mm-dd",
-    autoclose: true,
-    todayHighlight: true
-});
 
-//edit project form start date datepicker
-$('#project_end_date_edit_dpicker').datepicker({
-    format: "yyyy-mm-dd",
-    autoclose: true,
-    todayHighlight: true
-});
 
-//edit project Form
-$('#edit_project_form').validate({
+////edit upload_files form start date datepicker
+//$('#upload_files_end_date_edit_dpicker').datepicker({
+//    format: "yyyy-mm-dd",
+//    autoclose: true,
+//    todayHighlight: true
+//});
+
+//edit upload_files Form
+$('#edit_upload_files_form').validate({
     focusInvalid: false,
     ignore: "",
     rules: {
-        project_name: {
+        file_name: {
             required: true
         },
-        project_vendor: {
-            required: true
-        },
-        project_start_date: {
-            required: true
-        },
-        project_description: {
+        
+        file_description: {
             required: true
         }
 
@@ -168,14 +138,14 @@ $('#edit_project_form').validate({
         parent.removeClass('error-control').addClass('success-control');
     }, submitHandler: function(form)
     {
-        $.post(site_url + '/project/project_controller/edit_project', $('#edit_project_form').serialize(), function(msg)
+        $.post(site_url + '/upload_files/upload_files_controller/edit_upload_files', $('#edit_upload_files_form').serialize(), function(msg)
         {
             if (msg == 1) {
-                $("#edit_project_msg").html('<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Success: The <a class="link" >project </a>has been updated.</div>');
-                edit_project_form.reset();
-                window.location = site_url + '/project/project_controller/manage_projects';
+                $("#edit_upload_files_msg").html('<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Success: The <a class="link" > File </a>has been updated.</div>');
+                edit_upload_files_form.reset();
+                window.location = site_url + '/upload_files/upload_files_controller/manage_upload_files';
             } else {
-                $("#edit_project_msg").html('<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Error: The <a class="link" href="#">project </a>has failed.</div>');
+                $("#edit_upload_files_msg").html('<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Error: The <a class="link" href="#"> File</a>has failed.</div>');
             }
         });
 
@@ -185,68 +155,48 @@ $('#edit_project_form').validate({
 
 
 
-//delete projects
-function delete_project(id) {
+//delete upload_files
+function delete_upload_files(id) {
 
-    if (confirm('Are you sure want to delete this Project ?')) {
+    if (confirm('Are you sure want to delete this File ?')) {
 
         $.ajax({
             type: "POST",
-            url: site_url + '/project/project_controller/delete_project',
+            url: site_url + '/upload_files/upload_files_controller/delete_upload_files',
             data: "id=" + id,
             success: function(msg) {
                 //alert(msg);
                 if (msg == 1) {
                     //document.getElementById(trid).style.display='none';
-                    $('#projects_' + id).hide();
+                    $('#upload_files_' + id).hide();
                 }
-                else if (msg == 2) {
-                    alert('Cannot be deleted as it is already assigned to Tasks.<br>First complete tasks !!');
-                }
+//                else if (msg == 2) {
+//                    alert('Cannot be deleted as it is already assigned to Tasks.<br>First complete tasks !!');
+//                }
             }
         });
     }
 }
 
 
-// add project sumbit btn action
-$(document).on('click', '#add_project_save_btn', function() {
-    if ($('#add_project_form').valid()) {
-        $('#add_project_form').submit();
+// add upload_files sumbit btn action
+$(document).on('click', '#add_upload_files_save_btn', function() {
+    if ($('#add_upload_files_form').valid()) {
+        $('#add_upload_files_form').submit();
     }
 });
 
-// edit project sumbit btn action
-$(document).on('click', '#edit_project_save_btn', function() {
-    if ($('#edit_project_form').valid()) {
-        $('#edit_project_form').submit();
+// edit upload_files sumbit btn action
+$(document).on('click', '#edit_upload_files_save_btn', function() {
+    if ($('#edit_upload_files_form').valid()) {
+        $('#edit_upload_files_form').submit();
     }
 });
 
 
-//////////////////////Project Report/////////////////////////////////////////////////////////
-// project report search
-$(document).on('click', '#report_project_search_btn', function() {
-    $.post(site_url + '/project/project_controller/edit_project', $('#edit_project_form').serialize(), function(msg)
-    {
-        if (msg == 1) {
-            $("#edit_project_msg").html('<div class="alert alert-success"><button class="close" data-dismiss="alert"></button>Success: The <a class="link" >project </a>has been updated.</div>');
-            edit_project_form.reset();
-            window.location = site_url + '/project/project_controller/manage_projects';
-        } else {
-            $("#edit_project_msg").html('<div class="alert alert-error"><button class="close" data-dismiss="alert"></button>Error: The <a class="link" href="#">project </a>has failed.</div>');
-        }
-    });
-});
 
 
-//print project report
-$(document).on('click', '#project_print_btn', function() {
-    var win = window.open(site_url + '/project/project_controller/print_project_pdf_report', '_blank');
-    win.focus();
-});
-
-function delete_project_files(element){
+function delete_upload_files(element){
     $(element).parent().parent().hide();
 }
 
