@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2015 at 12:00 PM
+-- Generation Time: Feb 17, 2015 at 03:17 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -91,7 +91,7 @@ CREATE TABLE IF NOT EXISTS `statistics` (
   `ip` varchar(300) DEFAULT NULL,
   `browser` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`statistic_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
 
 --
 -- Dumping data for table `statistics`
@@ -123,7 +123,10 @@ INSERT INTO `statistics` (`statistic_id`, `user_id`, `action`, `date`, `uri`, `p
 (30, 0, 'login_controller', 1423996500, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36'),
 (31, 0, 'authenticate_user', 1423996551, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36'),
 (32, 0, 'login_controller', 1423997924, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36'),
-(33, 0, 'authenticate_user', 1423997949, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36');
+(33, 0, 'authenticate_user', 1423997949, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36'),
+(34, 0, 'login_controller', 1424093972, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36'),
+(35, 0, 'authenticate_user', 1424094011, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36'),
+(36, 0, 'login_controller', 1424094034, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.111 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -141,6 +144,55 @@ CREATE TABLE IF NOT EXISTS `system` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `upload_files`
+--
+
+CREATE TABLE IF NOT EXISTS `upload_files` (
+  `file_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `file_name` varchar(100) NOT NULL,
+  `file_desc` text NOT NULL,
+  `del_ind` enum('1','0') NOT NULL,
+  `added_by` int(11) DEFAULT NULL,
+  `added_date` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`file_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `upload_files_stuff`
+--
+
+CREATE TABLE IF NOT EXISTS `upload_files_stuff` (
+  `upload_file_stuff_id` int(11) NOT NULL AUTO_INCREMENT,
+  `stuff_name` varchar(200) NOT NULL,
+  `file_id` int(11) NOT NULL,
+  `del_ind` enum('1','0') NOT NULL DEFAULT '0',
+  `added_date` timestamp NULL DEFAULT NULL,
+  `added_by` int(11) NOT NULL,
+  PRIMARY KEY (`upload_file_stuff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `upload_files_stuff_temp`
+--
+
+CREATE TABLE IF NOT EXISTS `upload_files_stuff_temp` (
+  `upload_file_stuff_id` int(11) NOT NULL AUTO_INCREMENT,
+  `stuff_name` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `del_ind` enum('1','0') NOT NULL DEFAULT '0',
+  `added_date` timestamp NULL DEFAULT NULL,
+  `added_by` int(11) NOT NULL,
+  PRIMARY KEY (`upload_file_stuff_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -149,13 +201,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_name` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL,
   `user_email` varchar(100) NOT NULL,
-  `user_image` varchar(100) DEFAULT NULL,
+  `user_avatar` varchar(100) DEFAULT NULL,
   `user_cover_image` varchar(400) DEFAULT NULL,
   `account_activation_code` varchar(100) NOT NULL,
   `user_job` varchar(100) NOT NULL,
   `user_company_name` varchar(100) NOT NULL,
   `is_online` enum('Y','N') DEFAULT 'N' COMMENT 'Online =Y,Offline=N',
-  `del_ind` enum('1','0','2') NOT NULL COMMENT '0-deactivate,1 -active, 2-pending(Inserted User record from mail server)',
   `added_by` int(11) DEFAULT NULL,
   `added_date` timestamp NULL DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
@@ -167,11 +218,11 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_email`, `user_image`, `user_cover_image`, `account_activation_code`, `user_job`, `user_company_name`, `is_online`, `del_ind`, `added_by`, `added_date`, `updated_by`, `updated_date`) VALUES
-(1, 'Rachini', 'c4961b067d274050e43e26beb9d7d19c', 'rachini94perera@gmail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'Y', '1', NULL, '2015-02-11 18:30:00', NULL, NULL),
-(2, 'Kaumadi', 'c4961b067d274050e43e26beb9d7d19c', 'kaumadi2014@gmail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'Y', '1', NULL, '2015-02-11 18:30:00', NULL, NULL),
-(3, 'Dahami', 'c4961b067d274050e43e26beb9d7d19c', 'dahamiyh@ymail.com', 'avatar.jpg', 'default_cover_Pic.png', '', 'Employee', 'ABC', 'Y', '1', NULL, '2015-02-11 18:30:00', NULL, NULL),
-(4, 'Dilupa', 'c4961b067d274050e43e26beb9d7d19c', 'dila.june@ymail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'Y', '1', NULL, '2015-02-11 18:30:00', NULL, NULL);
+INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_email`, `user_avatar`, `user_cover_image`, `account_activation_code`, `user_job`, `user_company_name`, `is_online`, `added_by`, `added_date`, `updated_by`, `updated_date`) VALUES
+(1, 'Rachini', 'c4961b067d274050e43e26beb9d7d19c', 'rachini94perera@gmail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'Y', NULL, '2015-02-11 18:30:00', NULL, NULL),
+(2, 'Kaumadi', 'c4961b067d274050e43e26beb9d7d19c', 'kaumadi2014@gmail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'Y', NULL, '2015-02-11 18:30:00', NULL, NULL),
+(3, 'Dahami', 'c4961b067d274050e43e26beb9d7d19c', 'dahamiyh@ymail.com', 'avatar.jpg', 'default_cover_Pic.png', '', 'Employee', 'ABC', 'Y', NULL, '2015-02-11 18:30:00', NULL, NULL),
+(4, 'Dilupa', 'c4961b067d274050e43e26beb9d7d19c', 'dila.june@ymail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'Y', NULL, '2015-02-11 18:30:00', NULL, NULL);
 
 -- --------------------------------------------------------
 
