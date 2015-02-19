@@ -12,6 +12,7 @@ class User_model extends CI_Model {
     var $user_job;
     var $user_company_name;
     var $is_online;
+    var $del_ind;
     var $added_by;
     var $added_date;
     var $updated_by;
@@ -102,7 +103,16 @@ class User_model extends CI_Model {
     public function set_is_online($is_online) {
         $this->is_online = $is_online;
     }
+    
+    public function get_del_ind() {
+        return $this->del_ind;
+    }
 
+    public function set_del_ind($del_ind) {
+        $this->del_ind = $del_ind;
+    }
+
+    
     public function get_added_by() {
         return $this->added_by;
     }

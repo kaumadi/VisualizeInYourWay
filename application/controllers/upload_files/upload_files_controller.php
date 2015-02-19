@@ -26,7 +26,7 @@ class Upload_files_controller extends CI_Controller {
     }
 
     function manage_upload_files() {
-       $perm = Access_control_service::check_access('MANAGE_FILES');
+       $perm = Access_controll_service::check_access('MANAGE_FILES');
         if ($perm) {
             $upload_files_service = new Upload_files_service();
 
@@ -42,7 +42,7 @@ class Upload_files_controller extends CI_Controller {
     }
 
     function add_upload_files_view() {
-        $perm = Access_control_service::check_access('ADD_NEW_FILE');
+        $perm = Access_controll_service::check_access('ADD_NEW_FILE');
         if ($perm) {
 
 
@@ -68,7 +68,7 @@ class Upload_files_controller extends CI_Controller {
     }
 
     function add_new_upload_files() {
-//        $perm = Access_control_service :: checkAccess('ADD_PRIVILEGES');
+//        $perm = Access_controll_service :: checkAccess('ADD_PRIVILEGES');
 //        if ($perm) {
 
         $upload_files_model = new Upload_files_model();
@@ -121,7 +121,7 @@ class Upload_files_controller extends CI_Controller {
     }
 
     function edit_upload_files_view($id) {
-        $perm = Access_control_service::check_access('EDIT_FILES');
+        $perm = Access_controll_service::check_access('EDIT_FILES');
         if ($perm) {
 
 
@@ -141,7 +141,7 @@ class Upload_files_controller extends CI_Controller {
 
     function edit_upload_files() {
 
-//        $perm = Access_control_service :: checkAccess('EDIT_FILESS');
+//        $perm = Access_controll_service :: checkAccess('EDIT_FILESS');
 //        if ($perm) {
 
         $upload_files_model = new Upload_files_model();

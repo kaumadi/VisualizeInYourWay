@@ -147,9 +147,9 @@
                                     <div class="form-wizard-steps">
                                         <ul class="wizard-steps form-wizard">
                                             <!--<li class="active" data-target="#step1"> <a href="#tab1" data-toggle="tab"> <span class="step">1</span> <span class="title">Company information</span> </a> </li>-->
-                                            <li data-target="#step2" class=""> <a href="#tab2" data-toggle="tab"> <span class="step">2</span> <span class="title">Employer Registration</span> </a> </li>
+                                            <li data-target="#step2" class=""> <a href="#tab2" data-toggle="tab"> <span class="step">1</span> <span class="title">User Registration</span> </a> </li>
                                            <!-- <li data-target="#step3" class=""> <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Payments</span> </a> </li>-->
-                                            <li data-target="#step3" class=""> <a href="#tab3" data-toggle="tab"> <span class="step">3</span> <span class="title">Get Started <br>
+                                            <li data-target="#step3" class=""> <a href="#tab3" data-toggle="tab"> <span class="step">2</span> <span class="title">Get Started <br>
                                                     </span> </a> </li>
                                         </ul>
                                         <div class="clearfix"></div>
@@ -185,21 +185,14 @@
                                                     <input type="text" placeholder="Email, This will be used as login" class="form-control no-boarder " name="txtEmail" id="txtEmail">
                                                 </div>
                                             </div>
-                                            <div class="row form-row">
-                                                <div class="col-md-12">
-                                                    <input type="text" placeholder="Contact" class="form-control no-boarder " name="txtContact" id="txtContact">
-                                                </div>
-                                            </div>
+                                            
                                             <div class="row form-row">
                                                   <div class="col-md-12">
                                              <div class="input-with-icon  right input-append primary date  no-padding" id="birthday">                                       
                                 <i class=""></i>
                                 
-                                <input class="form-control" type="text" id="birthdy" name="birthdy" readonly="true" placeholder="ex: 1991-04-10">
-                                    <span class="add-on">
-                                        <span class="arrow"></span>
-                                        <i class="fa fa-th"></i>
-                                    </span>
+                                
+                                    
                             </div>
                                                   </div>
                                             </div>
@@ -219,7 +212,7 @@
                                         <div class="col-md-12">
                                             <ul class=" wizard wizard-actions">
                                                 <li class="previous first" style="display:none;"><a href="javascript:;" class="btn">&nbsp;&nbsp;First&nbsp;&nbsp;</a></li>
-                                                <li class="previous"><a href="javascript:;" class="btn">&nbsp;&nbsp;Previous&nbsp;&nbsp;</a></li>
+                                                <!--<li class="previous"><a href="javascript:;" class="btn">&nbsp;&nbsp;Previous&nbsp;&nbsp;</a></li>-->
                                                 <li class="next last" style="display:none;" ><a href="javascript:;" class="btn btn-primary">&nbsp;&nbsp;Start&nbsp;&nbsp;</a></li>
                                                 <li class="next" id="nextbtn"><a href="javascript:;" class="btn btn-primary">&nbsp;&nbsp;Next&nbsp;&nbsp;</a></li>
                                             </ul>

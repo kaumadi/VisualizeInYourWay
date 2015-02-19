@@ -66,12 +66,8 @@ $(document).ready(function() {
                 email: true,
                 minlength: 3
 
-            },
-            txtContact: {
-                required: true,
-                minlength: 3
-
             }
+           
 
         },
         errorPlacement: function(label, element) {
@@ -149,11 +145,11 @@ $(document).ready(function() {
         }
     });
 
-    $('#birthday').datepicker({
-        format: "yyyy-mm-dd",
-        autoclose: true,
-        todayHighlight: true
-    });
+//    $('#birthday').datepicker({
+//        format: "yyyy-mm-dd",
+//        autoclose: true,
+//        todayHighlight: true
+//    });
 
 
 });

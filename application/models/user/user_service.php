@@ -52,7 +52,7 @@ class User_service extends CI_Model {
 
     function authenticate_user($user_model) {
 
-        $data = array('user_email' => $user_model->get_user_email() , 'user_Password'=>$user_model->get_user_password() );
+        $data = array('user_email' => $user_model->get_user_email() , /*'user_password'=>$user_model->get_user_password() */  'user.del_ind' => '1');
 
         $this->db->select('*');
         $this->db->from('user');
@@ -79,7 +79,7 @@ class User_service extends CI_Model {
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where('user.user_email', $user_model->get_user_email());
-        //$this->db->where('del_ind', '1');
+        $this->db->where('del_ind', '1');
         $query = $this->db->get();
         foreach ($query->result() as $user) {
 //            $server = $emp->mail_server;
@@ -178,18 +178,18 @@ class User_service extends CI_Model {
         return $this->db->update('user', $data);
     }
 
-//    function updateEmployee($usermodel) {
-//
-//        //setting the fields need to be update
-//        $data = array('user_id' => $usermodel->getEmployee_no(), //11Oct2013 Barathy
-//            'Employee_Name' => $usermodel->getEmployee_Name(), 'Designation' => $usermodel->getDesignation(), 'Email' => $usermodel->getEmail(), 'last_name' => $usermodel->getLast_name(), 'full_name' => $usermodel->getFull_name(), 'birthday' => $usermodel->getBirthday(), 'nic' => $usermodel->getNic(), 'gender' => $usermodel->getGender(), 'marital_status' => $usermodel->getMarital_status(), 'address1' => $usermodel->getAddress1(), 'address2' => $usermodel->getAddress2(), 'city' => $usermodel->getCity(), 'mobile_no' => $usermodel->getMobile_no(), 'phone_extension' => $usermodel->getPhone_extension(), 'contract_type' => $usermodel->getContract_type(), //11Oct2013 Barathy
-//            'emp_cat_id' => $usermodel->getEmp_cat_id(), //11Oct2013 Barathy
-//            'joined_date' => $usermodel->getJoined_date(), 'resigned_date' => $usermodel->getResigned_date(), 'roster_id ' => $usermodel->getRoster_id(), 'emp_image' => $usermodel->getEmp_image(), 'company_id' => $usermodel->getCompany_id(), 'mail_server' => $usermodel->getMail_server(), 'updated_by' => $this->session->userdata('LCS_EMPLOYEE_CODE'), 'updated_date' => date('Y-m-d H:i:s'));
-//        $this->db->where('Employee_Code', $usermodel->getEmployee_Code());
-//        return $this->db->update('lcs_user', $data);
-//    }
+    function update_user($usermodel) {
 
-    public function get_user($emp_code) {
+        //setting the fields need to be update
+        $data = array('user_id' => $usermodel->get_user_id(), //11Oct2013 Barathy
+            'user_name' => $usermodel->get_user_name(), 'Email' => $usermodel->get_user_email()); /*'full_name' => $usermodel->getFull_name(), 'birthday' => $usermodel->getBirthday(), 'nic' => $usermodel->getNic(), 'gender' => $usermodel->getGender(), 'marital_status' => $usermodel->getMarital_status(), 'address1' => $usermodel->getAddress1(), 'address2' => $usermodel->getAddress2(), 'city' => $usermodel->getCity(), 'mobile_no' => $usermodel->getMobile_no(), 'phone_extension' => $usermodel->getPhone_extension(), 'contract_type' => $usermodel->getContract_type(),*/ //11Oct2013 Barathy
+            //'emp_cat_id' => $usermodel->getEmp_cat_id(), //11Oct2013 Barathy
+           // 'joined_date' => $usermodel->getJoined_date(), 'resigned_date' => $usermodel->getResigned_date(), 'roster_id ' => $usermodel->getRoster_id(), 'emp_image' => $usermodel->getEmp_image(), 'company_id' => $usermodel->getCompany_id(), 'mail_server' => $usermodel->getMail_server(), 'updated_by' => $this->session->userdata('LCS_EMPLOYEE_CODE'), 'updated_date' => date('Y-m-d H:i:s'));
+        $this->db->where('user_id', $usermodel->get_user_id());
+        return $this->db->update('lcs_user', $data);
+    }
+
+    public function get_user($user_id) {
 
         $query = $this->db->get_where('user', array('user_id' => $user_id, 'del_ind' => '1'));
         return $query->row();
@@ -198,58 +198,58 @@ class User_service extends CI_Model {
     public function get_usersRoster($usermodel) {
 
         //07Nov2013 Barathy added 'Status' => '1' to where clause
-        $query = $this->db->get_where('lcs_user', array('roster_id' => $usermodel->getRoster_id(), 'Status' => '1', 'Employee_Code !=' => '0'));
+        $query = $this->db->get_where('lcs_user', array('roster_id' => $usermodel->getRoster_id(), 'Status' => '1', 'User_Id !=' => '0'));
         return $query->result();
     }
 
-    public function get_usersNoRoster() {
-
-        $this->db->where('resigned_date =', '0000-00-00');
-        //07Nov2013 Barathy added 'Status' => '1' to where clause
-        $query = $this->db->get_where('lcs_user', array('roster_id !=' => '0', 'Status' => '1', 'Employee_Code !=' => '0'));
-        return $query->result();
-    }
+//    public function get_usersNoRoster() {
+//
+//        $this->db->where('resigned_date =', '0000-00-00');
+//        //07Nov2013 Barathy added 'Status' => '1' to where clause
+//        $query = $this->db->get_where('lcs_user', array('roster_id !=' => '0', 'Status' => '1', 'Employee_Code !=' => '0'));
+//        return $query->result();
+//    }
 
     function addwelcomepage($usermodel) {
 
         $data = array('preferred_welcome_sys' => $usermodel->getpreferred_welcome_sys());
-        $this->db->where('Employee_Code', $usermodel->getEmployee_Code());
+        $this->db->where('User_Id', $usermodel->get_user_id());
         $result = $this->db->update('lcs_user', $data);
         return $result;
     }
 
     //11Oct2013 Barathy check if user number exists
-    function checkEmpNoExists($emp_no) {
+    function checkUserIdExists($user_id) {
 
-        $query = $this->db->get_where('lcs_user', array('user_no' => $emp_no));
+        $query = $this->db->get_where('lcs_user', array('user_id' => $user_id));
         return $query->num_rows();
     }
 
     function addroster($usermodel) {
 
         $data = array('roster_id' => $usermodel->getRoster_id());
-        $this->db->where('Employee_Code', $usermodel->getEmployee_Code());
+        $this->db->where('User_Id', $usermodel->getUser_Id());
         return $this->db->update('lcs_user', $data);
     }
 
     function removeroster($usermodel) {
 
         $data = array('roster_id' => '0');
-        $this->db->where('Employee_Code', $usermodel->getEmployee_Code());
+        $this->db->where('User_Id', $usermodel->getUser_Id());
         return $this->db->update('lcs_user', $data);
     }
 
-    function getEmployeebyidwithoutgetters($id) {
+    function getUserbyidwithoutgetters($id) {
 
-        $query = $this->db->get_where('lcs_user', array('Employee_Code' => $id));
+        $query = $this->db->get_where('lcs_user', array('User_Id' => $id));
         return $query->row();
     }
 
-    function getEmployeepasswordbyid($usermodel) {
+    function getUserpasswordbyid($usermodel) {
 
         $this->db->select('lcs_user.Password');
         $this->db->from('lcs_user');
-        $this->db->where('lcs_user.Employee_Code ', $usermodel->getEmployee_Code());
+        $this->db->where('lcs_user.User_Id ', $usermodel->getUser_Id());
         $query = $this->db->get();
         return $query->row()->Password;
     }
@@ -257,14 +257,14 @@ class User_service extends CI_Model {
     function setnewPassword($usermodel) {
 
         $data = array('Password' => $usermodel->getPassword());
-        $this->db->where('Employee_Code', $usermodel->getEmployee_Code());
+        $this->db->where('User_Id', $usermodel->getUser_Id());
         $result = $this->db->update('lcs_user', $data);
         return $result;
     }
 
     function change_user_pro_pic($user_model) {
 
-        $data = array('user_image' => $user_model->get_user_image());
+        $data = array('user_avatar' => $user_model->get_user_avatar());
         $this->db->where('user_id', $user_model->get_user_id());
         $result = $this->db->update('lcs_user', $data);
         return $result;
