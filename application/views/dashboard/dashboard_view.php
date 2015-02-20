@@ -1,6 +1,6 @@
-<h3>Employees  at <span class="semi-bold"><?php echo ucfirst($company); ?></span></h3>
+<!--<h3>Employees  at <span class="semi-bold"><?php echo ucfirst($company); ?></span></h3>-->
 
-<div class="row">
+<!--<div class="row">
 
     <?php
     foreach ($users as $user) {
@@ -29,7 +29,7 @@
                                 <div class="row">
                                     <div class="user-comment-wrapper pull-left">
                                         <div class="profile-wrapper"> 
-                                            <!--<img src="<?php echo base_url(); ?>application_resources/img/profiles/avatar_small.jpg" alt="" data-src="<?php echo base_url(); ?>application_resources/img/profiles/avatar_small.jpg" data-src-retina="<?php echo base_url(); ?>application_resources/img/profiles/avatar_small2x.jpg" width="35" height="35">--> 
+                                            <img src="<?php echo base_url(); ?>application_resources/img/profiles/avatar_small.jpg" alt="" data-src="<?php echo base_url(); ?>application_resources/img/profiles/avatar_small.jpg" data-src-retina="<?php echo base_url(); ?>application_resources/img/profiles/avatar_small2x.jpg" width="35" height="35"> 
                                             <?php if ($user->u_avatar == '') { ?>
 
                                                 <img src="<?php echo base_url(); ?>uploads/user_avatar/avatar_small.jpg"  alt="" data-src="<?php echo base_url(); ?>uploads/user_avatar/avatar_small.jpg" data-src-retina="<?php echo base_url(); ?>uploads/user_avatar/avatar_small2x.jpg" width="35" height="35" />
@@ -63,4 +63,4 @@
     ?>
 
 </div>
-
+-->
