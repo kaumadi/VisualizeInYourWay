@@ -40,9 +40,9 @@
                                 </div>
                             </div>
 
-<!--                            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
-                            <script src="<?php echo base_url(); ?>application_resources/file_upload_plugin/ajaxupload.3.5.js" type="text/javascript"></script>
-                            <script type="text/javascript">
+<!--                        <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
+                        <script src="<?php echo base_url(); ?>application_resources/file_upload_plugin/ajaxupload.3.5.js" type="text/javascript"></script>
+                        <script type="text/javascript">
 
                                 $(function() {
                                     var btnUpload = $('#upload');

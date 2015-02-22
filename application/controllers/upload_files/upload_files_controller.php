@@ -43,8 +43,8 @@ class Upload_files_controller extends CI_Controller {
     }
 
     function add_upload_files_view() {
-        $perm = Access_controll_service::check_access('ADD_NEW_FILE');
-        if ($perm) {
+        //$perm = Access_controll_service::check_access('ADD_NEW_FILE');
+        //if ($perm) {
 
 
             $data['heading'] = "Add New File";
@@ -63,9 +63,9 @@ class Upload_files_controller extends CI_Controller {
 
             $partials = array('content' => 'upload_files/add_upload_file_view');
             $this->template->load('template/main_template', $partials, $data);
-        } else {
+        //} else {
             
-        }
+       // }
     }
 
     function add_new_upload_files() {

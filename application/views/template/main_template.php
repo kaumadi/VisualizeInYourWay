@@ -352,12 +352,12 @@
 
             <!-- BEGIN CUSTOM JS -->
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_privilege.js" type="text/javascript"></script>
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_project.js" type="text/javascript"></script>-->
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_statistics.js" type="text/javascript"></script>-->
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_profile.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_statistics.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_dahami.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_profile.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_kaumadi.js" type="text/javascript"></script>
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_company.js" type="text/javascript"></script>-->
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_upload_files.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_dilupa.js" type="text/javascript"></script>
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_skill.js" type="text/javascript"></script>-->
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_notification.js" type="text/javascript"></script>-->
