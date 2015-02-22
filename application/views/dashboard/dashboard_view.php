@@ -1,6 +1,6 @@
 <!--<h3>Employees  at <span class="semi-bold"><?php echo ucfirst($company); ?></span></h3>-->
 
-<!--<div class="row">
+<div class="row">
 
     <?php
     foreach ($users as $user) {
@@ -63,4 +63,4 @@
     ?>
 
 </div>
--->
+

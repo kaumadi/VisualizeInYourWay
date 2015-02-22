@@ -49,9 +49,9 @@ class Upload_files_controller extends CI_Controller {
 
             $data['heading'] = "Add New File";
 
-            $upload_files_stuff_temp_service = new Upload_files_stuff_temp_service();
+           // $upload_files_stuff_temp_service = new Upload_files_stuff_temp_service();
             $upload_files_service = new Upload_files_service();
-            $upload_files_stuff_temp_service->truncate_upload_files_temp_stuff();
+            //$upload_files_stuff_temp_service->truncate_upload_files_temp_stuff();
 
             $result = $upload_files_service->get_last_upload_files_id();
             $last_id = '';
@@ -61,7 +61,7 @@ class Upload_files_controller extends CI_Controller {
 
             $data['last_id'] = $last_id;
 
-            $partials = array('content' => 'upload_files/add_upload_file_view');
+            $partials = array('content' => 'upload_files/add_upload_files_view');
             $this->template->load('template/main_template', $partials, $data);
         //} else {
             

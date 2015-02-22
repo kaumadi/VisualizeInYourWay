@@ -24,7 +24,7 @@
         <link href="<?php echo base_url(); ?>application_resources/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo base_url(); ?>application_resources/plugins/ios-switch/ios7-switch.css" rel="stylesheet" type="text/css" media="screen">
         <link href="<?php echo base_url(); ?>application_resources/plugins/jquery-slider/css/jquery.sidr.light.css" rel="stylesheet" type="text/css" media="screen"/>
-        <link href="<?php echo base_url(); ?>application_resources/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" media="screen"/>
+       <!-- <link href="<?php echo base_url(); ?>application_resources/css/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css" media="screen"/>-->
         <link rel="stylesheet" href="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/css/rickshaw.css" type="text/css" media="screen" >
         <link rel="stylesheet" href="<?php echo base_url(); ?>application_resources/plugins/jquery-morris-chart/css/morris.css" type="text/css" media="screen">
         <link href="<?php echo base_url(); ?>application_resources/plugins/jquery-isotope/isotope.css" rel="stylesheet" type="text/css"/>
@@ -53,7 +53,7 @@
         <!-- JS -->
         <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
         <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
-        <script src="<?php echo base_url(); ?>application_resources/custom_js/chat.js"></script>
+        <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/chat.js"></script>-->
 
            
       
@@ -295,7 +295,7 @@
                 //alert(js_url_path);
             </script>
 
-            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
+            <!--<script src="<?php echo base_url(); ?>application_resources/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>-->
             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/breakpoints.js" type="text/javascript"></script>
@@ -369,12 +369,12 @@
 
             <!-- BEGIN CORE TEMPLATE JS -->
  <script src="<?php echo base_url(); ?>application_resources/js/moment.min.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/js/fullcalendar.min.js" type="text/javascript"></script>
+            <!--<script src="<?php echo base_url(); ?>application_resources/js/fullcalendar.min.js" type="text/javascript"></script>-->
 
             <!-- END PAGE LEVEL PLUGINS -->
             <!-- BEGIN CORE TEMPLATE JS -->
             <script src="<?php echo base_url(); ?>application_resources/js/core.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/js/chat.js" type="text/javascript"></script>
+            <!--<script src="<?php echo base_url(); ?>application_resources/js/chat.js" type="text/javascript"></script>-->
             <script src="<?php echo base_url(); ?>application_resources/js/demo.js" type="text/javascript"></script>
 
 
