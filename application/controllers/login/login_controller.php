@@ -51,8 +51,7 @@ class Login_controller extends CI_Controller {
         $user_service = new User_service();
 
         $email = $this->input->post('login_username', TRUE);
-
-        
+          
 
         $login_option =  $this->config->item('LOGIN_OPTION');
         // 1 = Username & Password
@@ -61,6 +60,7 @@ class Login_controller extends CI_Controller {
             $user_model->set_user_email($email);
             $user_model->set_user_password(md5($this->input->post('login_password', TRUE))); // password md 5 change 
 
+        
             if (count($user_service->authenticate_user_with_password($user_model)) == 0) {
                 $logged_user_result = false;
             } else {
@@ -83,7 +83,7 @@ class Login_controller extends CI_Controller {
 
 
             $user_model->set_user_email($email);
-            $user_model->set_user_password($this->input->post('login_password', TRUE)); // password md 5 change
+            $user_model->set_user_password(md5($this->input->post('login_password', TRUE))); // password md 5 change
 
             $mailServer = $user_service->get_server_by_email($user_model);
 
@@ -133,8 +133,8 @@ class Login_controller extends CI_Controller {
                 $this->session->set_userdata('USER_COMPANY_NAME', $logged_user_details->user_company_name);
 //                $this->session->set_userdata('USER_TYPE', $logged_user_details->user_type);
                 $this->session->set_userdata('USER_ONLINE', 'Y');
-
-
+ $this->session->set_userdata('USER_LOGGED_IN', 'TRUE');
+ echo 1;
                 
                 
             }

@@ -52,13 +52,13 @@ class User_service extends CI_Model {
 
     function authenticate_user($user_model) {
 
-        $data = array('user_email' => $user_model->get_user_email() , /*'user_password'=>$user_model->get_user_password() */  'user.del_ind' => '1');
+        $data = array('user_email' => $user_model->get_user_email() );
 
         $this->db->select('*');
         $this->db->from('user');
         $this->db->where($data);
         $query = $this->db->get();
-       
+      
         return $query->row();
     }
 
@@ -70,6 +70,7 @@ class User_service extends CI_Model {
         $this->db->from('user');
         $this->db->where($data);
         $query = $this->db->get();
+          
         return $query->row();
     }
 
