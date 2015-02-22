@@ -25,7 +25,7 @@
                             
                             <?php
                             
-                            foreach ($upload_files as $upload_file) {
+                            foreach($upload_files as $upload_file) {
                             ?>
                                 <tr  id="upload_files_<?php echo $upload_file->file_id; ?>" >
                                     <td><?php echo ++$i; ?></td>
