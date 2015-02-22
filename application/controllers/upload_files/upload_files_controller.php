@@ -9,22 +9,30 @@ class Upload_files_controller extends CI_Controller {
         parent::__construct();
 
 
-//        if (!$this->session->userdata('USER_LOGGED_IN')) {
-//            redirect(site_url() . '/login/login_controller');
-//        } else {
+        if (!$this->session->userdata('USER_LOGGED_IN')) {
+           redirect(site_url() . '/login/login_controller');
+        }else {
         $this->load->model('upload_files/upload_files_model');
         $this->load->model('upload_files/upload_files_service');
+        
+        $this->load->model('upload_files_stuff/upload_files_stuff_model');
+        $this->load->model('upload_files_stuff/upload_files_stuff_service');
+
+        $this->load->model('upload_files_stuff_temp/upload_files_stuff_temp_model');
+        $this->load->model('upload_files_stuff_temp/upload_files_stuff_temp_service');
 
 
 
         $this->load->model('user/user_model');
         $this->load->model('user/user_service');
         
+       
+
+        }
         
-
-//        }
     }
-
+    
+    
     function manage_upload_files() {
        //$perm = new Access_controll_service();
       // $perm->check_access('MANAGE_FILES');
@@ -49,9 +57,9 @@ class Upload_files_controller extends CI_Controller {
 
             $data['heading'] = "Add New File";
 
-           // $upload_files_stuff_temp_service = new Upload_files_stuff_temp_service();
+           $upload_files_stuff_temp_service = new Upload_files_stuff_temp_service();
             $upload_files_service = new Upload_files_service();
-            //$upload_files_stuff_temp_service->truncate_upload_files_temp_stuff();
+            $upload_files_stuff_temp_service->truncate_upload_files_temp_stuff();
 
             $result = $upload_files_service->get_last_upload_files_id();
             $last_id = '';

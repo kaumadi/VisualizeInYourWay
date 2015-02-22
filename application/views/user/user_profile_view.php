@@ -21,7 +21,7 @@
                                         onSubmit: function(file, ext) {
                                             if (!(ext && /^(sql|xlsx)$/.test(ext))) {
                                                 // extension is not allowed 
-                                                status.text('Only SQL or XLSX files are allowed');
+                                                status.text('Only JPG, PNG or GIF files are allowed');
                                                 return false;
                                             }
                                             //status.text('Uploading...Please wait');
@@ -98,7 +98,7 @@
                         onSubmit: function(file, ext) {
                             if (!(ext && /^(sql|xlsx)$/.test(ext))) {
                                 // extension is not allowed 
-                                status.text('Only SQL or XLSX files are allowed');
+                                status.text('Only JPG, PNG or GIF files are allowed');
                                 return false;
                             }
                             //status.text('Uploading...Please wait');

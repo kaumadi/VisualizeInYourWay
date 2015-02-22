@@ -43,9 +43,9 @@ class UploadHandler
     function __construct($options = null, $initialize = true, $error_messages = null) {
         
         $this->options = array(
-            'script_url' => $this->get_full_url().'/uploads/project_stuff/pr_'.$_POST['last_project_id'],
-            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/uploads/project_stuff/pr_'.$_POST['last_project_id'].'/',
-            'upload_url' => $this->get_full_url().'/uploads/project_stuff/pr_'.$_POST['last_project_id'].'/',
+            'script_url' => $this->get_full_url().'/uploads/upload_files_stuff/pr_'.$_POST['last_file_id'],
+            'upload_dir' => dirname($this->get_server_var('SCRIPT_FILENAME')).'/uploads/upload_files_stuff/pr_'.$_POST['last_file_id'].'/',
+            'upload_url' => $this->get_full_url().'/uploads/upload_files_stuff/pr_'.$_POST['last_file_id'].'/',
             'user_dirs' => false,
             'mkdir_mode' => 0755,
             'param_name' => 'files',

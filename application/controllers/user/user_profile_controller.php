@@ -12,8 +12,8 @@ class User_profile_controller extends CI_Controller {
             redirect(site_url() . '/login/login_controller');
         } else {
 
-//            $this->load->model('user/user_model');
-//            $this->load->model('user/user_service');
+            $this->load->model('user/user_model');
+            $this->load->model('user/user_service');
 //
 //            $this->load->model('task/task_model');
 //            $this->load->model('task/task_service');
@@ -42,7 +42,9 @@ class User_profile_controller extends CI_Controller {
 
         $data['heading'] = "My Profile";
         $data['user_detail'] = $user_service->get_user_by_id($this->session->userdata('USER_ID'));
-        $data['user_graphs'] = $user_service->get_graphs_for_user($this->session->userdata('USER_ID'));
+        //$data['users'] = $user_service->get_user_by_id($this->session->userdata('USER_ID'));
+        
+        //$data['user_graphs'] = $user_service->get_graphs_for_user($this->session->userdata('USER_ID'));
         
         $partials = array('content' => 'user/user_profile_view');
         $this->template->load('template/main_template', $partials, $data);
