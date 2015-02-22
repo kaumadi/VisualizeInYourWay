@@ -33,15 +33,15 @@ class Login_controller extends CI_Controller {
     }
 
     function index() {
-        if ($this->session->userdata('USER_LOGGED_IN')) {
+       if ($this->session->userdata('USER_LOGGED_IN')) {
             redirect(base_url() . 'dashboard/dashboard_controller/');
 
         } else {
 
             $this->template->load('template/login');
         }
+    
     }
-
     //Login details checking function 
     function authenticate_user() {
 

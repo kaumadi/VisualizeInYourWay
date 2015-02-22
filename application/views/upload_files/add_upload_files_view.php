@@ -160,7 +160,7 @@
 
                         </form>
 
-                        <!-- The template to display files available for upload -->
+<!--                         The template to display files available for upload 
                         <script id="template-upload" type="text/x-tmpl">
                             {% for (var i=0, file; file=o.files[i]; i++) { %}
                             <tr class="template-upload fade">
@@ -192,7 +192,7 @@
                             </tr>
                             {% } %}
                         </script>
-                        <!-- The template to display files available for download -->
+                         The template to display files available for download 
                         <script id="template-download" type="text/x-tmpl">
                             {% for (var i=0, file; file=o.files[i]; i++) { %}
                             <tr class="template-download fade" style="display:none">
@@ -234,7 +234,7 @@
                             </td>
                             </tr>
                             {% } %}
-                        </script>
+                        </script>-->
 
                         <form>
                             <div id="add_upload_files_msg" class="form-row"> </div>
