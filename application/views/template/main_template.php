@@ -130,7 +130,7 @@
                                 <div class="user-details">
                                     <div class="username" id="user-name"> <span id="notification-count" class="badge badge-important"></span> <?php echo ucfirst($this->session->userdata('USER_NAME')); ?>  </div>
                                 </div>
-                                <div class="iconset top-down-arrow"></div>
+                                <!--<div class="iconset top-down-arrow"></div>-->
                             </a>
                             
                             <div class="profile-pic">
@@ -295,7 +295,7 @@
                 //alert(js_url_path);
             </script>
 
-            <!--<script src="<?php echo base_url(); ?>application_resources/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>-->
+            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-1.8.3.min.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/breakpoints.js" type="text/javascript"></script>
@@ -382,8 +382,8 @@
 
             <script src="<?php echo base_url(); ?>application_resources/file_upload_plugin/ajaxupload.3.5.js" type="text/javascript"></script>
 
-<!--            <script src="<?php echo base_url(); ?>application_resources/jupload/js/jquery-ui-1.8.20.custom.min.js"></script>
-            <script src="<?php echo base_url(); ?>application_resources/jupload/js/vendor/jquery.ui.widget.js"></script>-->
+            <script src="<?php echo base_url(); ?>application_resources/jupload/js/jquery-ui-1.8.20.custom.min.js"></script>
+            <script src="<?php echo base_url(); ?>application_resources/jupload/js/vendor/jquery.ui.widget.js"></script>
             <script src="<?php echo base_url(); ?>application_resources/jupload/js/tmpl.min.js"></script>
             <script src="<?php echo base_url(); ?>application_resources/jupload/js/load-image.min.js"></script>
             <script src="<?php echo base_url(); ?>application_resources/jupload/js/canvas-to-blob.min.js"></script>

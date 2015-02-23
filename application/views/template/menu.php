@@ -47,7 +47,7 @@
  
 
 
-<li class="" id="user_privilege_parent_menu"> 
+<!--<li class="" id="user_privilege_parent_menu"> 
     <a href="javascript:;">
         <i class="fa fa-money"></i> 
         <span class="title">Privileges</span> 
@@ -57,5 +57,5 @@
         <li > <a href="<?php echo site_url(); ?>/user_privilege/user_privilege_controller/manage_user_privileges"> Manage User Privileges </a> </li>
         
     </ul>
-</li> 
+</li> -->
 

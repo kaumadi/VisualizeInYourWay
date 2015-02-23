@@ -31,21 +31,21 @@ class Dashboard_controller extends CI_Controller {
             $this->load->model('user/user_model');
             $this->load->model('user/user_service');
 
-            $this->load->model('access_controll/access_controll_model');
-            $this->load->model('access_controll/access_controll_service');
+//            $this->load->model('access_controll/access_controll_model');
+//            $this->load->model('access_controll/access_controll_service');
         }
     }
 
     function index() {
         $user_service = new User_service();
 
-//        $data['company'] = $this->session->userdata('USER_COMPANY_NAME');
+          $data['users'] = $this->session->userdata('USERS');
 //        $this->session->set_userdata('LCS_SYSTEM', 3);
 //        $this->session->set_userdata('LCS_PARENT_SYSTEM', 7);
 //        $data['users'] = $user_service->get_users_by_company_id($this->session->userdata('USER_COMPANY_CODE'));
 
         $partials = array('content' => 'dashboard/dashboard_view');
-        $this->template->load('template/main_template', $partials, $data);
+        $this->template->load('template/main_template', $partials,$data);
     }
 
 }

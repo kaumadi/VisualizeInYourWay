@@ -34,7 +34,7 @@ class Login_controller extends CI_Controller {
 
     function index() {
        if ($this->session->userdata('USER_LOGGED_IN')) {
-            redirect(base_url() . 'dashboard/dashboard_controller/');
+            redirect(base_url() . 'index.php/dashboard/dashboard_controller/');
 
         } else {
 

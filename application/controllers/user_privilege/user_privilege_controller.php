@@ -8,9 +8,9 @@ class User_privilege_controller extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        if (!$this->session->userdata('USER_LOGGED_IN')) {
-            redirect(site_url() . '/login/login_controller');
-        } else {
+        //if (!$this->session->userdata('USER_LOGGED_IN')) {
+            //redirect(site_url() . '/login/login_controller');
+        //} else {
 
             $this->load->model('user_privileges/user_privileges_model');
             $this->load->model('user_privileges/user_privileges_service');
@@ -26,10 +26,10 @@ class User_privilege_controller extends CI_Controller {
 
             $this->load->model('user/user_model');
             $this->load->model('user/user_service');
-        }
+       // }
     }
 
-    function manage_user_privileges($id) {
+    function manage_user_privileges($user_id) {
 
         $user_service = new user_service();
         $system_service = new System_service();
@@ -38,7 +38,7 @@ class User_privilege_controller extends CI_Controller {
         $data['heading'] = "Manage User Privileges";
 
         $data['systems'] = $system_service->get_all_systems();
-        $data['user_detail'] = $user_service->get_user_by_id($id);
+        $data['user_detail'] = $user_service->get_user_by_id($user_id);
 
         $current_assigned_privileges = $user_privilege_service->get_assigned_privileges_by_user_id($id);
         $privileges = array();

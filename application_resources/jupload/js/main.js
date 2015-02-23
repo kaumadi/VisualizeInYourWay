@@ -41,7 +41,7 @@ var folder_id=$('#last_file_id').val();
             disableImageResize: /Android(?!.*Chrome)|Opera/
                 .test(window.navigator.userAgent),
             maxFileSize: 5000000,
-            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
+            acceptFileTypes: /(\.|\/)(sql|xlsx)$/i
         });
         // Upload server status check for browsers with CORS support:
         if ($.support.cors) {
