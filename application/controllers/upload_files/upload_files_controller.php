@@ -9,9 +9,9 @@ class Upload_files_controller extends CI_Controller {
         parent::__construct();
 
 
-        if (!$this->session->userdata('USER_LOGGED_IN')) {
-           redirect(site_url() . '/login/login_controller');
-        }else {
+       // if (!$this->session->userdata('USER_LOGGED_IN')) {
+          // redirect(site_url() . '/login/login_controller');
+       // }else {
         $this->load->model('upload_files/upload_files_model');
         $this->load->model('upload_files/upload_files_service');
         
@@ -30,7 +30,7 @@ class Upload_files_controller extends CI_Controller {
 
         }
         
-    }
+    
     
     
     function manage_upload_files() {

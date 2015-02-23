@@ -13,12 +13,12 @@
 
 $(function () {
     'use strict';
-var folder_id=$('#last_project_id').val();
+var folder_id=$('#last_file_id').val();
     // Initialize the jQuery File Upload widget:
     $('#fileupload').fileupload({
         // Uncomment the following to send cross-domain cookies:
         //xhrFields: {withCredentials: true},
-        url: site_url+'/project/fileupload/custom_init/'+folder_id
+        url: site_url+'/upload_files/fileupload/custom_init/'+folder_id
     });
 
     // Enable iframe cross-domain access via redirect option:
