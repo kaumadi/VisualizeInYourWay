@@ -8,9 +8,9 @@ class User_profile_controller extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        //if (!$this->session->userdata('USER_LOGGED_IN')) {
-           // redirect(site_url() . '/login/login_controller');
-       // } else {
+       //if (!$this->session->userdata('USER_LOGGED_IN')) {
+            //redirect(site_url() . '/login/login_controller');
+        //} else {
 
             $this->load->model('user/user_model');
             $this->load->model('user/user_service');
@@ -26,7 +26,7 @@ class User_profile_controller extends CI_Controller {
 //            
 //            $this->load->model('skill_category/skill_category_model');
 //            $this->load->model('skill_category/skill_category_service');
-       // }
+      // }
     }
 
     /*
@@ -41,8 +41,8 @@ class User_profile_controller extends CI_Controller {
 
 
         $data['heading'] = "My Profile";
-        $data['user_detail'] = $user_service->get_user_by_id($this->session->userdata('USER_ID'));
-        $data['users'] = $user_service->get_user_by_id($this->session->userdata('USER_ID'));
+        $data['user_detail'] = $user_service->get_user_by_email($this->session->userdata('USER_EMAIL'));
+        $data['users'] = $user_service->get_user_by_email($this->session->userdata('USER_EMAIL'));
         
         //$data['user_graphs'] = $user_service->get_graphs_for_user($this->session->userdata('USER_ID'));
         

@@ -133,6 +133,9 @@
                                 <!--<div class="iconset top-down-arrow"></div>-->
                             </a>
                             
+                               
+                                                        
+                            
                             <div class="profile-pic">
                                 <a href="<?php echo site_url(); ?>/user/user_profile_controller/view_profile">
                                     <?php if ($this->session->userdata('USER_PROPIC') == '') { ?>
@@ -380,7 +383,7 @@
 
 
 
-            <script src="<?php echo base_url(); ?>application_resources/file_upload_plugin/ajaxupload.3.5.js" type="text/javascript"></script>
+<!--            <script src="<?php echo base_url(); ?>application_resources/file_upload_plugin/ajaxupload.3.5.js" type="text/javascript"></script>-->
 
             <script src="<?php echo base_url(); ?>application_resources/jupload/js/jquery-ui-1.8.20.custom.min.js"></script>
             <script src="<?php echo base_url(); ?>application_resources/jupload/js/vendor/jquery.ui.widget.js"></script>

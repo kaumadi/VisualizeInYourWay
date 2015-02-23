@@ -44,9 +44,9 @@ class User_service extends CI_Model {
 
     //get user details by user id
     /* this function use in user controller edit_user_view($user_code)  function */
-    function get_user_by_id($user_id) {
+    function get_user_by_email($user_email) {
 
-        $query = $this->db->get_where('user', array('user_id' => $user_id));
+        $query = $this->db->get_where('user', array('user_email' => $user_email));
         return $query->row();
     }
 

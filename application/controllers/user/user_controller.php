@@ -8,9 +8,9 @@ class User_controller extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        if (!$this->session->userdata('USER_LOGGED_IN')) {
-            redirect(site_url() . '/login/login_controller');
-        } else {
+        //if (!$this->session->userdata('USER_LOGGED_IN')) {
+           // redirect(site_url() . '/login/login_controller');
+        //} else {
 
             $this->load->model('user/user_model');
             $this->load->model('user/user_service');
@@ -20,7 +20,7 @@ class User_controller extends CI_Controller {
             
 
             
-        }
+        //}
     }
 
     function manage_users() {
@@ -28,7 +28,7 @@ class User_controller extends CI_Controller {
         $user_service = new User_service();
         
         $data['heading'] = "Manage User";
-        $data['users'] = $user_service->get_user_by_id($this->session->userdata('USER_ID'));
+        $data['users'] = $user_service->get_user_by_email($this->session->userdata('USER_EMAIL'));
 
         //$data['wages_categories'] = $wages_category_service->get_all_wages_categories();
 
