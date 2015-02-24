@@ -9,7 +9,7 @@ class Upload_files_service extends CI_Model {
 
     public function get_all_upload_files_of_user($user_id) {
 
-        $this->db->select('file_name,file_description');
+        $this->db->select('*');
         $this->db->from('upload_files');
         $this->db->join('user', 'user.user_id = upload_files.added_by');
         //$this->db->where('upload_files.user_id', $user_id);

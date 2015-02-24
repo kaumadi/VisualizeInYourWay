@@ -24,27 +24,19 @@
                         <tbody>
                             
                             <?php
-                            
+                            $i=0;
                             foreach($upload_files as $upload_file) {
                             ?>
                                 <tr  id="upload_files_<?php echo $upload_file->file_id; ?>" >
                                     <td><?php echo ++$i; ?></td>
-                                    <td><?php echo $upload_file->file_name; ?></td
-                                    <td><?php echo $upload_file->file_description; ?></td>
-                                    
-                                    
-                                    
-
-                                    
-
+                                    <td><?php echo $upload_file->file_name; ?></td>
+                                    <td><?php echo $upload_file->file_desc; ?></td>
                                     <td>
-
-                                        
                                         <?php
                                         //$perm = Access_controll_service::check_access('EDIT_UPLOAD_FILES');
                                         //if ($perm) {
                                             ?>
-                                            <a href="<?php echo site_url(); ?>/upload_files/upload_files_controller/edit_upload_files_view/<?php echo $upload_files->file_id; ?>">
+                                            <a href="<?php echo site_url(); ?>/upload_files/upload_files_controller/edit_upload_files_view/<?php echo $upload_file->file_id; ?>">
                                                 <span class="label label-info">Edit</span>
                                             </a>
                                             <?php
@@ -52,7 +44,7 @@
                                        // $perm = Access_controll_service::check_access('DELETE_UPLOAD_FILES');
                                        // if ($perm) {
                                             ?>
-                                            <a style="cursor: pointer;"   title="Delete this File" onclick="delete_upload_file(<?php echo $upload_files->file_id; ?>)">
+                                            <a style="cursor: pointer;"   title="Delete this File" onclick="delete_upload_file(<?php echo $upload_file->file_id; ?>)">
                                                 <span class="label label-important">Delete</span>
                                             </a>
                                             <?php

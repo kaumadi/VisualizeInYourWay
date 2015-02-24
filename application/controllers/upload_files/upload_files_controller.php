@@ -90,8 +90,8 @@ class Upload_files_controller extends CI_Controller {
 
         $upload_files_model->set_file_name($this->input->post('file_name', TRUE));
 
-        $upload_files_model->set_file_description($this->input->post('file_description', TRUE));
-
+        $upload_files_model->set_file_desc($this->input->post('file_description', TRUE));
+        $upload_files_model->set_user_id($this->session->userdata('USER_ID'));
         $upload_files_model->set_del_ind('1');
         $upload_files_model->set_added_date(date("Y-m-d H:i:s"));
         $upload_files_model->set_added_by($this->session->userdata('USER_ID'));
