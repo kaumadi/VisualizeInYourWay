@@ -10,7 +10,7 @@
             <select class="select2 span12" id="select_file">
                 <option value="">Select File</option>
                 <?php
-                foreach ($upload_file_stuff as $upload_files_stuff) {
+                foreach ($upload_files_stuff as $upload_file_stuff) {
                     ?>
                     <option value="<?php echo $upload_files_stuff->file_id; ?>"   selected="true"<?php  ?>><?php echo ucfirst($upload_files_stuff->stuff_name); ?></option>
                 <?php }
