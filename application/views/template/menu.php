@@ -38,7 +38,7 @@
         <span class="arrow "></span> 
     </a>
     <ul class="sub-menu">
-        <li > <a href="<?php echo site_url(); ?>/upload_files/upload_files_controller/manage_upload_files"> Select Data Type</a> </li>
+        <li > <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff"> Select Data Type</a> </li>
 
     </ul>
 </li> 
