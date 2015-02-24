@@ -31,14 +31,14 @@ class User_service extends CI_Model {
     //update user avatar
     function update_user_avatar($user_model) {
         $data = array('user_avatar' => $user_model->get_user_avatar());
-        $this->db->where('user_code', $user_model->get_user_code());
+        $this->db->where('user_id', $user_model->get_user_id());
         return $this->db->update('user', $data);
     }
 
     //update user cover image
     function update_user_cover_image($user_model) {
         $data = array('user_cover_image' => $user_model->get_user_cover_image());
-        $this->db->where('user_id', $user_model->get_user_code());
+        $this->db->where('user_id', $user_model->get_user_id());
         return $this->db->update('user', $data);
     }
 
@@ -48,6 +48,23 @@ class User_service extends CI_Model {
 
         $query = $this->db->get_where('user', array('user_email' => $user_email));
         return $query->row();
+    }
+    
+//    function get_users_by_id($user_id) {
+//
+//        $query = $this->db->get_where('user', array('user_id' => $user_id));
+//        return $query->row();
+//    }
+    
+    public function get_all_users() {
+
+
+        $this->db->select('user_avatar');
+        $this->db->from('user');
+        $this->db->where('del_ind','1');
+        $this->db->order_by("user.user_id", "desc");
+        $query = $this->db->get();
+        return $query->result();
     }
 
     function authenticate_user($user_model) {

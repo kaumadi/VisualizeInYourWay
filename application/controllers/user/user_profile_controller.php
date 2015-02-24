@@ -42,7 +42,7 @@ class User_profile_controller extends CI_Controller {
 
         $data['heading'] = "My Profile";
         $data['user_detail'] = $user_service->get_user_by_email($this->session->userdata('USER_EMAIL'));
-        $data['users'] = $user_service->get_user_by_email($this->session->userdata('USER_EMAIL'));
+        $data['users'] = $user_service->get_all_users($this->session->userdata('USER_ID'));
         
         //$data['user_graphs'] = $user_service->get_graphs_for_user($this->session->userdata('USER_ID'));
         
@@ -170,7 +170,7 @@ class User_profile_controller extends CI_Controller {
         $result = $user_service->update_user_cover_image($user_model);
 
         //update session profile pic into new pic
-        $this->session->set_userdata('EMPLOYEE_COVERPIC', $this->input->post('user_cover_image', TRUE));
+        $this->session->set_userdata('USER_COVERPIC', $this->input->post('user_cover_image', TRUE));
 
         echo $result;
     }
