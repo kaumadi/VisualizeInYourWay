@@ -367,6 +367,7 @@
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_wages.js" type="text/javascript"></script>-->
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_event.js" type="text/javascript"></script>-->
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_attendance.js" type="text/javascript"></script>-->
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>
             <!-- END CUSTOM JS -->
 
 
