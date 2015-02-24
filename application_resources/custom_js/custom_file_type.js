@@ -18,8 +18,8 @@ var site_url = js_site_url;
    reader.readAsBinaryString(f);
  }
 }
-input_dom_element.addEventListener('change', handleFile, false);
-input_dom_element.addEventListener('change', handleFile, false);
+//input_dom_element.addEventListener('change', handleFile, false);
+//input_dom_element.addEventListener('change', handleFile, false);
 
 
 //Search button

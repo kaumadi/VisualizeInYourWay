@@ -34,11 +34,11 @@
 <li class="" id="select_data_type_parent_menu"> 
     <a href="javascript:;">
         <i class="fa fa-tasks"></i> 
-        <span class="title">Select data type</span> 
+        <span class="title">Select file and data sets</span> 
         <span class="arrow "></span> 
     </a>
     <ul class="sub-menu">
-        <li > <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff"> Select Data Type</a> </li>
+        <li > <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff"> Select file and data sets</a> </li>
 
     </ul>
 </li> 
