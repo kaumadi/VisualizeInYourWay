@@ -11,9 +11,9 @@ class Upload_files_service extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('upload_files');
-        $this->db->join('user', 'user.user_id = upload_files.added_by');
-        //$this->db->where('upload_files.user_id', $user_id);
-        $this->db->order_by("upload_files.added_date", "ASC");
+        //$this->db->join('user', 'user.user_id = upload_files.added_by');
+        $this->db->where('user_id=1');
+        //$this->db->order_by("added_date", "ASC");
         $query = $this->db->get();
         return $query->result();
     }

@@ -41,7 +41,7 @@ class Upload_files_controller extends CI_Controller {
 
 
             $data['heading'] = "Manage Uploaded Files";
-            $data['upload_files'] = $upload_files_service->get_all_upload_files_of_user($this->session->userdata('USER_FILE_ID'));
+            $data['upload_files'] = $upload_files_service->get_all_upload_files_of_user($this->session->userdata('1'));
 
             $partials = array('content' => 'upload_files/manage_upload_files_view');
             $this->template->load('template/main_template', $partials, $data);
