@@ -30,7 +30,7 @@ $(document).ready(function() {
     $(".select2-wrapper").select2({minimumResultsForSearch: -1});
 
     //HTML5 editor
-    $('#upload_files_description').wysihtml5();
+    $('#file_description').wysihtml5();
 
 
     
