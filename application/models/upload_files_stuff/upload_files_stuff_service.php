@@ -27,13 +27,15 @@ class Upload_files_stuff_service extends CI_Model {
         return $this->db->update('upload_files', $data);
     }
 
-       public function get_all_upload_files_stuff() {
+    
+  public function get_all_upload_files_stuff() {
 
 
         $this->db->select('*');
         $this->db->from('upload_files_stuff');
+        $this->db->where('del_ind','1');
+        $this->db->order_by("upload_files_stuff.file_id", "desc");
         $query = $this->db->get();
         return $query->result();
     }
-
 }

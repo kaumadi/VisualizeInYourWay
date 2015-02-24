@@ -21,7 +21,7 @@ class file_type_controller extends CI_Controller {
 
 
             $data['heading'] = "select file type";
-            $data['upload_file_stuff'] = $upload_files_stuff_service->get_upload_files_stuff_for_upload_files($this->session->userdata('FILE_ID'));
+            $data['upload_file_stuff'] = $upload_files_stuff_service->get_all_upload_files_stuff($this->session->userdata('USER_FILE_ID'));
 
             $partials = array('content' => 'file_type/manage_file_type_view');
             $this->template->load('template/main_template', $partials, $data);

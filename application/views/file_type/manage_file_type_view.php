@@ -7,17 +7,17 @@
     <div class="col-md-11">
         <div class="col-md-4" >
             <!--select file-->
-            <select class="select2 span12" id="select_file">
-                <option value="">Select File</option>
+           
+
+ <select class="select2 span12" id="select_file">
+                <option value="">Select Your File Here</option>
                 <?php
-                foreach ($upload_files_stuff as $upload_file_stuff) {
+                foreach ($upload_file_stuff as $upload_files_stuff) {
                     ?>
-                    <option value="<?php echo $upload_files_stuff->file_id; ?>"   selected="true"<?php ?>><?php echo ucfirst($upload_files_stuff->stuff_name); ?></option>
+                    <option value="<?php echo $upload_files_stuff->file_id; ?>" <?php if ($upload_files_stuff->file_id == $this->session->userdata('USER_FILE_ID')) { ?> selected="true"<?php } ?>><?php echo ucfirst($upload_files_stuff->stuff_name); ?></option>
                 <?php }
                 ?>
             </select>
-
-
 
         </div>
 
@@ -29,7 +29,7 @@
             <button id="search_btn" style="margin-left:12px" name="search_btn" class="btn btn-primary"><i class="fa fa-search"></i></button>
         </div>
     </div>
-    <!-- print button-->
+   
 
 
 </div>
