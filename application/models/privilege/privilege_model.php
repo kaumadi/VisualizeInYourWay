@@ -6,7 +6,7 @@ class Privilege_model extends CI_Model {
     var $privilege_master_code;
     var $privilege;
     var $privilege_description;
-    var $priviledge_code_HF;
+    var $privilege_code_HF;
     var $assign_for;
 
     function __construct() {
@@ -29,8 +29,8 @@ class Privilege_model extends CI_Model {
         return $this->privilege_description;
     }
 
-    public function get_priviledge_code_HF() {
-        return $this->priviledge_code_HF;
+    public function get_privilege_code_HF() {
+        return $this->privilege_code_HF;
     }
 
     public function get_assign_for() {
@@ -53,8 +53,8 @@ class Privilege_model extends CI_Model {
         $this->privilege_description = $privilege_description;
     }
 
-    public function set_priviledge_code_HF($priviledge_code_HF) {
-        $this->priviledge_code_HF = $priviledge_code_HF;
+    public function set_privilege_code_HF($privilege_code_HF) {
+        $this->privilege_code_HF = $privilege_code_HF;
     }
 
     public function set_assign_for($assign_for) {

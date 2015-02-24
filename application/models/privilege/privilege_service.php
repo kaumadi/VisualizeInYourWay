@@ -43,9 +43,9 @@ class Privilege_service extends CI_Model {
         return $query->result();
     }
 
-    function add_new_privilege($priviledge_model) {
+    function add_new_privilege($privilege_model) {
 
-        return $this->db->insert('privilege', $priviledge_model);
+        return $this->db->insert('privilege', $privilege_model);
     }
 
     function delete_privilege($privilege_code) {
@@ -62,33 +62,33 @@ class Privilege_service extends CI_Model {
     function get_privilege_by_name($name) {
 
 
-        $query = $this->db->get_where('privilege', array('priviledge_code_HF' => $name));
+        $query = $this->db->get_where('privilege', array('privilege_code_HF' => $name));
         return $query->row();
     }
 
-    function update_privilege($priviledge_model) {
+    function update_privilege($privilege_model) {
 
         $data = array(
-            'privilege_master_code' => $priviledge_model->get_privilege_master_code(),
-            'privilege' => $priviledge_model->get_privilege(),
-            'privilege_description' => $priviledge_model->get_privilege_description(),
-            'priviledge_code_HF' => $priviledge_model->get_priviledge_code_HF(),
-            'assign_for' => $priviledge_model->get_assign_for()
+            'privilege_master_code' => $privilege_model->get_privilege_master_code(),
+            'privilege' => $privilege_model->get_privilege(),
+            'privilege_description' => $privilege_model->get_privilege_description(),
+            'privilege_code_HF' => $privilege_model->get_privilege_code_HF(),
+            'assign_for' => $privilege_model->get_assign_for()
         );
 
 
-        $this->db->where('privilege_code', $priviledge_model->get_privilege_code());
+        $this->db->where('privilege_code', $privilege_model->get_privilege_code());
 
         return $this->db->update('privilege', $data);
     }
 
-    function get_users_for_privilege($priviledge_model) {
+    function get_users_for_privilege($privilege_model) {
         //method to get all the users with a particular privilege.
         $this->db->select('*');
         $this->db->from('user_privileges');
         $this->db->join('user', 'user_privileges.user_id = user.user_id', 'inner');
         $this->db->join('privilege', 'privilege.privilege_code = user_privileges.privilege_code', 'inner');
-        $this->db->where('user_privileges.privilege_code =' . $priviledge_model->get_privilege_code());
+        $this->db->where('user_privileges.privilege_code =' . $privilege_model->get_privilege_code());
 
         return $this->db->get()->result();
     }
