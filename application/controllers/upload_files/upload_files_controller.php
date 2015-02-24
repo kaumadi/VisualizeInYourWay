@@ -177,12 +177,13 @@ class Upload_files_controller extends CI_Controller {
         $upload_files_stuff_temp_service = new Upload_files_stuff_temp_service();
 
         $files = $this->input->post('file_name', TRUE);
+
 //        $files = explode(',', $files);
 
         foreach ($files as $file) {
 
             $upload_files_stuff_temp_model->set_stuff_name($file);
-            //$upload_files_stuff_temp_model->set_company_code($this->session->userdata('EMPLOYEE_COMPANY_CODE'));
+            $upload_files_stuff_temp_model->set_user_id($this->session->userdata('USER_ID'));
             $upload_files_stuff_temp_model->set_del_ind('1');
             $upload_files_stuff_temp_model->set_added_date(date("Y-m-d H:i:s"));
             $upload_files_stuff_temp_model->set_added_by($this->session->userdata('USER_ID'));
