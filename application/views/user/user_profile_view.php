@@ -268,7 +268,9 @@ Chart.js has a ton of customisation features for line graphs, along with support
 </div>
 </div>
 
-
+        </div>
+    </div>
+</div>
 
 <!--edit modal-->
 <div class="modal fade" id="edit_profile_modal" tabindex="-1" role="dialog" aria-labelledby="edit_profile_modalLabel" aria-hidden="true">

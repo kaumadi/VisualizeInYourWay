@@ -88,7 +88,7 @@ class Upload_files_controller extends CI_Controller {
 
         $upload_files_temp_stuff = $upload_files_stuff_temp_service->get_all_upload_files_stuff_temp_for_user($this->session->userdata('USER_FILE_ID'));
 
-        $upload_files_model->set_file_name($this->input->post('files_name', TRUE));
+        $upload_files_model->set_file_name($this->input->post('file_name', TRUE));
 
         $upload_files_model->set_file_description($this->input->post('file_description', TRUE));
 
@@ -104,7 +104,7 @@ class Upload_files_controller extends CI_Controller {
         foreach ($upload_files_temp_stuff as $stuff) {
             $upload_files_stuff_model->set_stuff_name($stuff->stuff_name);
 
-            $upload_files_stuff_model->set_upload_file_stuff_id($file_id);
+            $upload_files_stuff_model->set_file_id($file_id);
             $upload_files_stuff_model->set_del_ind('1');
             $upload_files_stuff_model->set_added_date(date("Y-m-d H:i:s"));
             $upload_files_stuff_model->set_added_by($this->session->userdata('USER_ID'));
