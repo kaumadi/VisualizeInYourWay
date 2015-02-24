@@ -130,8 +130,8 @@ class Upload_files_controller extends CI_Controller {
     }
 
     function edit_upload_files_view($id) {
-        $perm = Access_controll_service::check_access('EDIT_FILES');
-        if ($perm) {
+        //$perm = Access_controll_service::check_access('EDIT_FILES');
+        //if ($perm) {
 
 
             $upload_files_service = new Upload_files_service();
@@ -143,9 +143,9 @@ class Upload_files_controller extends CI_Controller {
 
             $partials = array('content' => 'upload_files/edit_upload_files_view');
             $this->template->load('template/main_template', $partials, $data);
-        } else {
+       // } else {
             
-        }
+       // }
     }
 
     function edit_upload_files() {

@@ -37,7 +37,7 @@
 
                                 <div class="right">                                       
                                     <i class=""></i>
-                                    <textarea id="file_description" class="form-control" type="text" name="file_description" rows="20"><?php echo $upload_files->file_description; ?> </textarea>                                       
+                                    <textarea id="file_description" class="form-control" type="text" name="file_description" rows="20"><?php echo $upload_files->file_desc; ?> </textarea>                                       
                                 </div>
                             </div>
 
