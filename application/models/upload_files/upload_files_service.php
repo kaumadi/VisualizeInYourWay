@@ -12,7 +12,7 @@ class Upload_files_service extends CI_Model {
         $this->db->select('*');
         $this->db->from('upload_files');
         //$this->db->join('user', 'user.user_id = upload_files.added_by');
-        $this->db->where('user_id=1');
+        $this->db->where('user_id',$user_id);
         //$this->db->order_by("added_date", "ASC");
         $query = $this->db->get();
         return $query->result();
