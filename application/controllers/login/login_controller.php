@@ -121,6 +121,8 @@ class Login_controller extends CI_Controller {
                 $user_service->update_online_status($user_login_status_model);
                 //Setting sessions		
                 $this->session->set_userdata('USER_ID', $logged_user_details->user_id);
+//                                print_r(die);
+//                                echo'user_id';
 //                $this->session->set_userdata('USER_WELCOME', $logged_user_details->preferred_welcome_sys);
                 $this->session->set_userdata('USER_FIRST', '1'); //check first time log in and redirect to welcome page
                 $this->session->set_userdata('USER_NAME', $logged_user_details->user_name);
@@ -184,18 +186,7 @@ class Login_controller extends CI_Controller {
         return $result;
     }
 
-    /*
-     * Api Methods for User Login
-     */
-
-    /*
-     * Login details checking function for desktop client
-     * if username and password wrong
-     * or there's no such user according to that username or pasword 
-     * this function will return 0
-     * otherwise return users' user code 
-     * as the correct authentication.
-     */
+    
 
     
 

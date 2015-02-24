@@ -170,7 +170,7 @@ class User_profile_controller extends CI_Controller {
         $result = $user_service->update_user_cover_image($user_model);
 
         //update session profile pic into new pic
-        $this->session->set_userdata('USER_COVERPIC', $this->input->post('user_cover_image', TRUE));
+       $this->session->set_userdata('USER_COVERPIC', $this->input->post('user_cover_image', TRUE));
 
         echo $result;
     }
