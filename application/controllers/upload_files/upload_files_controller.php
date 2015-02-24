@@ -58,8 +58,8 @@ class Upload_files_controller extends CI_Controller {
             $data['heading'] = "Add New File";
 
            $upload_files_stuff_temp_service = new Upload_files_stuff_temp_service();
-            $upload_files_service = new Upload_files_service();
-            $upload_files_stuff_temp_service->truncate_upload_files_temp_stuff();
+           $upload_files_service = new Upload_files_service();
+           $upload_files_stuff_temp_service->truncate_upload_files_temp_stuff();
 
             $result = $upload_files_service->get_last_upload_files_id();
             $last_id = '';
@@ -77,8 +77,7 @@ class Upload_files_controller extends CI_Controller {
     }
 
     function add_new_upload_files() {
-//        $perm = Access_controll_service :: checkAccess('ADD_PRIVILEGES');
-//        if ($perm) {
+        
 
         $upload_files_model = new Upload_files_model();
         $upload_files_service = new Upload_files_service();
@@ -86,12 +85,10 @@ class Upload_files_controller extends CI_Controller {
         $upload_files_stuff_service = new Upload_files_stuff_service();
         $upload_files_stuff_model = new Upload_files_stuff_model();
 
-        $upload_files_temp_stuff = $upload_files_stuff_temp_service->get_all_upload_files_stuff_temp_of_user($this->session->userdata('USER_FILE_ID'));
-
-        $upload_files_model->set_file_name($this->input->post('files_name', TRUE));
-
+        $upload_files_temp_stuff = $upload_files_stuff_temp_service->get_all_upload_files_stuff_temp_for_user($this->session->userdata('USER_FILE_ID'));
+        $upload_files_model->set_user_id($this->input->post('USER_FILE_ID', TRUE));
+        $upload_files_model->set_file_name($this->input->post('file_name', TRUE));
         $upload_files_model->set_file_description($this->input->post('file_description', TRUE));
-
         $upload_files_model->set_del_ind('1');
         $upload_files_model->set_added_date(date("Y-m-d H:i:s"));
         $upload_files_model->set_added_by($this->session->userdata('USER_ID'));
@@ -103,8 +100,8 @@ class Upload_files_controller extends CI_Controller {
 
         foreach ($upload_files_temp_stuff as $stuff) {
             $upload_files_stuff_model->set_stuff_name($stuff->stuff_name);
-
-            $upload_files_stuff_model->set_upload_file_stuff_id($file_id);
+            $upload_files_stuff_model->set_user_id($stuff->user_id);  
+            $upload_files_stuff_model->set_file_id($file_id);
             $upload_files_stuff_model->set_del_ind('1');
             $upload_files_stuff_model->set_added_date(date("Y-m-d H:i:s"));
             $upload_files_stuff_model->set_added_by($this->session->userdata('USER_ID'));
@@ -141,7 +138,7 @@ class Upload_files_controller extends CI_Controller {
             $data['upload_files'] = $upload_files_service->get_upload_files_by_id($id);
 
 
-            $partials = array('content' => 'upload_filess/edit_upload_files_view');
+            $partials = array('content' => 'upload_files/edit_upload_files_view');
             $this->template->load('template/main_template', $partials, $data);
         } else {
             
@@ -150,16 +147,16 @@ class Upload_files_controller extends CI_Controller {
 
     function edit_upload_files() {
 
-//        $perm = Access_controll_service :: checkAccess('EDIT_FILESS');
+//        $perm = Access_controll_service :: checkAccess('EDIT_FILES');
 //        if ($perm) {
 
         $upload_files_model = new Upload_files_model();
         $upload_files_service = new Upload_files_service();
 
-        $upload_files_model->set_upload_files_name($this->input->post('file_name', TRUE));
-        $upload_files_model->set_upload_files_description($this->input->post('file_description', TRUE));
+        $upload_files_model->set_file_name($this->input->post('file_name', TRUE));
+        $upload_files_model->set_file_description($this->input->post('file_description', TRUE));
 
-        $upload_files_model->set_upload_files_id($this->input->post('file_id', TRUE));
+        $upload_files_model->set_file_id($this->input->post('file_id', TRUE));
 
 
 
@@ -208,7 +205,7 @@ class Upload_files_controller extends CI_Controller {
     public function get_upload_files_for_user() {
 
         $upload_files_service = new Upload_files_service();
-        $result = $upload_files_service->get_upload_files_for_user($this->input->post('user_id'));
+        $result = $upload_files_service->get_all_upload_files_of_user($this->input->post('user_id'));
 
         echo json_encode($result);
     }
