@@ -8,9 +8,9 @@ class Privilege_master_controller extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        if (!$this->session->userdata('USER_LOGGED_IN')) {
-            redirect(site_url() . '/login/login_controller');
-        } else {
+        //if (!$this->session->userdata('USER_LOGGED_IN')) {
+           // redirect(site_url() . '/login/login_controller');
+       // } else {
             $this->load->model('privilege_master/privilege_master_model');
             $this->load->model('privilege_master/privilege_master_service');
 
@@ -18,7 +18,7 @@ class Privilege_master_controller extends CI_Controller {
             $this->load->model('settings/system/system_service');
 //
 //            $this->load->model('Systems/Systemsservice');
-        }
+       // }
     }
 
     function manage_privilege_masters() {

@@ -8,9 +8,9 @@ class Privilege_controller extends CI_Controller {
     function __construct() {
         parent::__construct();
 
-        if (!$this->session->userdata('USER_LOGGED_IN')) {
-            redirect(site_url() . '/login/login_controller');
-        } else {
+        //if (!$this->session->userdata('USER_LOGGED_IN')) {
+           // redirect(site_url() . '/login/login_controller');
+       // } else {
             $this->load->model('privilege/privilege_model');
             $this->load->model('privilege/privilege_service');
 
@@ -18,7 +18,7 @@ class Privilege_controller extends CI_Controller {
             $this->load->model('privilege_master/privilege_master_service');
 //            $this->load->model('Employee_user_priviledges/Employeeuserpriviledgesmodel');
 //            $this->load->model('Employee_user_priviledges/Employeeuserpriviledgesservice');
-        }
+        //}
     }
 
     function manage_privileges() {
@@ -50,7 +50,7 @@ class Privilege_controller extends CI_Controller {
         $privilege_model->set_privilege_master_code($this->input->post('master_privilege_code', TRUE));
         $privilege_model->set_privilege($this->input->post('privilege', TRUE));
         $privilege_model->set_privilege_description($this->input->post('privilege_desc', TRUE));
-        $privilege_model->set_priviledge_code_HF($this->input->post('privilege_hf', TRUE));
+        $privilege_model->set_privilege_code_HF($this->input->post('privilege_hf', TRUE));
         $privilege_model->set_assign_for($this->input->post('assign_for', TRUE));
 
 
@@ -100,7 +100,7 @@ class Privilege_controller extends CI_Controller {
         $privileges_model->set_privilege_master_code($this->input->post('master_privilege_code', TRUE));
         $privileges_model->set_privilege($this->input->post('privilege', TRUE));
         $privileges_model->set_privilege_description($this->input->post('privilege_desc', TRUE));
-        $privileges_model->set_priviledge_code_HF($this->input->post('privilege_hf', TRUE));
+        $privileges_model->set_privilege_code_HF($this->input->post('privilege_hf', TRUE));
         $privileges_model->set_assign_for($this->input->post('assign_for', TRUE));
 
         $privileges_model->set_privilege_code($this->input->post('privilege_code', TRUE));

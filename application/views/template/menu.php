@@ -31,14 +31,14 @@
 </li> 
 <?php // }  ?>
 
-<li class="" id="select_data_type_parent_menu"> 
+<li class="" id="select_file_and_data_sets_parent_menu"> 
     <a href="javascript:;">
         <i class="fa fa-tasks"></i> 
-        <span class="title">Select data type</span> 
+        <span class="title">Select file and data sets</span> 
         <span class="arrow "></span> 
     </a>
     <ul class="sub-menu">
-        <li > <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff"> Select Data Type</a> </li>
+        <li > <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff"> Select file and data sets</a> </li>
 
     </ul>
 </li> 
@@ -73,15 +73,16 @@
  
 
 
-<!--<li class="" id="user_privilege_parent_menu"> 
+<li class="" id="settings_parent_menu"> 
     <a href="javascript:;">
-        <i class=""></i> 
-        <span class="title">Privileges</span> 
+        <i class="fa fa-gears"></i> 
+        <span class="title">Settings</span> 
         <span class="arrow "></span> 
     </a>
     <ul class="sub-menu">
-        <li > <a href="<?php echo site_url(); ?>/user_privilege/user_privilege_controller/manage_user_privileges"> Manage User Privileges </a> </li>
+        <li > <a href="<?php echo site_url(); ?>/settings/privilege_master_controller/manage_privilege_masters"> Manage Master Privileges </a> </li>
+        <li > <a href="<?php echo site_url(); ?>/settings/privilege_controller/manage_privileges"> Manage Privileges </a> </li>
         
     </ul>
-</li> -->
+</li> 
 

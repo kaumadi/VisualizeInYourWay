@@ -16,6 +16,7 @@
                             <th>Privilege ID</th>
                             <th>Master Privilege</th>
                             <th>Privilege</th>
+                            <th>Privilege Description</th>
                             <th>Human Friendly Code</th>
                             <th>Assign For</th>
                             <th>Options</th>
@@ -29,7 +30,8 @@
                                 <td><?php echo $privilege->privilege_code; ?></td>
                                 <td><?php echo $privilege->master_privilege; ?></td>
                                 <td><?php echo $privilege->privilege; ?></td>
-                                <td><?php echo $privilege->priviledge_code_HF; ?></td>
+                                <td><?php echo $privilege->privilege_description; ?></td>
+                                <td><?php echo $privilege->privilege_code_HF; ?></td>
                                 <td>
                                     <?php if ($this->config->item('ADMIN') == $privilege->assign_for) { ?> 
                                         <span class="label label-important">Admin</span>

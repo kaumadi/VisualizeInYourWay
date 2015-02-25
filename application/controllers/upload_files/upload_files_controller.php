@@ -41,7 +41,7 @@ class Upload_files_controller extends CI_Controller {
 
 
             $data['heading'] = "Manage Uploaded Files";
-            $data['upload_files'] = $upload_files_service->get_all_upload_files_of_user($this->session->userdata('USER_FILE_ID'));
+            $data['upload_files'] = $upload_files_service->get_all_upload_files_of_user($this->session->userdata('USER_ID'));
 
             $partials = array('content' => 'upload_files/manage_upload_files_view');
             $this->template->load('template/main_template', $partials, $data);
@@ -90,8 +90,8 @@ class Upload_files_controller extends CI_Controller {
 
         $upload_files_model->set_file_name($this->input->post('file_name', TRUE));
 
-        $upload_files_model->set_file_description($this->input->post('file_description', TRUE));
-
+        $upload_files_model->set_file_desc($this->input->post('file_description', TRUE));
+        $upload_files_model->set_user_id($this->session->userdata('USER_ID'));
         $upload_files_model->set_del_ind('1');
         $upload_files_model->set_added_date(date("Y-m-d H:i:s"));
         $upload_files_model->set_added_by($this->session->userdata('USER_ID'));
@@ -129,23 +129,23 @@ class Upload_files_controller extends CI_Controller {
         echo $upload_files_service->delete_upload_files(trim($this->input->post('id', TRUE)));
     }
 
-    function edit_upload_files_view($id) {
-        $perm = Access_controll_service::check_access('EDIT_FILES');
-        if ($perm) {
+    function edit_upload_files_view($file_id) {
+        //$perm = Access_controll_service::check_access('EDIT_FILES');
+        //if ($perm) {
 
 
             $upload_files_service = new Upload_files_service();
 
 
             $data['heading'] = "Edit Upload_files";
-            $data['upload_files'] = $upload_files_service->get_upload_files_by_id($id);
+            $data['upload_files'] = $upload_files_service->get_upload_files_by_id($file_id);
 
 
             $partials = array('content' => 'upload_files/edit_upload_files_view');
             $this->template->load('template/main_template', $partials, $data);
-        } else {
+       // } else {
             
-        }
+       // }
     }
 
     function edit_upload_files() {
