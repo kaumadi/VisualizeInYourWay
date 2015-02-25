@@ -51,7 +51,7 @@
         <span class="arrow "></span> 
     </a>
     <ul class="sub-menu">
-        <li > <a href="<?php echo site_url(); ?>/upload_files/upload_files_controller/manage_upload_files"> Generate graphs</a> </li>
+        <li > <a href="<?php echo site_url(); ?>/graphs/graphs_controller/manage_graphs"> Generate graphs</a> </li>
 
     </ul>
 </li> 

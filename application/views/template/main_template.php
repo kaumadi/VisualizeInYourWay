@@ -369,6 +369,13 @@
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_attendance.js" type="text/javascript"></script>-->
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>
             <!-- END CUSTOM JS -->
+           <script src="<?php echo base_url(); ?>application_resources/custom_js/ga.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/ods.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/shim.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsx.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker2.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>
 
 
             <!-- BEGIN CORE TEMPLATE JS -->
