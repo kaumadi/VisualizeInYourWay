@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class graphs_controller extends CI_Controller {
+class share_and_print_controller extends CI_Controller {
 
     function __construct() {
         parent::__construct();
@@ -13,12 +13,14 @@ class graphs_controller extends CI_Controller {
         }
         
   
-    function manage_graphs() {
-              $data['heading'] = "select graphs category";
+    function view_share_and_print() {
+        
+            $data['heading'] = "share and print your graphs";
    
-            $partials = array('content' => 'graph/graph_analyzer_view');
+            $partials = array('content' => 'share_and_print/share_and_print_view');
             $this->template->load('template/main_template', $partials, $data);
       
     }
 
 }
+
