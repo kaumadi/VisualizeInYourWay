@@ -128,12 +128,12 @@
                     <div class="pull-right">
                         <div class="chat-toggler"> <a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom"  data-content='' data-toggle="dropdown" data-original-title="Notifications">
                                 <div class="user-details">
-                                    <div class="username" id="user-name"> <!--<span id="notification-count" class="badge badge-important"></span>--> <?php echo ucfirst($this->session->userdata('USER_NAME')); ?>  </div>
+                                    <div class="username" id="user-name"> <!--<span id="notification-count" class="badge badge-important"></span>--> <?php echo ucfirst($this->session->userdata('USER_NAME')); ?> &nbsp;&nbsp;&nbsp;&nbsp </div>
                                 </div>
                                 <!--<div class="iconset top-down-arrow"></div>-->
                             </a>
                             
-                               
+                                
                                                         
                             
                             <div class="profile-pic">
@@ -192,6 +192,8 @@
 
                             </a>
                         </div>
+                        
+                         
                         <div class="user-info">
                             <div class="greeting">Welcome</div>
                             <div class="username"><?php echo ucfirst($this->session->userdata('USER_NAME')); ?> </div>
@@ -330,7 +332,7 @@
             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-flot/jquery.flot.resize.min.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-flot/jquery.flot.orderBars.js"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-sparkline/jquery-sparkline.js"></script>
-            <!--<script src="<?php echo base_url(); ?>application_resources/plugins/jquery-morris-chart/js/morris.min.js"></script>-->
+            <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-morris-chart/js/morris.min.js"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-easy-pie-chart/js/jquery.easypiechart.min.js"></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-metrojs/MetroJs.min.js" type="text/javascript" ></script>
             <script src="<?php echo base_url(); ?>application_resources/plugins/skycons/skycons.js"></script>
@@ -362,12 +364,16 @@
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_kaumadi.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_upload_files.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_dilupa.js" type="text/javascript"></script>
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_skill.js" type="text/javascript"></script>-->
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_notification.js" type="text/javascript"></script>-->
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_wages.js" type="text/javascript"></script>-->
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_event.js" type="text/javascript"></script>-->
-            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_attendance.js" type="text/javascript"></script>-->
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/odm.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/shim.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsx.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker1.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker2.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/cpexcel.js" type="text/javascript"></script>
+
             <!-- END CUSTOM JS -->
 <!--           <script src="<?php echo base_url(); ?>application_resources/custom_js/cpexcel.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
@@ -382,13 +388,13 @@
 
 
 <!--            <script src="<?php echo base_url(); ?>application/views/file_type/custom_js/cpexcel.js" type="text/javascript"></script>-->
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
+<!--            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/ods.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/shim.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsx.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker2.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker1.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker1.js" type="text/javascript"></script>-->
 
 
             <!-- BEGIN CORE TEMPLATE JS -->
