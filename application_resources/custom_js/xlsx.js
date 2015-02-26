@@ -6,7 +6,7 @@ var XLSX = {};
 XLSX.version = '0.7.12';
 var current_codepage = 1252, current_cptable;
 if(typeof module !== "undefined" && typeof require !== 'undefined') {
-	if(typeof cptable === 'undefined') cptable = require('./dist/cpexcel');
+	if(typeof cptable === 'undefined') cptable = require('./application_resources/custom_js/cpexcel');
 	current_cptable = cptable[current_codepage];
 }
 function reset_cp() { set_cp(1252); }
