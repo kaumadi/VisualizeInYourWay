@@ -10,7 +10,7 @@
 <!-- vim: set ts=2: -->
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>JS-XLSX Live Demo</title>
+<title></title>
 <style>
 #drop{
 	border:2px dashed #bbb;
@@ -26,7 +26,7 @@
 }
 </style>
 
-<b>JS-XLSX (XLSX/XLSB/XLSM) Live Demo</b><br />
+<b></b><br />
 Output Format:
 <select name="format">
 <option value="csv" selected> CSV</option>
@@ -37,14 +37,14 @@ Output Format:
 <input type="radio" name="format" value="json"> JSON<br>
 <input type="radio" name="format" value="form"> FORMULAE<br> -->
 
-<div id="drop">Drop an XLSX / XLSM / XLSB / ODS file here to see sheet data</div>
-<p><input type="file" name="xlfile" id="xlf" /> ... or click here to select a file</p>
-<textarea id="b64data">... or paste a base64-encoding here</textarea>
-<input type="button" id="dotext" value="Click here to process the base64 text" onclick="b64it();"/><br />
+<div id="drop">Drop an Excel or SQL file here to see sheet data</div>
+<!--<p><input type="file" name="xlfile" id="xlf" /> ... or click here to select a file</p>-->
+<textarea id="b64data"></textarea>
+<!--<input type="button" id="dotext" value="Click here to process the base64 text" onclick="b64it();"/><br />
 Advanced Demo Options: <br />
 Use Web Workers: (when available) <input type="checkbox" name="useworker" checked><br />
 Use Transferrables: (when available) <input type="checkbox" name="xferable" checked><br />
-Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked><br />
+Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked><br />-->
 <pre id="out"></pre>
 <br />
  <!--uncomment the next line here and in xlsxworker.js for encoding support--> 
@@ -52,10 +52,10 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
  <script type="text/javascript" src="application_resources/custom_js/shim.js"></script>
  <script type="text/javascript" src="application_resources/custom_js/jszip.js"></script>
  <script type="text/javascript" src="application_resources/custom_js/xlsx.js"></script>
- <script type="text/javascript" src="application_resources/custom_js/ods.js"></script>-->
+ <script type="text/javascript" src="application_resources/custom_js/ods.js"></script>
 
 
-<!--<script src="./cpexcel.js"></script>
+<script src="./cpexcel.js"></script>
 <script src="./shim.js"></script>
 <script src="./jszip.js"></script>
 <script src="./xlsx.js"></script>
@@ -286,7 +286,67 @@ function handleFile(e) {
 if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
 </script>
 
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-title">
+                <h4>Advance <span class="semi-bold">Options</span></h4>
+                <div class="tools"> <a href="javascript:;" class="collapse"></a>  <a href="javascript:;" class="reload"></a></div>
+            </div>
+            <div class="grid-body ">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form id="add_data_set_form" name="add_data_set_form">
+                            <div class="form-group">
+                                <label class="form-label">File</label>
+                                <span style="color: red">*</span>                       
 
+                                <div class="input-with-icon  right">                                       
+                                    <i class=""></i>
+                                    <select name="data_set_id" id="data_set_id" class="select2 form-control" style="width: 30%" >
+                                        <option value="">-- Select File --</option>
+                                        <?php foreach ($data_sets as $data_set) {
+                                            ?> 
+                                            <option value="<?php echo $data_set->data_set_id; ?>"><?php echo $data_set->data_set_name; ?></option>
+                                        <?php } ?>
+                                    </select>                            
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="form-label">Data Sets</label>
+                                <span style="color: red">*</span>
+
+                                <div class="input-with-icon  right">                                       
+                                    <i class=""></i>
+                                    <select name="file_id" id="file_id" class="select2 form-control" style="width: 30%" >
+                                        <option value="">-- Select Data Sets --</option>
+
+                                    </select>   
+                                </div>
+                            </div>
+
+
+                        
+
+                            <div id="add_file_type_msg" class="form-row"> </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-primary btn-cons" type="submit">
+                                    <i class="icon-ok"></i>
+                                    Save
+                                </button>
+                                <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff" class="btn btn-white btn-cons" type="button">Cancel</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="text/javascript">
     $('#select_data_type_parent_menu').addClass('active open');

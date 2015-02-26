@@ -128,7 +128,7 @@
                     <div class="pull-right">
                         <div class="chat-toggler"> <a href="#" class="dropdown-toggle" id="my-task-list" data-placement="bottom"  data-content='' data-toggle="dropdown" data-original-title="Notifications">
                                 <div class="user-details">
-                                    <div class="username" id="user-name"> <!--<span id="notification-count" class="badge badge-important"></span>--> <?php echo ucfirst($this->session->userdata('USER_NAME')); ?>  </div>
+                                    <div class="username" id="user-name"> <!--<span id="notification-count" class="badge badge-important"></span>--> <?php echo ucfirst($this->session->userdata('USER_NAME')); ?> &nbsp&nbsp; </div>
                                 </div>
                                 <!--<div class="iconset top-down-arrow"></div>-->
                             </a>
