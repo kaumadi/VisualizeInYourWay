@@ -3,20 +3,30 @@
 //importScripts('dist/cpexcel.js');
 //importScripts('jszip.js');
 //importScripts('xlsx.js');
-///* uncomment the next line for ODS support */
+/////* uncomment the next line for ODS support */
 //importScripts('ods.js');
 //postMessage({t:"ready"});
+//
+//onmessage = function (oEvent) {
+//  var v;
+//  try {
+//    v = XLSX.read(oEvent.data.d, {type: oEvent.data.b ? 'binary' : 'base64'});
+//  } catch(e) { postMessage({t:"e",d:e.stack||e}); }
+//  postMessage({t:"xlsx", d:JSON.stringify(v)});
+//};
+// proper initialization
 if( 'function' === typeof importScripts) {
    importScripts('jszip.js');
 importScripts('xlsx.js');
-   importScripts('ods.js');
-   addEventListener('message', onmessage);
+importScripts('ods.js');
 postMessage({t:"ready"});
-onmessage = function (oEvent) {
-  var v;
+   addEventListener('message', onMessage);
+
+   function onMessage(oEvent) { 
+     var v;
   try {
     v = XLSX.read(oEvent.data.d, {type: oEvent.data.b ? 'binary' : 'base64'});
   } catch(e) { postMessage({t:"e",d:e.stack||e}); }
   postMessage({t:"xlsx", d:JSON.stringify(v)});
-};
+   }; 
 }

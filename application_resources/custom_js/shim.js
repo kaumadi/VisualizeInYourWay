@@ -1,3 +1,5 @@
+var base_url = js_base_url;
+var site_url = js_site_url;
 // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
 if (!Object.keys) {
   Object.keys = (function () {

@@ -3,17 +3,15 @@
 //importScripts('dist/cpexcel.js');
 //importScripts('jszip.js');
 //importScripts('xlsx.js');
-///* uncomment the next line for ODS support */
+/////* uncomment the next line for ODS support */
 //importScripts('ods.js');
 //postMessage({t:"ready"});
 if( 'function' === typeof importScripts) {
    importScripts('jszip.js');
 importScripts('xlsx.js');
-   importScripts('ods.js');
-   addEventListener('message', onmessage);
+importScripts('ods.js');
 postMessage({t:"ready"});
-     
-
+   addEventListener('message', onMessage);
 function ab2str(data) {
 	var o = "", l = 0, w = 10240;
 	for(; l<data.byteLength/w; ++l) o+=String.fromCharCode.apply(null,new Uint16Array(data.slice(l*w,l*w+w)));
@@ -27,8 +25,17 @@ function s2ab(s) {
   return [v, b];
 }
 
-onmessage = function (oEvent) {
-  var v;
+//onmessage = function (oEvent) {
+//  var v;
+//  try {
+//    v = XLSX.read(ab2str(oEvent.data), {type: 'binary'});
+//  } catch(e) { postMessage({t:"e",d:e.stack}); }
+//  var res = {t:"xlsx", d:JSON.stringify(v)};
+//  var r = s2ab(res.d)[1];
+//  postMessage(r, [r]);
+//};
+   function onMessage(oEvent) { 
+         var v;
   try {
     v = XLSX.read(ab2str(oEvent.data), {type: 'binary'});
   } catch(e) { postMessage({t:"e",d:e.stack}); }
@@ -36,4 +43,4 @@ onmessage = function (oEvent) {
   var r = s2ab(res.d)[1];
   postMessage(r, [r]);
 };
-}
+   }

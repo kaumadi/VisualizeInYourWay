@@ -1,3 +1,5 @@
+var base_url = js_base_url;
+var site_url = js_site_url;
 /*!
 
 JSZip - A Javascript class for generating and reading zip files

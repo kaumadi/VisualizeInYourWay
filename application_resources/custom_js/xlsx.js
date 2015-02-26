@@ -1,4 +1,6 @@
-/* xlsx.js (C) 2013-2014 SheetJS -- http://sheetjs.com */
+
+var base_url = js_base_url;
+var site_url = js_site_url;/* xlsx.js (C) 2013-2014 SheetJS -- http://sheetjs.com */
 /* vim: set ts=2: */
 /*jshint -W041 */
 var XLSX = {};
@@ -6,7 +8,7 @@ var XLSX = {};
 XLSX.version = '0.7.12';
 var current_codepage = 1252, current_cptable;
 if(typeof module !== "undefined" && typeof require !== 'undefined') {
-	if(typeof cptable === 'undefined') cptable = require('./application_resources/custom_js/cpexcel');
+	if(typeof cptable === 'undefined') cptable = require('./cpexcel');
 	current_cptable = cptable[current_codepage];
 }
 function reset_cp() { set_cp(1252); }

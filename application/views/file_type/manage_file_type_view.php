@@ -1,9 +1,14 @@
 
+
+
+
 <div class="page-title">	
     <h3><?php echo $heading; ?></h3>		
 </div>
+<!DOCTYPE html>
+<!-- xlsx.js (C) 2013-2014 SheetJS http://sheetjs.com -->
+<!-- vim: set ts=2: -->
 
-<div >
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>JS-XLSX Live Demo</title>
 <style>
@@ -20,7 +25,6 @@
 	width:100%;
 }
 </style>
-
 
 <b>JS-XLSX (XLSX/XLSB/XLSM) Live Demo</b><br />
 Output Format:
@@ -43,13 +47,20 @@ Use Transferrables: (when available) <input type="checkbox" name="xferable" chec
 Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked><br />
 <pre id="out"></pre>
 <br />
-<!-- uncomment the next line here and in xlsxworker.js for encoding support -->
-<!--<script src="dist/cpexcel.js"></script>-->
-<!--<script src="shim.js"></script>
-<script src="jszip.js"></script>
-<script src="xlsx.js"></script>
+ <!--uncomment the next line here and in xlsxworker.js for encoding support--> 
+<!-- <script type="text/javascript" src="application_resources/custom_js/cpexcel.js"></script>
+ <script type="text/javascript" src="application_resources/custom_js/shim.js"></script>
+ <script type="text/javascript" src="application_resources/custom_js/jszip.js"></script>
+ <script type="text/javascript" src="application_resources/custom_js/xlsx.js"></script>
+ <script type="text/javascript" src="application_resources/custom_js/ods.js"></script>-->
+
+
+<!--<script src="./cpexcel.js"></script>
+<script src="./shim.js"></script>
+<script src="./jszip.js"></script>
+<script src="./xlsx.js"></script>
  uncomment the next line here and in xlsxworker.js for ODS support 
-<script src="ods.js"></script>-->
+<script src="./ods.js"></script>-->
 <script>
 var rABS = typeof FileReader !== "undefined" && typeof FileReader.prototype !== "undefined" && typeof FileReader.prototype.readAsBinaryString !== "undefined";
 if(!rABS) {
@@ -274,7 +285,9 @@ function handleFile(e) {
 
 if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
 </script>
-</div>
+
+
+
 <script type="text/javascript">
     $('#select_data_type_parent_menu').addClass('active open');
 </script>

@@ -1,3 +1,5 @@
+var base_url = js_base_url;
+var site_url = js_site_url;
 /* ods.js (C) 2014 SheetJS -- http://sheetjs.com */
 /* vim: set ts=2: */
 /*jshint -W041 */
