@@ -275,6 +275,71 @@ function handleFile(e) {
 if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
 </script>
 </div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="grid simple ">
+            <div class="grid-title">
+                <h4>Advance <span class="semi-bold">Options</span></h4>
+                <div class="tools"> <a href="javascript:;" class="collapse"></a>  <a href="javascript:;" class="reload"></a></div>
+            </div>
+            <div class="grid-body ">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form id="add_data_set_form" name="add_data_set_form">
+                            <div class="form-group">
+                                <label class="form-label">Data</label>
+                                <span style="color: red">*</span>                       
+
+                                <div class="input-with-icon  right">                                       
+                                    <i class=""></i>
+                                    <select name="data_set_id" id="data_set_id" class="select2 form-control" style="width: 30%" >
+                                        <option value="">-- Select Data --</option>
+                                        <?php foreach ($data_sets as $data_set) {
+                                            ?> 
+                                            <option value="<?php echo $data_set->data_set_id; ?>"><?php echo $data_set->data_set_name; ?></option>
+                                        <?php } ?>
+                                    </select>                            
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="form-label">Files</label>
+                                <span style="color: red">*</span>
+
+                                <div class="input-with-icon  right">                                       
+                                    <i class=""></i>
+                                    <select name="file_id" id="file_id" class="select2 form-control" style="width: 30%" >
+                                        <option value="">-- Select File --</option>
+
+                                    </select>   
+                                </div>
+                            </div>
+
+
+                        
+
+                            <div id="add_file_type_msg" class="form-row"> </div>
+
+                            <div class="modal-footer">
+                                <button class="btn btn-primary btn-cons" type="submit">
+                                    <i class="icon-ok"></i>
+                                    Save
+                                </button>
+                                <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff" class="btn btn-white btn-cons" type="button">Cancel</a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 <script type="text/javascript">
     $('#select_data_type_parent_menu').addClass('active open');
 </script>
