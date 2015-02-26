@@ -13,11 +13,11 @@ class share_and_print_controller extends CI_Controller {
         }
         
   
-    function view_share_and_print() {
+    function manage_share_and_print() {
         
             $data['heading'] = "share and print your graphs";
    
-            $partials = array('content' => 'share_and_print/share_and_print_view');
+            $partials = array('content' => 'share_and_print/manage_share_and_print_view');
             $this->template->load('template/main_template', $partials, $data);
       
     }
