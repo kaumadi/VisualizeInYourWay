@@ -7,13 +7,16 @@ class share_and_print_controller extends CI_Controller {
 
     function __construct() {
         parent::__construct();
-//  $this->load->model('upload_files_stuff/upload_files_stuff_model');
-//        $this->load->model('upload_files_stuff/upload_files_stuff_service');
 
-        }
         
-  
+        
+        $this->load->model('upload_files_stuff/upload_files_stuff_model');
+        $this->load->model('upload_files_stuff/upload_files_stuff_service');
+        
+    }
     function manage_share_and_print() {
+        
+            $upload_files_stuff_service = new upload_files_stuff_service();
         
             $data['heading'] = "share and print your graphs";
    
