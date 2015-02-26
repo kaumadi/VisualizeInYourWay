@@ -16,7 +16,7 @@ class Share_controller extends CI_Controller {
         
   
     function manage_share() {
-              $data['heading'] = "select graphs category";
+              $data['heading'] = "Share and print your graphs";
    
             $partials = array('content' => 'share/share_view');
             $this->template->load('template/main_template', $partials, $data);
