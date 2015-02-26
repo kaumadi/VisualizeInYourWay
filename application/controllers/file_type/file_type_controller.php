@@ -27,5 +27,6 @@ class file_type_controller extends CI_Controller {
             $this->template->load('template/main_template', $partials, $data);
       
     }
+    
 
 }
