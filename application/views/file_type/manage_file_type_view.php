@@ -321,7 +321,7 @@ if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
                                 <div class="input-with-icon  right">                                       
                                     <i class=""></i>
                                     <select name="file_id" id="file_id" class="select2 form-control" style="width: 30%" >
-                                        <option value="">-- Select Data Sets --</option>
+                                        <option value="">-- Select Data Set --</option>
 
                                     </select>   
                                 </div>
