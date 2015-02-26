@@ -64,7 +64,7 @@
         <span class="arrow "></span> 
     </a>
     <ul class="sub-menu">
-        <li > <a href="<?php echo site_url(); ?>/share_and_print/share_and_print_controller/manage_share_and_print"> Share and Print</a> </li>
+        <li > <a href="<?php echo site_url(); ?>/share/share_controller/manage_share"> Share and Print</a> </li>
 
     </ul>
 </li> 
