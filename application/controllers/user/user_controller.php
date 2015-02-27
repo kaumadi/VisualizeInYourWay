@@ -28,7 +28,7 @@ class User_controller extends CI_Controller {
         $user_service = new User_service();
         
         $data['heading'] = "Manage User";
-        $data['users'] = $user_service->get_user_by_email($this->session->userdata('USER_EMAIL'));
+        $data['users'] = $user_service->get_all_user_details($this->session->userdata('USER_ID'));
 
         //$data['wages_categories'] = $wages_category_service->get_all_wages_categories();
 

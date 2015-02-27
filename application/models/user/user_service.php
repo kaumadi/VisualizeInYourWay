@@ -66,6 +66,17 @@ class User_service extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    
+    public function get_all_user_details() {
+
+
+        $this->db->select('*');
+        $this->db->from('user');
+        $this->db->where('del_ind','1');
+        $this->db->order_by("user.user_id", "desc");
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     function authenticate_user($user_model) {
 

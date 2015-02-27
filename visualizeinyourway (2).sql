@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 26, 2015 at 10:59 AM
+-- Generation Time: Feb 27, 2015 at 08:46 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -38,10 +38,10 @@ CREATE TABLE IF NOT EXISTS `data_set` (
 --
 
 INSERT INTO `data_set` (`data_set_id`, `data_set_type_id`, `data_set_name`) VALUES
-(1, 1, 'cus_name'),
-(2, 1, 'cus_address'),
-(3, 1, 'cus_tel'),
-(4, 1, 'cus_age');
+(1, 12, 'cus_name'),
+(2, 12, 'cus_address'),
+(3, 12, 'cus_tel'),
+(4, 12, 'cus_age');
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `privilege` (
   `privilege_code_HF` varchar(100) NOT NULL,
   `assign_for` enum('1','2','3','4') NOT NULL,
   PRIMARY KEY (`privilege_code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `privilege`
@@ -93,7 +93,8 @@ INSERT INTO `privilege` (`privilege_code`, `privilege_master_code`, `privilege`,
 (4, 6, 'Manage Generate Graphs', 'This is to manage the generated graphs', 'MANAGE_GENERATE_GRAPHS', '4'),
 (5, 5, 'Manage Master Privileges', 'This is to manage master privileges', 'MANAGE_MASTER_PRIVILEGES', '1'),
 (6, 4, 'Manage User Profile', 'This is to manage user profile', 'MANAGE_USER_PROFILE', '3'),
-(7, 3, 'Manage Upload Files', 'This is to manage upload files', 'MANAGE_UPLOAD_FILES', '4');
+(7, 3, 'Manage Upload Files', 'This is to manage upload files', 'MANAGE_UPLOAD_FILES', '4'),
+(8, 8, 'Manage Users', 'This is to Manage Users', 'MANAGE_USERS', '1');
 
 -- --------------------------------------------------------
 
@@ -107,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `privilege_master` (
   `master_privilege_description` varchar(1000) NOT NULL,
   `system_code` int(11) NOT NULL,
   PRIMARY KEY (`privilege_master_code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `privilege_master`
@@ -118,7 +119,8 @@ INSERT INTO `privilege_master` (`privilege_master_code`, `master_privilege`, `ma
 (4, 'Manage User Profile', 'Manage User Profile', 7),
 (5, 'Manage Master Privileges', 'Manage Master Privileges', 4),
 (6, 'Manage Generate Graphs', 'Manage Generate Graphs', 6),
-(7, 'Manage Privileges', 'Manage Privileges', 3);
+(7, 'Manage Privileges', 'Manage Privileges', 3),
+(8, 'Manage Users', 'Manage Users', 8);
 
 -- --------------------------------------------------------
 
@@ -136,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `statistics` (
   `ip` varchar(300) DEFAULT NULL,
   `browser` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`statistic_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1893 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2061 ;
 
 --
 -- Dumping data for table `statistics`
@@ -2035,7 +2037,176 @@ INSERT INTO `statistics` (`statistic_id`, `user_id`, `action`, `date`, `uri`, `p
 (1889, 0, 'manage_upload_files_stuff', 1424943778, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
 (1890, 0, '[object%20Object]', 1424943782, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
 (1891, 0, 'manage_upload_files_stuff', 1424944184, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
-(1892, 0, '[object%20Object]', 1424944186, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36');
+(1892, 0, '[object%20Object]', 1424944186, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1893, 0, 'login_controller', 1424954108, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1894, 0, 'authenticate_user', 1424954205, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1895, 0, 'index', 1424954207, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1896, 0, 'index', 1424954208, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1897, 0, '[object%20Object]', 1424954218, 'dashboard/dashboard_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1898, 0, 'manage_upload_files_stuff', 1424954302, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1899, 0, '[object%20Object]', 1424954308, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1900, 0, 'manage_upload_files_stuff', 1424954511, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1901, 0, '[object%20Object]', 1424954519, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1902, 0, 'manage_upload_files_stuff', 1424954575, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1903, 0, '[object%20Object]', 1424954593, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1904, 0, 'manage_upload_files_stuff', 1424954914, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1905, 0, '[object%20Object]', 1424954917, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1906, 0, 'manage_upload_files_stuff', 1424955184, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1907, 0, '[object%20Object]', 1424955190, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1908, 0, 'manage_upload_files_stuff', 1424955199, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1909, 0, '[object%20Object]', 1424955200, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1910, 0, 'manage_graphs', 1424955216, 'graphs/graphs_controller/manage_graphs', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1911, 0, '[object%20Object]', 1424955218, 'graphs/graphs_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1912, 0, 'manage_upload_files_stuff', 1424955309, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1913, 0, '[object%20Object]', 1424955310, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1914, 0, 'manage_upload_files_stuff', 1424955368, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1915, 0, '[object%20Object]', 1424955371, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1916, 0, 'manage_upload_files_stuff', 1424955523, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1917, 0, '[object%20Object]', 1424955525, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1918, 0, 'manage_upload_files_stuff', 1424955608, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1919, 0, '[object%20Object]', 1424955612, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1920, 0, 'manage_upload_files_stuff', 1424955633, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1921, 0, '[object%20Object]', 1424955638, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1922, 0, 'manage_upload_files_stuff', 1424955794, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1923, 0, 'cpexcel.js', 1424955795, 'file_type/file_type_controller/cpexcel.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1924, 0, 'application_resources', 1424955795, 'file_type/file_type_controller/application_resources/custom_js/cpexcel.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1925, 0, 'application_resources', 1424955795, 'file_type/file_type_controller/application_resources/custom_js/shim.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1926, 0, 'application_resources', 1424955795, 'file_type/file_type_controller/application_resources/custom_js/jszip.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1927, 0, 'application_resources', 1424955795, 'file_type/file_type_controller/application_resources/custom_js/ods.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1928, 0, 'jszip.js', 1424955795, 'file_type/file_type_controller/jszip.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1929, 0, 'xlsx.js', 1424955795, 'file_type/file_type_controller/xlsx.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1930, 0, 'ods.js', 1424955795, 'file_type/file_type_controller/ods.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1931, 0, 'shim.js', 1424955795, 'file_type/file_type_controller/shim.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1932, 0, 'application_resources', 1424955795, 'file_type/file_type_controller/application_resources/custom_js/xlsx.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1933, 0, '[object%20Object]', 1424955799, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1934, 0, 'manage_upload_files_stuff', 1424955976, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1935, 0, 'application_resources', 1424955977, 'file_type/file_type_controller/application_resources/custom_js/xlsx.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1936, 0, 'application_resources', 1424955977, 'file_type/file_type_controller/application_resources/custom_js/cpexcel.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1937, 0, 'application_resources', 1424955977, 'file_type/file_type_controller/application_resources/custom_js/jszip.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1938, 0, 'application_resources', 1424955977, 'file_type/file_type_controller/application_resources/custom_js/ods.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1939, 0, 'application_resources', 1424955977, 'file_type/file_type_controller/application_resources/custom_js/shim.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1940, 0, 'shim.js', 1424955977, 'file_type/file_type_controller/shim.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1941, 0, 'cpexcel.js', 1424955977, 'file_type/file_type_controller/cpexcel.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1942, 0, 'xlsx.js', 1424955977, 'file_type/file_type_controller/xlsx.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1943, 0, 'jszip.js', 1424955977, 'file_type/file_type_controller/jszip.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1944, 0, 'ods.js', 1424955977, 'file_type/file_type_controller/ods.js', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1945, 0, '[object%20Object]', 1424955980, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1946, 0, 'manage_upload_files_stuff', 1424956004, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1947, 0, '[object%20Object]', 1424956008, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1948, 0, 'manage_upload_files_stuff', 1424956047, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1949, 0, '[object%20Object]', 1424956049, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1950, 0, 'manage_upload_files_stuff', 1424956083, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1951, 0, '[object%20Object]', 1424956085, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1952, 0, 'manage_graphs', 1424960911, 'graphs/graphs_controller/manage_graphs', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1953, 0, '[object%20Object]', 1424960914, 'graphs/graphs_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1954, 0, 'manage_upload_files', 1424960948, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1955, 0, '[object%20Object]', 1424960950, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1956, 0, 'login_controller', 1424970559, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1957, 0, 'authenticate_user', 1424970634, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1958, 0, 'index', 1424970636, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1959, 0, 'index', 1424970636, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1960, 0, '[object%20Object]', 1424970644, 'dashboard/dashboard_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1961, 0, 'manage_upload_files_stuff', 1424970913, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1962, 0, '[object%20Object]', 1424970919, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1963, 0, 'manage_privileges', 1424971093, 'settings/privilege_controller/manage_privileges', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1964, 0, '[object%20Object]', 1424971096, 'settings/privilege_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1965, 0, 'manage_privilege_masters', 1424971113, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1966, 0, '[object%20Object]', 1424971115, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1967, 0, 'manage_privilege_masters', 1424971598, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1968, 0, '[object%20Object]', 1424971600, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1969, 0, 'manage_privilege_masters', 1424971617, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1970, 0, '[object%20Object]', 1424971619, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1971, 0, 'manage_upload_files_stuff', 1424972472, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1972, 0, '[object%20Object]', 1424972474, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1973, 0, 'manage_upload_files', 1424974999, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1974, 0, '[object%20Object]', 1424975004, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1975, 0, 'manage_upload_files', 1424976958, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1976, 0, '[object%20Object]', 1424976965, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1977, 0, 'manage_share', 1424976968, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1978, 0, '[object%20Object]', 1424976970, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1979, 0, 'manage_share', 1424977058, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1980, 0, '[object%20Object]', 1424977062, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1981, 0, 'manage_share', 1424977232, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1982, 0, '[object%20Object]', 1424977235, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1983, 0, 'manage_share', 1424977274, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1984, 0, '[object%20Object]', 1424977278, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1985, 0, 'manage_share', 1424977555, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1986, 0, '[object%20Object]', 1424977558, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1987, 0, 'manage_share', 1424977591, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1988, 0, '[object%20Object]', 1424977593, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1989, 0, 'manage_share', 1424977612, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1990, 0, '[object%20Object]', 1424977614, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1991, 0, 'logout', 1424977636, 'login/login_controller/logout', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1992, 0, 'index', 1424977636, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1993, 0, 'authenticate_user', 1424977753, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1994, 0, 'index', 1424977754, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1995, 0, 'index', 1424977754, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1996, 0, '[object%20Object]', 1424977756, 'dashboard/dashboard_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1997, 0, 'manage_upload_files', 1424977762, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1998, 0, '[object%20Object]', 1424977764, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(1999, 0, 'add_upload_files_view', 1424977767, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2000, 0, 'index', 1424977770, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2001, 0, 'index', 1424977815, 'upload_files/fileupload/index', '{"last_file_id":"23"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2002, 0, 'add_temp_upload_files_stuff', 1424977815, 'upload_files/upload_files_controller/add_temp_upload_files_stuff', '{"file_name":["Assignment plan - 2014 - Sem 2 (18).xlsx"]}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2003, 0, 'add_new_upload_files', 1424977817, 'upload_files/upload_files_controller/add_new_upload_files', '{"file_name":"New 7","file_description":"This is new 7","_wysihtml5_mode":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2004, 0, 'manage_upload_files', 1424977818, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2005, 0, '[object%20Object]', 1424977819, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2006, 0, 'view_profile', 1424977827, 'user/user_profile_controller/view_profile', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2007, 0, '[object%20Object]', 1424977829, 'user/user_profile_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2008, 0, 'view_profile', 1424977883, 'user/user_profile_controller/view_profile', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2009, 0, '[object%20Object]', 1424977884, 'user/user_profile_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2010, 0, 'manage_upload_files_stuff', 1424977916, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2011, 0, '[object%20Object]', 1424977918, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2012, 0, 'manage_graphs', 1424977925, 'graphs/graphs_controller/manage_graphs', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2013, 0, '[object%20Object]', 1424977927, 'graphs/graphs_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2014, 0, 'manage_share', 1424977935, 'share/share_controller/manage_share', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2015, 0, '[object%20Object]', 1424977937, 'share/share_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2016, 0, 'manage_privilege_masters', 1424977949, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2017, 0, '[object%20Object]', 1424977951, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2018, 0, 'manage_privileges', 1424977963, 'settings/privilege_controller/manage_privileges', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2019, 0, '[object%20Object]', 1424977965, 'settings/privilege_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2020, 0, 'logout', 1424977990, 'login/login_controller/logout', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2021, 0, 'index', 1424977991, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2022, 0, 'login_controller', 1425021716, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2023, 0, 'authenticate_user', 1425021760, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2024, 0, 'index', 1425021762, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2025, 0, 'index', 1425021763, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2026, 0, 'index', 1425021776, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2027, 0, 'index', 1425022253, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36');
+INSERT INTO `statistics` (`statistic_id`, `user_id`, `action`, `date`, `uri`, `post_data`, `ip`, `browser`) VALUES
+(2028, 0, 'authenticate_user', 1425022272, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2029, 0, 'index', 1425022272, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2030, 0, 'index', 1425022272, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2031, 0, 'index', 1425022274, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2032, 0, 'manage_users', 1425022278, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2033, 0, '[object%20Object]', 1425022279, 'user/user_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2034, 0, 'manage_users', 1425022379, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2035, 0, '[object%20Object]', 1425022382, 'user/user_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2036, 0, 'manage_users', 1425022444, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2037, 0, '[object%20Object]', 1425022447, 'user/user_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2038, 0, 'manage_privilege_masters', 1425022469, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2039, 0, '[object%20Object]', 1425022471, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2040, 0, 'manage_privilege_masters', 1425022869, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2041, 0, '[object%20Object]', 1425022878, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2042, 0, 'manage_privilege_masters', 1425022881, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2043, 0, '[object%20Object]', 1425022883, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2044, 0, 'manage_privileges', 1425022891, 'settings/privilege_controller/manage_privileges', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2045, 0, '[object%20Object]', 1425022893, 'settings/privilege_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2046, 0, 'add_new_privilege', 1425022925, 'settings/privilege_controller/add_new_privilege', '{"master_privilege_code":"8","privilege":"Manage Users","privilege_desc":"This is to Manage Users","privilege_hf":"MANAGE_USERS","assign_for":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2047, 0, 'add_new_privilege', 1425022925, 'settings/privilege_controller/add_new_privilege', '{"master_privilege_code":"8","privilege":"Manage Users","privilege_desc":"This is to Manage Users","privilege_hf":"MANAGE_USERS","assign_for":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2048, 0, 'manage_privileges', 1425022926, 'settings/privilege_controller/manage_privileges', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2049, 0, 'manage_privileges', 1425022927, 'settings/privilege_controller/manage_privileges', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2050, 0, '[object%20Object]', 1425022931, 'settings/privilege_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2051, 0, 'delete_privilege', 1425022943, 'settings/privilege_controller/delete_privilege', '{"id":"9"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2052, 0, 'manage_users', 1425023068, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2053, 0, '[object%20Object]', 1425023070, 'user/user_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2054, 0, 'manage_user_privileges', 1425023077, 'user_privilege/user_privilege_controller/manage_user_privileges/4', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2055, 0, 'manage_users', 1425023114, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2056, 0, '[object%20Object]', 1425023128, 'user/user_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2057, 0, 'manage_users', 1425023175, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2058, 0, '[object%20Object]', 1425023177, 'user/user_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2059, 0, 'logout', 1425023185, 'login/login_controller/logout', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36'),
+(2060, 0, 'index', 1425023186, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/40.0.2214.115 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -2048,7 +2219,7 @@ CREATE TABLE IF NOT EXISTS `system` (
   `system` varchar(100) NOT NULL,
   `dashboard_url` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`system_code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `system`
@@ -2059,7 +2230,8 @@ INSERT INTO `system` (`system_code`, `system`, `dashboard_url`) VALUES
 (3, 'Privileges', '/settings/privilege_controllers/manage_privileges'),
 (4, 'Master Privileges', '/settings/privilege_master_controller/manage_privilege_masters'),
 (6, 'Generate Graphs', '/generate_graph/generate_graph_contoller/manage_generate_graph'),
-(7, 'User Profile', '/user/user_profile_controller/view_profile');
+(7, 'User Profile', '/user/user_profile_controller/view_profile'),
+(8, 'User', '/user/user_controller/manage_users');
 
 -- --------------------------------------------------------
 
@@ -2076,7 +2248,7 @@ CREATE TABLE IF NOT EXISTS `upload_files` (
   `added_by` int(11) DEFAULT NULL,
   `added_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`file_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `upload_files`
@@ -2093,7 +2265,8 @@ INSERT INTO `upload_files` (`file_id`, `user_id`, `file_name`, `file_desc`, `del
 (19, 1, 'New 2', 'This is file new 2', '1', 1, '2015-02-26 02:13:22'),
 (20, 1, 'New 3', 'This is new 3', '1', 1, '2015-02-26 02:13:51'),
 (21, 1, 'New 4', 'This is file new 4', '1', 1, '2015-02-26 02:14:19'),
-(22, 1, 'new 6', 'This is new 6', '1', 1, '2015-02-26 04:37:48');
+(22, 1, 'new 6', 'This is new 6', '1', 1, '2015-02-26 04:37:48'),
+(23, 1, 'New 7', 'This is new 7', '1', 1, '2015-02-26 14:40:17');
 
 -- --------------------------------------------------------
 
@@ -2153,7 +2326,7 @@ CREATE TABLE IF NOT EXISTS `upload_files_stuff_temp` (
 --
 
 INSERT INTO `upload_files_stuff_temp` (`upload_file_stuff_id`, `stuff_name`, `user_id`, `del_ind`, `added_date`, `added_by`) VALUES
-(1, '2nd Year_DAA_VIVA_Metro_Schedule (21).xlsx', 1, '1', '2015-02-26 04:37:44', 1);
+(1, 'Assignment plan - 2014 - Sem 2 (18).xlsx', 1, '1', '2015-02-26 14:40:15', 1);
 
 -- --------------------------------------------------------
 

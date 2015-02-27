@@ -14,8 +14,9 @@
                     <table class="table table-hover" id="user_table" >
                         <thead>
                             <tr>                          
-                                <th>Full Name</th>                    
+                                <th>Name</th>                    
                                 <th>Email</th>
+                                <th>Designation</th>
                                 <th>Image</th>
                                 <th>Company</th>
                                 <th>Options</th>
@@ -31,6 +32,7 @@
 
                                     <td><?php echo $user->user_name; ?></td>
                                     <td><?php echo $user->user_email; ?></td>
+                                    <td><?php echo $user->user_job; ?></td>
                                     
 
 
@@ -45,6 +47,8 @@
                                             echo 'avatar.jpg';
                                         }
                                         ?>" alt="" width="50px" height="50px" /></td>
+                                    
+                                    <td><?php echo $user->user_company_name; ?></td>
 
                                     <td>
 <!--                                        <a href="<?php echo site_url(); ?>/user/user_controller/edit_user_view/<?php echo $user->user_id; ?>">
@@ -53,9 +57,9 @@
                                         <a style="cursor: pointer;"   title="Deactivate this Employee" onclick="delete_user(<?php echo $user->user_id; ?>)">
                                             <span class="label label-important">Deactivate</span>
                                         </a>
-                                        <a href="<?php echo site_url(); ?>/user_privilege/user_privilege_controller/manage_user_privileges/<?php echo $user->user_id; ?>">
+<!--                                        <a href="<?php echo site_url(); ?>/user_privilege/user_privilege_controller/manage_user_privileges/<?php echo $user->user_id; ?>">
                                             <span class="label label-warning ">Privilege</span>
-                                        </a>
+                                        </a>-->
 
                                     </td>
 
