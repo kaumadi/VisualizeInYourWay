@@ -88,7 +88,7 @@
                             </a> </li>
                     </ul>
                     <!-- BEGIN LOGO -->
-                    <a href="<?php echo site_url(); ?>/dashboard/dashboard_controller/"><img src="<?php echo base_url(); ?>application_resources/img/logo.png" class="logo" alt=""  data-src="<?php echo base_url(); ?>application_resources/img/logo.png" data-src-retina="<?php echo base_url(); ?>application_resources/img/logo2x.png" width="125" height="30"/></a>
+                    <!--<a href="<?php echo site_url(); ?>/dashboard/dashboard_controller/"><img src="<?php echo base_url(); ?>application_resources/img/logo.png" class="logo" alt=""  data-src="<?php echo base_url(); ?>application_resources/img/logo.png" data-src-retina="<?php echo base_url(); ?>application_resources/img/logo2x.png" width="125" height="30"/></a>-->
                     <!-- END LOGO -->
                     <ul class="nav pull-right notifcation-center">
                         <li class="dropdown" id="header_task_bar"> <a href="<?php echo site_url(); ?>/dashboard/dashboard_controller/" class="dropdown-toggle active" data-toggle="">
@@ -368,32 +368,33 @@
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_event.js" type="text/javascript"></script>-->
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_attendance.js" type="text/javascript"></script>-->
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>
+<!--             <script src="<?php echo base_url(); ?>application_resources/custom_js/cpexcel.js" type="text/javascript"></script>-->
+<!--            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/ods.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/shim.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsx.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker2.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker1.js" type="text/javascript"></script>-->-->
+ 
+
             <!-- END CUSTOM JS -->
-<!--           <script src="<?php echo base_url(); ?>application_resources/custom_js/cpexcel.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/ods.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/shim.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsx.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker2.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker1.js" type="text/javascript"></script>-->
-      
+<!--       
 
 
 
-          <script src="<?php echo base_url(); ?>application_resources/custom_js/cpexcel.js" type="text/javascript"></script>-->
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/ods.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/shim.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsx.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker2.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/xlsxworker1.js" type="text/javascript"></script>
-
-
+       
             <!-- BEGIN CORE TEMPLATE JS -->
  <script src="<?php echo base_url(); ?>application_resources/js/moment.min.js" type="text/javascript"></script>
             <!--<script src="<?php echo base_url(); ?>application_resources/js/fullcalendar.min.js" type="text/javascript"></script>-->
+<!--<script src="<?php echo base_url(); ?>application_resources/js/cpexcel.js" type="text/javascript"></script>-->
+<!--            <script src="<?php echo base_url(); ?>application_resources/js/jszip.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/js/ods.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/js/shim.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/js/xlsx.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/js/xlsxworker2.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/js/xlsxworker.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/js/xlsxworker1.js" type="text/javascript"></script>-->-->
 
             <!-- END PAGE LEVEL PLUGINS -->
             <!-- BEGIN CORE TEMPLATE JS -->
