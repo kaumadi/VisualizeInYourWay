@@ -1,8 +1,4 @@
-<!--
-
-
-
-<div class="page-title">	
+<!--<div class="page-title">	
     <h3><?php echo $heading; ?></h3>		
 </div>
 <!DOCTYPE html>
@@ -54,12 +50,7 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
  <script type="text/javascript" src="application_resources/custom_js/xlsx.js"></script>
  <script type="text/javascript" src="application_resources/custom_js/ods.js"></script>
 
-<script src="cpexcel.js"></script>
-<script src="shim.js"></script>
-<script src="jszip.js"></script>
-<script src="xlsx.js"></script>
- uncomment the next line here and in xlsxworker.js for ODS support 
-<script src="./ods.js"></script>
+
 <script>
 var rABS = typeof FileReader !== "undefined" && typeof FileReader.prototype !== "undefined" && typeof FileReader.prototype.readAsBinaryString !== "undefined";
 if(!rABS) {
@@ -349,13 +340,13 @@ if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
 
 <script type="text/javascript">
     $('#select_data_type_parent_menu').addClass('active open');
-</script>-->
+</script>
 
 
 
 <!DOCTYPE html>
-<!-- xlsx.js (C) 2013-2014 SheetJS http://sheetjs.com -->
-<!-- vim: set ts=2: -->
+ xlsx.js (C) 2013-2014 SheetJS http://sheetjs.com 
+ vim: set ts=2: 
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>JS-XLSX Live Demo</title>
@@ -381,9 +372,9 @@ Output Format:
 <option value="json"> JSON</option>
 <option value="form"> FORMULAE</option>
 </select><br />
-<!--<input type="radio" name="format" value="csv" checked> CSV<br>
+<input type="radio" name="format" value="csv" checked> CSV<br>
 <input type="radio" name="format" value="json"> JSON<br>
-<input type="radio" name="format" value="form"> FORMULAE<br> -->
+<input type="radio" name="format" value="form"> FORMULAE<br> 
 
 <div id="drop">Drop an XLSX / XLSM / XLSB / ODS file here to see sheet data</div>
 <p><input type="file" name="xlfile" id="xlf" /> ... or click here to select a file</p>
@@ -395,8 +386,8 @@ Use Transferrables: (when available) <input type="checkbox" name="xferable" chec
 Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked><br />
 <pre id="out"></pre>
 <br />
-<!-- uncomment the next line here and in xlsxworker.js for encoding support -->
-<!--<script src="dist/cpexcel.js"></script>-->
+ uncomment the next line here and in xlsxworker.js for encoding support 
+<script src="dist/cpexcel.js"></script>
 <script src="<?php echo base_url(); ?>application_resources/js/shim.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>application_resources/js/jszip.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>application_resources/js/xlsx.js" type="text/javascript"></script>
@@ -405,11 +396,11 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
 <script src="<?php echo base_url(); ?>application_resources/js/xlsxworker1.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>application_resources/js/xlsxworker2.js" type="text/javascript"></script>
 
-<!--<script src="shim.js"></script>
+<script src="shim.js"></script>
 <script src="jszip.js"></script>
-<script src="xlsx.js"></script>-->
-<!-- uncomment the next line here and in xlsxworker.js for ODS support -->
-<!--<script src="ods.js"></script>-->
+<script src="xlsx.js"></script>
+ uncomment the next line here and in xlsxworker.js for ODS support 
+<script src="ods.js"></script>
 <script>
 var rABS = typeof FileReader !== "undefined" && typeof FileReader.prototype !== "undefined" && typeof FileReader.prototype.readAsBinaryString !== "undefined";
 if(!rABS) {
@@ -465,7 +456,7 @@ function xlsxworker_noxfer(data, cb) {
 }
 
 function xlsxworker_xfer(data, cb) {
-	var worker = new Worker(rABS ? 'xlsxworker2.js' : 'xlsxworker1.js');
+	var worker = new Worker(rABS ? './xlsxworker2.js' : './xlsxworker1.js');
 	worker.onmessage = function(e) {
 		switch(e.data.t) {
 			case 'ready': break;
@@ -637,4 +628,84 @@ if(xlf.addEventListener) xlf.addEventListener('change', handleFile, false);
 
 <script type="text/javascript">
     $('#select_data_type_parent_menu').addClass('active open');
+</script>-->
+<div class="page-title">	
+    <h3><?php echo $heading; ?></h3>		
+</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Mr. Data Converter</title>
+  <meta name="author" content="Shan Carter">
+  <!-- Date: 2010-08-26 -->
+  <link rel="stylesheet" href="css/converter.css" type="text/css" media="screen" title="no title" charset="utf-8">
+<script src="<?php echo base_url(); ?>application_resources/js/CSVParser.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>application_resources/js/DataGridRenderer.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>application_resources/js/converter.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>application_resources/js/Controller.js" type="text/javascript"></script>
+
+<!--  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/CSVParser.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/DataGridRenderer.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/converter.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/Controller.js" type="text/javascript" charset="utf-8"></script>-->
+
+</head>
+<body>
+  <div id='base'>
+    <div id='header'>
+      <div id="description">
+        <h1>Mr. Data Converter</h1>
+        <p>I will convert your Excel data into one of several web-friendly formats, including HTML, JSON and XML.</p>
+        <p>Fork me on <a href="http://github.com/shancarter/Mr-Data-Converter">github</a>.</p>
+      </div>
+      <div id='settings'>
+        <h3>Settings</h3>
+        <form id='settingsForm'>
+           <p>Delimiter:
+
+             <label><input class="settingsElement" type="radio" name="delimiter" id='delimiterAuto'   value="auto" checked/> Auto</label>
+             <label><input class="settingsElement" type="radio" name="delimiter" id='delimiterComma'  value="comma" /> Comma</label>
+             <label><input class="settingsElement" type="radio" name="delimiter" id='delimiterTab'    value="tab" /> Tab</label>
+            </p>
+          <p>Decimal Sign:
+
+             <label><input class="settingsElement" type="radio" name="decimal" id='decimalDot'   value="dot" checked/> Dot</label>
+             <label><input class="settingsElement" type="radio" name="decimal" id='decimalComma'  value="comma" /> Comma</label>
+            </p>
+          <p><label><input class="settingsElement" type="checkbox" name="" value="" id="headersProvidedCB" checked /> First row is the header</label></p>
+          <div class="settingsGroup">
+            <p>Transform: <label><input class="settingsElement" type="radio" name="headerModifications" value="downcase" id='headersDowncase' /> downcase</label>
+            <label><input class="settingsElement" type="radio" name="headerModifications" id='headersUpcase' value="upcase" /> upcase</label>
+            <label><input class="settingsElement" type="radio" name="headerModifications" id='headersNoTransform' value="none" checked /> none</label></p>
+          </div>
+
+          <p><label><input class="settingsElement" type="checkbox" name="some_name" value="" id="includeWhiteSpaceCB" checked /> Include white space in output</label></p>
+          <div class="settingsGroup">
+            <p>Indent with: <label><input class="settingsElement" type="radio" name="indentType" value="tabs" id='includeWhiteSpaceTabs'/> tabs</label> <label><input class="settingsElement" type="radio" name="indentType" value="spaces" id='includeWhiteSpaceSpaces' checked/> spaces</label></p>
+          </div>
+
+
+        </form>
+
+
+      </div>
+    </div>
+
+
+
+    <div id='converter' class=''>
+
+    </div>
+
+  </div>
+
+
+</body>
+</html>
+<script type="text/javascript">
+    $('#select_file_and_data_sets_parent_menu').addClass('active open');
 </script>

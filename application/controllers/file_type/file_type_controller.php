@@ -8,20 +8,20 @@ class file_type_controller extends CI_Controller {
         parent::__construct();
 
 
-        $this->load->model('upload_files_stuff/upload_files_stuff_model');
-        $this->load->model('upload_files_stuff/upload_files_stuff_service');
+//        $this->load->model('upload_files_stuff/upload_files_stuff_model');
+//        $this->load->model('upload_files_stuff/upload_files_stuff_service');
     }
 
     function manage_upload_files_stuff() {
 
-        $upload_files_stuff_service = new upload_files_stuff_service();
+//        $upload_files_stuff_service = new upload_files_stuff_service();
 
 
         $data['heading'] = "select your file ";
-        $data['upload_file_stuff'] = $upload_files_stuff_service->get_all_upload_files_stuff($this->session->userdata('USER_FILE_ID'));
+//        $data['upload_file_stuff'] = $upload_files_stuff_service->get_all_upload_files_stuff($this->session->userdata('USER_FILE_ID'));
 
         $partials = array('content' => 'file_type/manage_file_type_view');
-        $this->template->load('template/main_template', $partials, $data);
+        $this->template->load('template/main_template', $partials,$data);
     }
 
 //    function add_new_file_type() {
