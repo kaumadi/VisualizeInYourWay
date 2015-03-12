@@ -399,7 +399,8 @@
             <script src="<?php echo base_url(); ?>application_resources/js/DataGridRenderer.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/js/converter.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/js/Controller.js" type="text/javascript"></script>
-           
+            <script src="<?php echo base_url(); ?>application_resources/js/jquery.js" type="text/javascript"></script>
+
             <!-- END PAGE LEVEL PLUGINS -->
             <!-- BEGIN CORE TEMPLATE JS -->
             <script src="<?php echo base_url(); ?>application_resources/js/core.js" type="text/javascript"></script>
