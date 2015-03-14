@@ -20,6 +20,20 @@ class User_service extends CI_Model {
         $this->db->where('user_id', $user_model->get_user_id());
         return $this->db->update('user', $data);
     }
+    
+    
+    
+       function update_user_lastlogin_date($user_model) {
+
+        $data = array(
+            'updated_date' => $user_model->get_current_date(),
+        );
+
+        $this->db->where('user_id', $user_model->get_user_id());
+        return $this->db->update('user', $data);
+    }
+    
+    
 
     //update online status
     function update_online_status($user_model) {

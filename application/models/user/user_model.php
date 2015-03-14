@@ -17,6 +17,7 @@ class User_model extends CI_Model {
     var $added_date;
     var $updated_by;
     var $updated_date;
+    var $current_date;
 
     function __construct() {
         parent::__construct();
@@ -144,6 +145,12 @@ class User_model extends CI_Model {
     public function set_updated_date($updated_date) {
         $this->updated_date = $updated_date;
     }
+
+    public function get_current_date() {
+        $this->current_date= new DateTime();
+        return $this->current_date;
+    }
+
 
 }
 ?>
