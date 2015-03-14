@@ -136,6 +136,7 @@ class Login_controller extends CI_Controller {
 //                $this->session->set_userdata('USER_TYPE', $logged_user_details->user_type);
                 $this->session->set_userdata('USER_ONLINE', 'Y');
  $this->session->set_userdata('USER_LOGGED_IN', 'TRUE');
+ //get system date & save it in variable then update the updated_by colun of user table for relevant user
  echo 1;
                 
                 
