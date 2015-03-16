@@ -23,4 +23,17 @@ class file_data_set_controller extends CI_Controller {
         $partials = array('content' => 'file_type/manage_file_type_view');
         $this->template->load('template/main_template', $partials,$data);
     }
-}
+    function add_new_data_set() {
+        
+
+            $data_set_model = new Data_set_model();
+            $data_set_service = new Company_service();
+
+            $data_set_model->set_company_code($this->input->post('company_code', TRUE));
+            $data_set_model->set_company_name($this->input->post('company_name', TRUE));
+            
+            
+
+            echo $company_service->add_new_company($company_model);
+       
+    }}
