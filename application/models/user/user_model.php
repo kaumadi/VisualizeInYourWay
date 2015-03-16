@@ -147,9 +147,13 @@ class User_model extends CI_Model {
     }
 
     public function get_current_date() {
-        $this->current_date= new DateTime();
+        //$this->current_date= new DateTime();
         return $this->current_date;
     }
+    public function set_current_date($current_date) {
+        $this->current_date = $current_date;
+    }
+
 
 
 }
