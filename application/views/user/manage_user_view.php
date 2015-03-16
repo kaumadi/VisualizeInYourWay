@@ -19,7 +19,7 @@
                                 <th>Designation</th>
                                 <th>Image</th>
                                 <th>Company</th>
-                                <th>Options</th>
+                               
 
                             </tr>
                         </thead>
@@ -54,9 +54,7 @@
 <!--                                        <a href="<?php echo site_url(); ?>/user/user_controller/edit_user_view/<?php echo $user->user_id; ?>">
                                             <span class="label label-info">Edit</span>
                                         </a>-->
-                                        <a style="cursor: pointer;"   title="Deactivate this Employee" onclick="delete_user(<?php echo $user->user_id; ?>)">
-                                            <span class="label label-important">Deactivate</span>
-                                        </a>
+                                        
 <!--                                        <a href="<?php echo site_url(); ?>/user_privilege/user_privilege_controller/manage_user_privileges/<?php echo $user->user_id; ?>">
                                             <span class="label label-warning ">Privilege</span>
                                         </a>-->
