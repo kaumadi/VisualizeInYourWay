@@ -33,11 +33,15 @@ Chart.js has a ton of customisation features for line graphs, along with support
   Series B:
   90
 </div></div></div>
-    
-    <button class="btn btn-primary btn-cons" id="share_btn" type="button">
+    <a href="#" class="btn-social"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="btn-social"><i class="fa fa-twitter"></i> </a>
+    <a href="#" class="btn-social"><i class="fa fa-google-plus"></i> </a>
+    <a href="#" class="btn-social"><i class="fa fa-tumblr"></i> </a>
+          
+<!--    <button class="btn btn-primary btn-cons" id="share_btn" type="button">
                                     Share
                                 </button>
-    
+    -->
     
            
                 <button class="btn btn-primary" type="button" id="graph_print_btn"><i class="fa fa-print"></i></button>
