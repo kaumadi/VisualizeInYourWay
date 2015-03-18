@@ -14,18 +14,8 @@ class User_profile_controller extends CI_Controller {
 
             $this->load->model('user/user_model');
             $this->load->model('user/user_service');
-//
-//            $this->load->model('task/task_model');
-//            $this->load->model('task/task_service');
-//
-//            $this->load->model('project/project_model');
-//            $this->load->model('project/project_service');
-//
-//            $this->load->model('user_skill/user_skill_model');
-//            $this->load->model('user_skill/user_skill_service');
-//            
-//            $this->load->model('skill_category/skill_category_model');
-//            $this->load->model('skill_category/skill_category_service');
+
+
       // }
     }
 
@@ -36,9 +26,6 @@ class User_profile_controller extends CI_Controller {
     function view_profile() {
 
         $user_service = new User_service();
-
-
-
 
         $data['heading'] = "My Profile";
         $data['user_detail'] = $user_service->get_user_by_email($this->session->userdata('USER_EMAIL'));
@@ -59,7 +46,6 @@ class User_profile_controller extends CI_Controller {
 //        if ($perm) {
 
         $user_service = new User_service();
-
 
         $data['heading'] = "Edit User Details";
         $data['user_detail'] = $user_service->get_user_by_id($user_id);

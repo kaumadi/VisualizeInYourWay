@@ -305,10 +305,10 @@ class User_service extends CI_Model {
         return $result;
     }
 
-    function change_user_pro_pic($user_model) {
+    function change_user_pro_pic($usermodel) {
 
-        $data = array('user_avatar' => $user_model->get_user_avatar());
-        $this->db->where('user_id', $user_model->get_user_id());
+        $data = array('user_avatar' => $usermodel->get_user_avatar());
+        $this->db->where('user_id', $usermodel->get_user_id());
         $result = $this->db->update('lcs_user', $data);
         return $result;
     }
