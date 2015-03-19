@@ -63,7 +63,7 @@ class User_privileges_service extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('user_privileges');
-        $this->db->where('user_code', $user_privilege_model->get_user_code());
+        $this->db->where('user_id', $user_privilege_model->get_user_id());
         $this->db->where('privilege_code', $user_privilege_model->get_privilege_code());
         $query = $this->db->get();
         $a = 0;

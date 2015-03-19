@@ -19,7 +19,7 @@
                                         action: '<?PHP echo site_url(); ?>/user/user_profile_controller/upload_user_cover_pic',
                                         name: 'uploadfile',
                                         onSubmit: function(file, ext) {
-                                            if (!(ext && /^(sql|xlsx)$/.test(ext))) {
+                                            if (!(ext && /^(jpg|png|jpeg|gif)$/.test(ext))) {
                                                 // extension is not allowed 
                                                 status.text('Only JPG, PNG or GIF files are allowed');
                                                 return false;
@@ -96,7 +96,7 @@
                         action: '<?PHP echo site_url(); ?>/user/user_profile_controller/upload_user_avatar',
                         name: 'uploadfile2',
                         onSubmit: function(file, ext) {
-                            if (!(ext && /^(sql|xlsx)$/.test(ext))) {
+                            if (!(ext && /^(jpg|png|jpeg|gif)$/.test(ext))) {
                                 // extension is not allowed 
                                 status.text('Only JPG, PNG or GIF files are allowed');
                                 return false;
@@ -169,7 +169,7 @@
                         </div>
 
                     </div>
-                </div>
+                
 
                 <!-- loading user's details-->
 
@@ -228,7 +228,7 @@
                                             <script src="<?php echo base_url(); ?>application_resources/plugins/jquery-morris-chart/js/morris.min.js"></script>-->
 
 
-
+                </div>
                 </div>				
             </div>
 <div class="col-md-12">

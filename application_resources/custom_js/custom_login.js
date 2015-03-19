@@ -45,15 +45,18 @@ $(document).ready(function() {
     var $validator = $("#commentForm").validate({
         rules: {
             
-            txtFirstName: {
+            txtUserName: {
                 required: true,
                 minlength: 3
             },
-            txtLastName: {
+            
+             txtUserEmail: {
                 required: true,
+                email: true,
                 minlength: 3
+
             },
-            txtPassword: {
+            txtUserPassword: {
                 required: true,
                 minlength: 3
             },
@@ -61,12 +64,17 @@ $(document).ready(function() {
                 minlength: 3,
                 equalTo: "#txtPassword"
             },
-            txtEmail: {
+            
+            txtUserJob: {
                 required: true,
-                email: true,
                 minlength: 3
-
+            },
+            
+            txtUserCompanyName: {
+                required: true,
+                minlength: 3
             }
+            
            
 
         },

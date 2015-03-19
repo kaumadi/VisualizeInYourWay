@@ -14,6 +14,8 @@ class User_controller extends CI_Controller {
 
             $this->load->model('user/user_model');
             $this->load->model('user/user_service');
+            
+            
 
             $this->load->library('email');
 
@@ -39,46 +41,48 @@ class User_controller extends CI_Controller {
 
     /* this function use to add new user */
 
-    function add_new_user() {
-//        $perm = Access_controllerservice :: checkAccess('ADD_EMPLOYEE');
-//        if ($perm) {
+    function user_registration() {
+      
 
-        $user_model = new user_model();
-        $user_service = new user_service();
+        
+
+        $user_model = new User_model();
+        $user_service = new User_service();
         $privilege_master_service = new Privilege_master_service();
         $privilege_service = new Privilege_service();
-        $user_privilege_model = new User_privileges_model();
-        $user_privilege_service = new User_privileges_service();
+        $user_privilege_model = new Employee_privileges_model();
+        $user_privilege_service = new Employee_privileges_service();
 
-        $name = ucfirst($this->input->post('user_name', TRUE));
-        $email = $this->input->post('user_email', TRUE);
+        $user_model->set_user_name($this->input->post('txtUserName', TRUE));
+        $user_model->set_user_email($this->input->post('txtUserEmail', TRUE));
+        $user_model->set_user_password(md5($this->input->post('txtUserPassword', TRUE)));
+        $user_model->set_user_job($this->input->post('txtUserJob', TRUE));
+        $user_model->set_user_comapny_name($this->input->post('txtUserCompanyName', TRUE));
+        $user_model->set_account_activation_code(md5($token));
+        $user_model->set_del_ind('2'); //account not activated
+        $user_model->set_added_date(date("Y-m-d H:i:s"));
+       
+
+
+
+
+        $user_id = $user_service->add_new_user_registration($user_model);
+
+      
+
+        $name = ucfirst($this->input->post('txtUserName', TRUE));
+        $email = $this->input->post('txtUserEmail', TRUE);
         $token = $this->generate_random_string(); //generate account activation token
 
-       // $user_model->set_user_id($this->input->post('user_no', TRUE));
-        $user_model->set_user_name($this->input->post('user_name', TRUE));
-        //$user_model->set_user_lname($this->input->post('user_lname', TRUE));
-        $user_model->set_user_password(md5($this->input->post('user_password', TRUE)));
-        $user_model->set_user_email($this->input->post('user_email', TRUE));
-        //$user_model->set_user_type($this->input->post('user_type', TRUE));
-        //$user_model->set_user_wages_category($this->input->post('wages_category', TRUE));
-        //$user_model->set_user_contract($this->input->post('user_contract', TRUE));
-        $user_model->set_user_avatar('default_cover_pic.png');
-        //$user_model->set_company_code($this->session->userdata('EMPLOYEE_COMPANY_CODE'));
-        $user_model->set_account_activation_code($this->config->item('USER'));
-        $user_model->set_user_job($this->input->post('user_job',TRUE));
-        $user_model->set_company_name($this->input->post('company_name',TRUE));
-        $user_model->set_del_ind('1');
-        $user_model->set_added_by($this->session->userdata('USER_ID'));
-        $user_model->set_added_date(date("Y-m-d H:i:s"));
+        
 
-
-        $user_id = $user_service->add_user($user_model);
+        
 
         //assign default privileges in the beginning 
         $privilege_masters = $privilege_master_service->get_available_master_privileges();
 
         foreach ($privilege_masters as $privilege_master) {
-            //$privileges = $privilege_service->get_privileges_by_master_privilege_assigned_for($privilege_master->privilege_master_code, $this->config->item('COMPANY_OWNER'));
+            $privileges = $privilege_service->get_privileges_by_master_privilege_assigned_for($privilege_master->privilege_master_code, $this->config->item('ADMIN'));
             foreach ($privileges as $privilege) {
 
                 $user_privilege_model->set_user_id($user_id);
@@ -95,8 +99,8 @@ class User_controller extends CI_Controller {
 
              $data['name'] = $name;
             $data['link'] = $link;
-            $data['pasword'] = $this->input->post('txtPassword', TRUE);
-            $data['user_name'] = $this->input->post('txtEmail', TRUE);
+            $data['pasword'] = $this->input->post('txtUserPassword', TRUE);
+            $data['user_name'] = $this->input->post('txtUserEmail', TRUE);
 
 
 
@@ -174,7 +178,7 @@ class User_controller extends CI_Controller {
         //$user_model->set_user_contract($this->input->post('user_contract', TRUE));
         $user_model->set_user_avatar($this->input->post('user_avatar', TRUE));
         $user_model->set_user_job($this->input->post('user_job',TRUE));
-        $user_model->set_company_name($this->input->post('company_name',TRUE));
+        $user_model->set_user_name($this->input->post('user_name',TRUE));
         $user_model->set_updated_date(date("Y-m-d H:i:s"));
 
         $user_model->set_user_id($this->input->post('user_id', TRUE));

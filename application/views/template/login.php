@@ -160,31 +160,42 @@
                                         <div class="tab-pane" id="tab2"> <br>
 
                                             <br>
-                                            <div class="row form-row">
+<!--                                            <div class="row form-row">
                                                 <div class="col-md-12">
                                                     <input type="text" placeholder="First Name" class="form-control no-boarder " name="txtFirstName" id="txtFirstName">
                                                 </div>
-                                            </div>
+                                            </div>-->
                                             <div class="row form-row">
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Last Name" class="form-control no-boarder " name="txtLastName" id="txtLastName">
+                                                    <input type="text" placeholder=" Name" class="form-control no-boarder " name="txtUserName" id="txtUserName">
                                                 </div>
                                             </div>
                                             <div class="row form-row">
                                                 <div class="col-md-12">
-                                                    <input type="password" placeholder="Password" class="form-control no-boarder " name="txtPassword" id="txtPassword">
+                                                    <input type="text" placeholder="Email, This will be used as login" class="form-control no-boarder " name="txtUserEmail" id="txtUserEmail">
                                                 </div>
                                             </div>
                                             <div class="row form-row">
                                                 <div class="col-md-12">
-                                                    <input type="password" placeholder="Confirm Password" class="form-control no-boarder " name="txtConfirmPassword" id="txtConfirmPassword">
+                                                    <input type="password" placeholder="Password" class="form-control no-boarder " name="txtUserPassword" id="txtUserPassword">
                                                 </div>
                                             </div>
                                             <div class="row form-row">
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Email, This will be used as login" class="form-control no-boarder " name="txtEmail" id="txtEmail">
+                                                    <input type="password" placeholder="Confirm Password" class="form-control no-boarder " name="txtUserConfirmPassword" id="txtUserConfirmPassword">
                                                 </div>
                                             </div>
+                                            <div class="row form-row">
+                                                <div class="col-md-12">
+                                                    <input type="text" placeholder=" Job" class="form-control no-boarder " name="txtUserJob" id="txtUserJob">
+                                                </div>
+                                            </div>
+                                            <div class="row form-row">
+                                                <div class="col-md-12">
+                                                    <input type="text" placeholder="Company" class="form-control no-boarder " name="txtUserCompanyName" id="txtUserCompanyName">
+                                                </div>
+                                            </div>
+                                            
                                             
                                             <div class="row form-row">
                                                   <div class="col-md-12">
