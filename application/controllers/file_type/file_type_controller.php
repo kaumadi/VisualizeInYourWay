@@ -8,20 +8,25 @@ class file_type_controller extends CI_Controller {
         parent::__construct();
 
 
-//        $this->load->model('upload_files_stuff/upload_files_stuff_model');
-//        $this->load->model('upload_files_stuff/upload_files_stuff_service');
+        $this->load->model('upload_files_stuff/upload_files_stuff_model');
+        $this->load->model('upload_files_stuff/upload_files_stuff_service');
+        
+        $this->load->model('data_set/data_set_model');
+        $this->load->model('data_set/data_set_service');
     }
 
     function manage_upload_files_stuff() {
 
-//        $upload_files_stuff_service = new upload_files_stuff_service();
+        $upload_files_stuff_service = new Upload_files_stuff_service();
+        $data_set_service = new Data_set_service();
+        $data['heading'] = "Select File and Data set";
 
+        $data['file_types'] = $upload_files_stuff_service->get_all_upload_files_stuff();
 
-        $data['heading'] = "select your file ";
-//        $data['upload_file_stuff'] = $upload_files_stuff_service->get_all_upload_files_stuff($this->session->userdata('USER_FILE_ID'));
+        $data['data_sets'] = $data_set_service->get_all_data_sets();
 
         $partials = array('content' => 'file_type/manage_file_type_view');
-        $this->template->load('template/main_template', $partials,$data);
+        $this->template->load('template/main_template', $partials, $data);
     }
 
 //    function add_new_file_type() {
@@ -45,7 +50,6 @@ class file_type_controller extends CI_Controller {
 //        echo $data_set_service->add_new_data_set($data_set_model);
 //        echo $upload_files_service->add_new_upload_files($upload_files_model);
 //    }
-
 //    function edit_file_type() {
 //
 //        $data_set_model = new Data_set_model();
@@ -66,7 +70,6 @@ class file_type_controller extends CI_Controller {
 //        echo $data_set_service->update_data_set($data_set_model);
 //        echo $upload_files_service->update_upload_files($upload_files_model);
 //    }
-
 //    function delete_file_type() {
 //
 //
@@ -97,22 +100,20 @@ class file_type_controller extends CI_Controller {
         ?>
         <?php
     }
-    
-    function get_file_for_filter() {
 
-//        $data_set_model = new Data_set_model();
-//        $data_set_service = new Data_set_service();
-        $upload_files_service = new Upload_files_service();
-        $upload_files_model = new Upload_files_model();
+    function get_files_for_filter() {
 
-        $file_id = $this->input->post('file_id');
-        $upload_files_model->set_file_id($file_id);
+        $upload_files_stuff_model = new Upload_files_stuff_model();
+        $upload_files_stuff_service = new Upload_files_stuff_service();
 
-        $files = $upload_files_service->get_upload_files_by_id($upload_files_model);
+        $upload_file_stuff_id = $this->input->post('upload_file_stuff_id');
+        $upload_files_stuff_model->set_upload_file_stuff_id($upload_file_stuff_id);
+
+        $file_types = $upload_files_stuff_service->get_all_upload_files_stuff($upload_files_stuff_model);
         ?>
-        <option value="">-- Select File --</option>
-        <?php foreach ($files as $file) { ?>
-            <option value="<?php echo $file->file_id ?>"><?php echo $file->file_name; ?></option>
+        <option value="">-- Select File Type --</option>
+        <?php foreach ($file_types as $file_type) { ?>
+            <option value="<?php echo $file_type->upload_file_stuff_id ?>"><?php echo $file_type->stuff_name; ?></option>
             <?php
         }
         ?>
