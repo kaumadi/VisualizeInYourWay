@@ -561,8 +561,7 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
 
 
 
-
---><script type="text/javascript">
+<script type="text/javascript">
     $('#select_data_type_parent_menu').addClass('active open');
 </script>
 
