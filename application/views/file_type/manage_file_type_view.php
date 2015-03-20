@@ -504,7 +504,7 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <form id="add_employee_skill_form" name="add_file_type_form">
                             <div class="form-group">
-                                <label class="form-label">File Type</label>
+                                <label class="form-label">File</label>
                                 <span style="color: red">*</span>                       
 
                                 <div class="input-with-icon  right">                                       
