@@ -28,6 +28,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>application_resources/plugins/jquery-ricksaw-chart/css/rickshaw.css" type="text/css" media="screen" >
         <link rel="stylesheet" href="<?php echo base_url(); ?>application_resources/plugins/jquery-morris-chart/css/morris.css" type="text/css" media="screen">
         <link href="<?php echo base_url(); ?>application_resources/plugins/jquery-isotope/isotope.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application_resources/plugins/twitter-facebook-google-plusone-share.2.4/twitter-facebook-google-plusone-share/tfg_style" />
 
         
         <link href="<?php echo base_url(); ?>application_resources/plugins/jquery-datatable/css/jquery.dataTables.css" rel="stylesheet" type="text/css"/>

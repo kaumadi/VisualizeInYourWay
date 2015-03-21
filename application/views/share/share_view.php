@@ -1,6 +1,7 @@
 <div class="page-title">	
     <h3><?php echo $heading; ?></h3>		
 </div>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>application_resources/plugins/twitter-facebook-google-plusone-share.2.4/twitter-facebook-google-plusone-share/tfg_style" />
 
 <div class="col-md-12">
 <div class="grid simple">
@@ -36,7 +37,6 @@ Chart.js has a ton of customisation features for line graphs, along with support
     <a href="#" class="btn-social"><i class="fa fa-facebook"></i></a>
     <a href="#" class="btn-social"><i class="fa fa-twitter"></i> </a>
     <a href="#" class="btn-social"><i class="fa fa-google-plus"></i> </a>
-    <a href="#" class="btn-social"><i class="fa fa-tumblr"></i> </a>
           
 <!--    <button class="btn btn-primary btn-cons" id="share_btn" type="button">
                                     Share
