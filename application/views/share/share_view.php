@@ -58,17 +58,18 @@ Chart.js has a ton of customisation features for line graphs, along with support
 </div>
 </div>-->
 <div>
-    <img src="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png"  alt="" data-src="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" data-src-retina="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" style="width: 100%;" />
+    <img src="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" data-src-retina="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" style="width: 100%;" />
 </div>
 <div>
     
 </div>
 <div>
     <a type="button" id="twiiter_btn" class="btn btn-success" href="https://twitter.com/intent/tweet?text=SVG `use` with External Source&amp;url=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Twitter</a>  
-<a type="button" id="facebook_btn" class="btn btn-info" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Facebook</a>
+<a type="button" id="facebook_btn" class="btn btn-info" href="https://www.facebook.com/sharer.php?u=<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png">Facebook</a>
 <a type="button" id="google+_btn" class="btn btn-danger" href="https://plus.google.com/share?url=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Google+</a>
 </div>
 
 <script type="text/javascript">
     $('#share_and_print_parent_menu').addClass('active open');
 </script>
+s
