@@ -64,11 +64,16 @@ Chart.js has a ton of customisation features for line graphs, along with support
     
 </div>
 <div>
-    <a type="button" id="twiiter_btn" class="btn btn-success" href="https://twitter.com/intent/tweet?text=SVG `use` with External Source&amp;url=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Twitter</a>  
-<a type="button" id="facebook_btn" class="btn btn-info" href="https://www.facebook.com/sharer.php?u=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Facebook</a>
-<a type="button" id="google+_btn" class="btn btn-danger" href="https://plus.google.com/share?url=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Google+</a>
-                <button class="btn btn-primary" type="button" id="graph_print_btn"><i class="fa fa-print"></i></button>
 
+<a href="http://www.facebook.com/sharer.php?u=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share" role="button" onclick=" _gaq.push(['_trackSocial', 'facebook', 'send', 'http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share']);window.open(this.href,'facebook','toolbar=0,status=0,width=480,height=420');return false;" title="Share this article in Facebook" class="btn btn-info"><i class="icon-facebook"></i> <span class="hidden-phone">Facebook</span></a>
+<a href="http://twitter.com/share?url=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share" role="button" onclick="_gaq.push(['_trackSocial', 'twitter', 'tweet', 'http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share']);window.open(this.href,'twitter','toolbar=0,status=0,width=480,height=360');return false;" title="Share this article in Twitter" class="btn btn-success"><i class="icon-twitter"></i> <span class="hidden-phone">Twitter</span></a>
+<a type="button" id="google+_btn" class="btn btn-danger" href="https://plus.google.com/share?url=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Google+</a>
+
+
+</div>
+<div>
+    <form><input type="button" id="print_btn" value=" Print " class="btn btn-primary"
+onclick="window.print();return false;" /></form>
 </div>
 
 <script type="text/javascript">
