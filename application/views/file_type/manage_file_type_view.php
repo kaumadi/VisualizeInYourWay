@@ -554,7 +554,7 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
                                                             </button>
                                                             <a href="<?php echo site_url(); ?>/file_type/file_type_controller/manage_upload_files_stuff" class="btn btn-white btn-cons" type="button">Cancel</a>
                                                         </div>-->
-
+<!--
                         </form>
                     </div>
                 </div>

@@ -117,16 +117,17 @@ function parseData() {
                     <tr>
                   
                
-                <th class="text-center" style="width:70%">Select Graph</th>
-                <th class="text-center" style="width:30%"></th>
+                <th class="text-center" style="width:50%">Select Graph</th>
+                <th class="text-center" style="width:50%"></th>
+                   
                 </tr>
                 </thead>
                 <tbody>
                     <tr>
                         
                         <td class="text-right">
-                            <button type="Button" id ="bubble_id"><img src="<?php echo base_url(); ?>application_resources/img/graph_images/Bubble Chart.png" style="width: 40%; hight:50%" /></button>
-                                                    
+                            <img src="<?php echo base_url(); ?>application_resources/img/graph_images/Bubble Chart.png" style="width: 50%;" />
+                               <button type="button" class="btn btn-primary btn-cons" id="bubble_id">Bubble Chart</button>                     
 
                         </td>
                         <td class="text-center">
