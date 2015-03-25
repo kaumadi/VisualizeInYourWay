@@ -43,7 +43,7 @@
                 return false;" title="Share this article in Twitter" class="btn btn-success"><i class="icon-twitter"></i> <span class="hidden-phone">Twitter</span></a>
         <a type="button" id="google+_btn" class="btn btn-danger" href="https://plus.google.com/share?url=http://localhost/VisualizeInYourWay-sliit/VisualizeInYourWay/index.php/share/share_controller/manage_share">Google+</a>
         
-        <a <form><input type="button" id="print_btn" value=" Print " class="btn btn-primary"
+        <a<form> <input type="button" id="print_btn" value=" Print " class="btn btn-primary"
                      onclick="window.print();
                          return false;" /></form></a>
    
