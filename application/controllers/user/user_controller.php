@@ -58,7 +58,7 @@ class User_controller extends CI_Controller {
         $user_model->set_user_password(md5($this->input->post('txtUserPassword', TRUE)));
         $user_model->set_user_job($this->input->post('txtUserJob', TRUE));
         $user_model->set_user_comapny_name($this->input->post('txtUserCompanyName', TRUE));
-        $user_model->set_account_activation_code(md5($token));
+        //$user_model->set_account_activation_code(md5($token));
         $user_model->set_del_ind('2'); //account not activated
         $user_model->set_added_date(date("Y-m-d H:i:s"));
        
@@ -70,9 +70,9 @@ class User_controller extends CI_Controller {
 
       
 
-        $name = ucfirst($this->input->post('txtUserName', TRUE));
-        $email = $this->input->post('txtUserEmail', TRUE);
-        $token = $this->generate_random_string(); //generate account activation token
+        //$name = ucfirst($this->input->post('txtUserName', TRUE));
+        //$email = $this->input->post('txtUserEmail', TRUE);
+        //$token = $this->generate_random_string(); //generate account activation token
 
         
 
