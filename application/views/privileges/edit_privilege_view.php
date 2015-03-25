@@ -70,7 +70,7 @@
                                     <i class=""></i>
                                     <select name="assign_for" id="assign_for" class="select2 form-control" style="width: 50%" >
                                         <option value="1" <?php if ($this->config->item('ADMIN') == $privilege->assign_for) { ?> selected="true" <?php } ?>>Admin</option>
-                   
+
                                         <option value="3" <?php if ($this->config->item('USER') == $privilege->assign_for) { ?> selected="true" <?php } ?>>User</option>
                                         <option value="4" <?php if ($this->config->item('ALL') == $privilege->assign_for) { ?> selected="true" <?php } ?>>All</option>
 
@@ -83,11 +83,12 @@
 
                             <input type="hidden" id="privilege_code" name="privilege_code" value="<?php echo $privilege->privilege_code; ?>"/>
                             <div class="modal-footer">
-                                    <button class="btn btn-primary btn-cons" type="submit">
-                                        <i class="icon-ok"></i>
-                                        Save
-                                    </button>
-                                    <button class="btn btn-white btn-cons" type="button">Cancel</button>
+                                <button class="btn btn-primary btn-cons" type="submit">
+                                    <i class="icon-ok"></i>
+                                    Save
+                                </button>
+                                <a href="<?php echo site_url(); ?>/settings/privilege_controller/manage_privileges" class="btn btn-white btn-cons" type="button">Cancel</a>
+                                <!--                                    <button class="btn btn-white btn-cons" type="button">Cancel</button>-->
                             </div>
 
                         </form>
@@ -98,6 +99,6 @@
     </div>
 </div>
 <script type="text/javascript">
-                                        $('#settings_parent_menu').addClass('active open');
+    $('#settings_parent_menu').addClass('active open');
 </script>
 
