@@ -70,6 +70,7 @@ class User_service extends CI_Model {
 //        return $query->row();
 //    }
     
+    /*display user avatar*/
     public function get_all_users() {
 
 
@@ -81,6 +82,7 @@ class User_service extends CI_Model {
         return $query->result();
     }
     
+    /*manage users*/
     public function get_all_user_details() {
 
 
@@ -133,20 +135,20 @@ class User_service extends CI_Model {
 
     //check token match for the actual one
     /* this function use in user controller in  function account_activation($emp_id, $token) */
-    public function check_user_id_token_combination($user_model) {
-        $this->db->where('user_id', $user_model->get_user_code());
-        $this->db->where('account_activation_code', $user_model->get_account_activation_code());
-        $res = $this->db->get('user');
-        return $res->num_rows();
-    }
+//    public function check_user_id_token_combination($user_model) {
+//        $this->db->where('user_id', $user_model->get_user_code());
+//        $this->db->where('account_activation_code', $user_model->get_account_activation_code());
+//        $res = $this->db->get('user');
+//        return $res->num_rows();
+//    }
 
     //check token match for the actual one
     /* this function use in user controller in  function account_activation($user_id, $token) */
-    function activate_user_account($user_model) {
-        $data = array('del_ind' => $user_model->get_del_ind());
-        $this->db->where('user_id', $user_model->get_user_id());
-        return $this->db->update('user', $data);
-    }
+//    function activate_user_account($user_model) {
+//        $data = array('del_ind' => $user_model->get_del_ind());
+//        $this->db->where('user_id', $user_model->get_user_id());
+//        return $this->db->update('user', $data);
+//    }
 
 //    function get_users($user_status = 1) {
 //
@@ -238,55 +240,22 @@ class User_service extends CI_Model {
         return $query->row();
     }
 
-    public function get_usersRoster($usermodel) {
 
-        //07Nov2013 Barathy added 'Status' => '1' to where clause
-        $query = $this->db->get_where('lcs_user', array('roster_id' => $usermodel->getRoster_id(), 'Status' => '1', 'User_Id !=' => '0'));
-        return $query->result();
-    }
 
-//    public function get_usersNoRoster() {
-//
-//        $this->db->where('resigned_date =', '0000-00-00');
-//        //07Nov2013 Barathy added 'Status' => '1' to where clause
-//        $query = $this->db->get_where('lcs_user', array('roster_id !=' => '0', 'Status' => '1', 'Employee_Code !=' => '0'));
-//        return $query->result();
-//    }
 
-    function addwelcomepage($usermodel) {
 
-        $data = array('preferred_welcome_sys' => $usermodel->getpreferred_welcome_sys());
-        $this->db->where('User_Id', $usermodel->get_user_id());
-        $result = $this->db->update('lcs_user', $data);
-        return $result;
-    }
+    
 
-    //11Oct2013 Barathy check if user number exists
+    
     function checkUserIdExists($user_id) {
 
         $query = $this->db->get_where('lcs_user', array('user_id' => $user_id));
         return $query->num_rows();
     }
 
-    function addroster($usermodel) {
+    
 
-        $data = array('roster_id' => $usermodel->getRoster_id());
-        $this->db->where('User_Id', $usermodel->getUser_Id());
-        return $this->db->update('lcs_user', $data);
-    }
-
-    function removeroster($usermodel) {
-
-        $data = array('roster_id' => '0');
-        $this->db->where('User_Id', $usermodel->getUser_Id());
-        return $this->db->update('lcs_user', $data);
-    }
-
-    function getUserbyidwithoutgetters($id) {
-
-        $query = $this->db->get_where('lcs_user', array('User_Id' => $id));
-        return $query->row();
-    }
+  
 
     function getUserpasswordbyid($usermodel) {
 
@@ -313,20 +282,20 @@ class User_service extends CI_Model {
         return $result;
     }
 
-    //functions to check email and user number availability
-    function checkEmail($user_model) {
-
-        $this->db->select('*');
-        $this->db->from('lcs_user');
-        $this->db->where('lcs_user.Email ', $user_model->get_user_email());
-        if ((int) $user_model->get_user_id() != 0) {
-            $this->db->where('lcs_user.user_id !=', $user_model->get_user_id());
-        }
-        $query = $this->db->get();
-        //echo $this->db->last_query();die;
-        //echo $query->num_rows();die;
-        return $query->num_rows();
-    }
+//    //functions to check email and user number availability
+//    function checkEmail($user_model) {
+//
+//        $this->db->select('*');
+//        $this->db->from('lcs_user');
+//        $this->db->where('lcs_user.Email ', $user_model->get_user_email());
+//        if ((int) $user_model->get_user_id() != 0) {
+//            $this->db->where('lcs_user.user_id !=', $user_model->get_user_id());
+//        }
+//        $query = $this->db->get();
+//        //echo $this->db->last_query();die;
+//        //echo $query->num_rows();die;
+//        return $query->num_rows();
+//    }
 
     function add_new_user_registration($user_model) {
 

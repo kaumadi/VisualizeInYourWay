@@ -79,24 +79,24 @@ class Login_controller extends CI_Controller {
         }
 
         // 3 = Corporate Email authentication
-        if ($login_option == 3) {
-
-
-            $user_model->set_user_email($email);
-            $user_model->set_user_password(md5($this->input->post('login_password', TRUE))); // password md 5 change
-
-            $mailServer = $user_service->get_server_by_email($user_model);
-
-            
-
-            if ($mailServer == 1) {
-                $logged_user_result = $this->authenticate_user_email($user_model, $this->config->item('MAILBOX'));
-            } else if ($mailServer == 2) {
-                $logged_user_result = $this->authenticate_user_email($user_model, $this->config->item('MAILBOX2'));
-            } else {
-                $logged_user_result = FALSE;
-            }
-        }
+//        if ($login_option == 3) {
+//
+//
+//            $user_model->set_user_email($email);
+//            $user_model->set_user_password(md5($this->input->post('login_password', TRUE))); // password md 5 change
+//
+//            $mailServer = $user_service->get_server_by_email($user_model);
+//
+//            
+//
+//            if ($mailServer == 1) {
+//                $logged_user_result = $this->authenticate_user_email($user_model, $this->config->item('MAILBOX'));
+//            } else if ($mailServer == 2) {
+//                $logged_user_result = $this->authenticate_user_email($user_model, $this->config->item('MAILBOX2'));
+//            } else {
+//                $logged_user_result = FALSE;
+//            }
+//        }
 
 
 
@@ -135,7 +135,7 @@ class Login_controller extends CI_Controller {
                 $this->session->set_userdata('USER_COMPANY_NAME', $logged_user_details->user_company_name);
 //                $this->session->set_userdata('USER_TYPE', $logged_user_details->user_type);
                 $this->session->set_userdata('USER_ONLINE', 'Y');
- $this->session->set_userdata('USER_LOGGED_IN', 'TRUE');
+                $this->session->set_userdata('USER_LOGGED_IN', 'TRUE');
  
  //get system date & save it in variable then update the updated_by colun of user table for relevant user
  echo 1;
@@ -147,13 +147,13 @@ class Login_controller extends CI_Controller {
         }// if($logged_user_result){
     }
 
-    function get_email_user($usermodel) {
-        $username_arr = explode('@', $usermodel->getEmail());
-
-
-        $this->username = $username_arr[0];
-        return $this->username;
-    }
+//    function get_email_user($usermodel) {
+//        $username_arr = explode('@', $usermodel->getEmail());
+//
+//
+//        $this->username = $username_arr[0];
+//        return $this->username;
+//    }
 
     function logout() {
 
@@ -170,23 +170,23 @@ class Login_controller extends CI_Controller {
     }
 
     
-    function authenticate_user_email($user_model, $mail_box) {
+//    function authenticate_user_email($user_model, $mail_box) {
+////
+////        // imap_timeout(IMAP_OPENTIMEOUT,10);
+////        $conn = imap_open($mailbox, $this->getEmailUser($usermodel), $usermodel->getPassword(), null) or die();
+////
+////        if ($conn) {
+////            $result = TRUE;
+////        } else {
+////            $result = FALSE;
+////        }
+////
+////
+////        imap_close($conn);
+//        $result = TRUE;
 //
-//        // imap_timeout(IMAP_OPENTIMEOUT,10);
-//        $conn = imap_open($mailbox, $this->getEmailUser($usermodel), $usermodel->getPassword(), null) or die();
-//
-//        if ($conn) {
-//            $result = TRUE;
-//        } else {
-//            $result = FALSE;
-//        }
-//
-//
-//        imap_close($conn);
-        $result = TRUE;
-
-        return $result;
-    }
+//        return $result;
+//    }
 
     
 

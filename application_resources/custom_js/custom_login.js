@@ -117,7 +117,7 @@ $(document).ready(function() {
 
                     $("#commentForm").find('input[type=text], textarea').val('');
 
-                    $('#comapnymodal').modal('toggle');
+                   // $('#comapnymodal').modal('toggle');
                     $('#tab1').addClass('active');
                     $('#tab3').removeClass('active');
                 } else {
