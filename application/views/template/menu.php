@@ -47,7 +47,7 @@
 </li> 
 <?php // }  ?>
 
-<li class="" id="share_and_print_parent_menu"> 
+<!--<li class="" id="share_and_print_parent_menu"> 
     <a href="javascript:;">
         <i class="fa fa-calendar-o"></i> 
         <span class="title">Share and Print</span> 
@@ -57,7 +57,7 @@
         <li > <a href="<?php echo site_url(); ?>/share/share_controller/manage_share"> Share and Print</a> </li>
 
     </ul>
-</li> 
+</li> -->
 <?php // }  ?>
 
 <li class="" id="user_parent_menu"> 
