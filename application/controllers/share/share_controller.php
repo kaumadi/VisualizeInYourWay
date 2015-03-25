@@ -41,5 +41,14 @@ class Share_controller extends CI_Controller {
         $mpdf->WriteHTML($SResultString);
         $mpdf->Output();
     }
+    
+      function manage_graphs() {
+              $data['heading'] = "select graphs category";
+   
+            $partials = array('content' => 'graph/view_graph');
+            $this->template->load('template/main_template', $partials, $data);
+      
+    }
+
 
 }
