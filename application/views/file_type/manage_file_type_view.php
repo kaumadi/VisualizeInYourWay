@@ -13,27 +13,29 @@
 <script src="<?php echo base_url(); ?>application_resources/js/parser/xlsx.js"></script>
 <!-- uncomment the next line here and in xlsxworker.js for ODS support -->
 <script src="<?php echo base_url(); ?>application_resources/js/parser/ods.js"></script>
+<link href="<?php echo base_url(); ?>application_resources/css/drop.css" rel="stylesheet" type="text/css"/>
+
 Output Format:
 <select name="format">
-    <option value="csv" selected=""> CSV</option>
+   <!--<option value="csv" selected=""> CSV</option>-->
     <option value="json"> JSON</option>
-    <option value="form"> FORMULAE</option>
+    <!--<option value="form"> FORMULAE</option>-->
 </select><br>
 <!--<input type="radio" name="format" value="csv" checked> CSV<br>
 <input type="radio" name="format" value="json"> JSON<br>
 <input type="radio" name="format" value="form"> FORMULAE<br> -->
 
-<div id="drop">Drop an XLSX / XLSM / XLSB / ODS file here to see sheet data</div>
-<p><input type="file" name="xlfile" id="xlf"> ... or click here to select a file</p>
-<textarea id="b64data">... or paste a base64-encoding here</textarea>
+<div id="drop" class="default">Drop an XLSX / XLSM / XLSB / ODS file here to see sheet data</div>
+<!--<p><input type="file" name="xlfile" id="xlf"> ... or click here to select a file</p>
+<textarea id="b64data">... or paste a base64-encoding here</textarea>-->
 <input type="button" id="dotext" value="Click here to process the base64 text" onclick="b64it();"><br>
 Advanced Demo Options: <br>
 Use Web Workers: (when available) <input type="checkbox" name="useworker" checked=""><br>
 Use Transferrables: (when available) <input type="checkbox" name="xferable" checked=""><br>
 Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked=""><br>
 <pre id="out"></pre>
-<input id="btn" type="button" value="Generate Graph"/>
-<script>
+<!--<input id="btn" type="button" value="Generate Graph"/>-->
+<!--<script>
     $('#btn').click(function() {
 
         var json = $('#out').val();
@@ -231,7 +233,7 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
         ;
 
     });
-</script>
+</script>-->
 
 <br>
 
@@ -490,7 +492,7 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
 
 
 
-<style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
+<!--<style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
 
 
 
@@ -559,7 +561,69 @@ Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" c
             </div>
         </div>
     </div>
-</div>
+</div>-->
+
+ <button type="button1" class="btn btn-primary btn-sm btn-small" id ="generate_graph">generate Graph</button> 
+  
+   
+<!--<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+function myFunction() {
+    var diameter = 960,
+    format = d3.format(",d"),
+    color = d3.scale.category20c();
+
+var bubble = d3.layout.pack()
+    .sort(null)
+    .size([diameter, diameter])
+    .padding(1.5);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+    .attr("class", "bubble");
+
+d3.json("to_json()", function(error, root) {
+  var node = svg.selectAll(".node")
+      .data(bubble.nodes(classes(root))
+      .filter(function(d) { return !d.children; }))
+    .enter().append("g")
+      .attr("class", "node")
+      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+  node.append("title")
+      .text(function(d) { return d.className + ": " + format(d.value); });
+
+  node.append("circle")
+      .attr("r", function(d) { return d.r; })
+      .style("fill", function(d) { return color(d.packageName); });
+
+  node.append("text")
+      .attr("dy", ".3em")
+      .style("text-anchor", "middle")
+      .text(function(d) { return d.className.substring(0, d.r / 3); });
+});
+
+// Returns a flattened hierarchy containing all leaf nodes under the root.
+function classes(root) {
+  var classes = [];
+
+  function recurse(name, node) {
+    if (node.children) node.children.forEach(function(child) { recurse(node.name, child); });
+    else classes.push({packageName: name, className: node.name, value: node.size});
+  }
+
+  recurse(null, root);
+  return {children: classes};
+}
+
+d3.select(self.frameElement).style("height", diameter + "px");
+
+}
+    
+</script>
+-->
+
 
 
 

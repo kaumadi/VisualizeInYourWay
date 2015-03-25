@@ -47,6 +47,8 @@
         <link href="<?php echo base_url(); ?>application_resources/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>application_resources/css/magic_space.css" rel="stylesheet" type="text/css"/>
         <link href="<?php echo base_url(); ?>application_resources/css/tiles_responsive.css" rel="stylesheet" type="text/css"/>
+              <link href="<?php echo base_url(); ?>application_resources/css/drop.css" rel="stylesheet" type="text/css"/>
+ 
         <!-- END CSS TEMPLATE -->
 
         <link href="<?php echo base_url(); ?>application_resources/plugins/boostrap-slider/css/slider.css" rel="stylesheet" type="text/css"/>
