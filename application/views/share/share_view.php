@@ -57,9 +57,9 @@ Chart.js has a ton of customisation features for line graphs, along with support
 </div>
 </div>
 </div>-->
-<div>
+<!--<div>
     <img src="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" data-src-retina="<?php echo base_url(); ?>uploads/user_cover_pics/default_cover_pic.png" style="width: 100%;" />
-</div>
+</div>-->
 <div>
     
 </div>
