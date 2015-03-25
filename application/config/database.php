@@ -51,11 +51,11 @@ $active_record = TRUE;
 $db['default']['hostname'] = 'localhost';
 $db['default']['port'] = '3306';
 $db['default']['username'] = 'root';
-<<<<<<< HEAD
+//<<<<<<< HEAD
 $db['default']['password'] = 'Work123@';
-=======
-$db['default']['password'] = '1234';
->>>>>>> origin/master
+//=======
+//$db['default']['password'] = '1234';
+//>>>>>>> origin/master
 $db['default']['database'] = 'visualizeinyourway';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
