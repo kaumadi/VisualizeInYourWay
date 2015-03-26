@@ -1,0 +1,13 @@
+1) upload excel files
+2) convert excel file to json/csv 
+   https://github.com/SheetJS/js-xlsx
+
+3) select columns from json
+    http://www.mkyong.com/jquery/jquery-loop-over-json-string-each-example/
+
+4) get user selected columns and generate graph
+   http://pothibo.com/2013/09/d3-js-how-to-handle-dynamic-json-data/
+
+5) share graph
+http://d3export.housegordon.org/
+http://stackoverflow.com/questions/3975499/convert-svg-to-image-jpeg-png-etc-in-the-browser
