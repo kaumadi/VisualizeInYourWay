@@ -20,6 +20,7 @@ class Upload_files_stuff_temp_service extends CI_Model {
         return $this->db->insert('upload_files_stuff_temp', $upload_files_stuff_temp_model);
     }
 
+    /*Generates a truncate SQL string to empty the table*/
     function truncate_upload_files_temp_stuff() {
         return $this->db->truncate('upload_files_stuff_temp');
     }

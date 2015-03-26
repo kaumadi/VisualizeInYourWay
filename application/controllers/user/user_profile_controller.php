@@ -94,7 +94,7 @@ class User_profile_controller extends CI_Controller {
         $uploaddir = './uploads/user_cover_pics/';
         $unique_tag = 'cover_pic';
 
-        $filename = $unique_tag . time() . '-' . basename($_FILES['uploadfile']['name']); //this is the file name
+        $filename = $unique_tag . time() . '-' . basename($_FILES['uploadfile']['name']); //this is the original name of the file on user machine
         $file = $uploaddir . $filename; // this is the full path of the uploaded file
 
         if (move_uploaded_file($_FILES['uploadfile']['tmp_name'], $file)) {

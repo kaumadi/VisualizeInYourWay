@@ -33,9 +33,9 @@ $(document).ready(function() {
     $('#file_description').wysihtml5();
 
 
-    
 
-   
+
+
 
     //add upload_files Form
     $('#add_upload_files_form').validate({
@@ -45,8 +45,6 @@ $(document).ready(function() {
             file_name: {
                 required: true
             },
-            
-           
             file_description: {
                 required: true
             }
@@ -108,7 +106,6 @@ $('#edit_upload_files_form').validate({
         file_name: {
             required: true
         },
-        
         file_description: {
             required: true
         }
@@ -196,7 +193,7 @@ $(document).on('click', '#edit_upload_files_save_btn', function() {
 
 
 
-function delete_upload_files(element){
+function delete_upload_files(element) {
     $(element).parent().parent().hide();
 }
 

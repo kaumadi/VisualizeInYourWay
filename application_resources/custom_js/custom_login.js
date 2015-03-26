@@ -186,6 +186,7 @@ function validkey(e) {
 
 
 //login submit button actions
+//pass the data to login_username and login_password
 function login() {
 
     var login_username = $('#txtusername').val();
@@ -196,7 +197,8 @@ function login() {
         $('#login_msg').hide();
         $.ajax({
             type: "POST",
-            url: site_url + "/login/login_controller/authenticate_user",
+            url: site_url + "/login/login_controller/authenticate_user",//controller function to be called
+            //give data that to be pass using post
             data: "login_username=" + login_username + "&login_password=" + login_password,
             async: false,
             success: function(msg) {

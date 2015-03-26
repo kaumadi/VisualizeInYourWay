@@ -126,10 +126,10 @@ class Upload_files_controller extends CI_Controller {
 
         $upload_files_service = new Upload_files_service();
 
-        echo $upload_files_service->delete_upload_files(trim($this->input->post('id', TRUE)));
+        echo $upload_files_service->delete_files(trim($this->input->post('id', TRUE)));
     }
 
-    function edit_upload_files_view($file_id) {
+    function edit_upload_files_view($id) {
         //$perm = Access_controll_service::check_access('EDIT_FILES');
         //if ($perm) {
 
@@ -138,7 +138,7 @@ class Upload_files_controller extends CI_Controller {
 
 
             $data['heading'] = "Edit Upload_files";
-            $data['upload_files'] = $upload_files_service->get_upload_files_by_id($file_id);
+            $data['upload_file'] = $upload_files_service->get_upload_files_by_id($id);
 
 
             $partials = array('content' => 'upload_files/edit_upload_files_view');
@@ -157,7 +157,7 @@ class Upload_files_controller extends CI_Controller {
         $upload_files_service = new Upload_files_service();
 
         $upload_files_model->set_file_name($this->input->post('file_name', TRUE));
-        $upload_files_model->set_file_description($this->input->post('file_description', TRUE));
+        $upload_files_model->set_file_desc($this->input->post('file_desc', TRUE));
 
         $upload_files_model->set_file_id($this->input->post('file_id', TRUE));
 

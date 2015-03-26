@@ -50,17 +50,18 @@ class Login_controller extends CI_Controller {
         $user_model = new User_model();
         $user_service = new User_service();
 
-        $email = $this->input->post('login_username', TRUE);
+        $email = $this->input->post('login_username', TRUE);//assigning the value in login_username to $email if login_type=1
           
 
         $login_option =  $this->config->item('LOGIN_OPTION');
         // 1 = Username & Password
+        /*taking the un and pswd in sign in*/
         if ($login_option == 1) {
             //  $logged_user_result = '';
             $user_model->set_user_email($email);
             $user_model->set_user_password(md5($this->input->post('login_password', TRUE))); // password md 5 change 
 
-        
+            /*if un and paswd is availabe*/
             if (count($user_service->authenticate_user_with_password($user_model)) == 0) {
                 $logged_user_result = false;
             } else {
@@ -101,8 +102,8 @@ class Login_controller extends CI_Controller {
 
 
 
-        /* Remove Imap authenticate error login with some machine */
-       
+        
+       /*if logged_in_user=true take user details frm authenticate_user and put it to logged_user_dateils var*/
         if ($logged_user_result) {// change
           
             $logged_user_details = $user_service->authenticate_user($user_model);
@@ -119,7 +120,7 @@ class Login_controller extends CI_Controller {
                 $user_login_status_model->set_is_online('Y');
                 $user_login_status_model->set_user_id($logged_user_details->user_id);
                 $user_service->update_online_status($user_login_status_model);
-                //Setting sessions		
+                //setting data to session variables and user_model setters using logged_user_details		
                 $this->session->set_userdata('USER_ID', $logged_user_details->user_id);
 //                                print_r(die);
 //                                echo'user_id';
