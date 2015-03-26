@@ -45,7 +45,8 @@
         
         <a<form> <input type="button" id="print_btn" value=" Print " class="btn btn-primary"
                      onclick="window.print();
-                         return false;" /></form></a>
+                         return false;" /></form>
+    </a>
    
     </div>
 </div>

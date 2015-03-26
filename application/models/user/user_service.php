@@ -22,7 +22,7 @@ class User_service extends CI_Model {
     }
     
     
-    
+    //update user last login date
        function update_user_lastlogin_date($user_model) {
 
         $data = array(
