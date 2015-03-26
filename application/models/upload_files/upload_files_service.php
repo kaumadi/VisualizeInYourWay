@@ -28,6 +28,8 @@ class Upload_files_service extends CI_Model {
         $data = array('del_ind' => '0');
         $this->db->where('file_id', $file_id);
         return $this->db->update('upload_files', $data);
+        
+        
     }
 
     function get_upload_files_by_id($file_id) {
@@ -62,5 +64,7 @@ class Upload_files_service extends CI_Model {
 
         return $query->row();
     }
-
+    
+      
 }
+

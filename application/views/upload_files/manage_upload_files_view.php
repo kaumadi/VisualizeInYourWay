@@ -44,9 +44,12 @@
                                        // $perm = Access_controll_service::check_access('DELETE_UPLOAD_FILES');
                                        // if ($perm) {
                                             ?>
-                                            <a style="cursor: pointer;"   title="Delete this File" onclick="delete_upload_file(<?php echo $upload_file->file_id; ?>)">
+                                            <a style="cursor: pointer;"   title="Delete this File" onclick="delete_upload_files <?php echo $upload_file->file_id; ?>">
                                                 <span class="label label-important">Delete</span>
                                             </a>
+<!--                                        <a style="cursor: pointer;" title="Delete this Master Privilege" onclick="delete_privilege_master(5)">
+                                        <span class="label label-important">Delete</span>
+                                    </a>-->
                                             <?php
                                         //}
                                         ?>
