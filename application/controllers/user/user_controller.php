@@ -92,36 +92,36 @@ class User_controller extends CI_Controller {
         }
 
 
-        $link = base_url() . "index.php/user/user_controller/account_activation/" . urlencode($user_id) . "/" . md5($token);
-
-
-        if ($user_id) {
-
-             $data['name'] = $name;
-            $data['link'] = $link;
-            $data['pasword'] = $this->input->post('txtUserPassword', TRUE);
-            $data['user_name'] = $this->input->post('txtUserEmail', TRUE);
-
-
-
-            $email_subject = "VisualizeInYourWay :Activate Your New Account ";
-
-
-            $msg = $this->load->view('template/mail_template/body', $data, TRUE);
-
-            $headers = 'MIME-Version: 1.0' . "\r\n";
-            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-            $headers .= 'From: VisualizeInYourWay <VisualizeInYourWay@gmail.com>' . "\r\n";
-            $headers .= 'Cc:kaumadi2014@gmail.com' . "\r\n";
-
-            if (mail($email, $email_subject, $msg, $headers)) {
-                echo "1";
-            } else {
-                echo "0";
-            }
-        } else {
-            echo "0";
-        }
+//        $link = base_url() . "index.php/user/user_controller/account_activation/" . urlencode($user_id) . "/" . md5($token);
+//
+//
+//        if ($user_id) {
+//
+//             $data['name'] = $name;
+//            $data['link'] = $link;
+//            $data['pasword'] = $this->input->post('txtUserPassword', TRUE);
+//            $data['user_name'] = $this->input->post('txtUserEmail', TRUE);
+//
+//
+//
+//            $email_subject = "VisualizeInYourWay :Activate Your New Account ";
+//
+//
+//            $msg = $this->load->view('template/mail_template/body', $data, TRUE);
+//
+//            $headers = 'MIME-Version: 1.0' . "\r\n";
+//            $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+//            $headers .= 'From: VisualizeInYourWay <VisualizeInYourWay@gmail.com>' . "\r\n";
+//            $headers .= 'Cc:kaumadi2014@gmail.com' . "\r\n";
+//
+//            if (mail($email, $email_subject, $msg, $headers)) {
+//                echo "1";
+//            } else {
+//                echo "0";
+//            }
+//        } else {
+//            echo "0";
+//        }
     }
 
     /* This Function use to delete user */

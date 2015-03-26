@@ -7,7 +7,7 @@ $(document).ready(function() {
     //upload_files table
     var upload_files_table = $('#upload_files_table').dataTable({
         "sDom": "<'row'<'col-md-6'l <'toolbar upload_files_table_tbar'>><'col-md-6'f>r>t<'row'<'col-md-12'p i>>",
-        "oTableTools": {
+        "oTableTools": {//plugin
             "aButtons": [
                 {
                     "sExtends": "collection",
@@ -45,7 +45,7 @@ $(document).ready(function() {
             file_name: {
                 required: true
             },
-            file_description: {
+            file_desc: {
                 required: true
             }
 
@@ -167,9 +167,9 @@ function delete_upload_files(id) {
                     //document.getElementById(trid).style.display='none';
                     $('#upload_files_' + id).hide();
                 }
-//                else if (msg == 2) {
-//                    alert('Cannot be deleted as it is already assigned to Tasks.<br>First complete tasks !!');
-//                }
+                else if (msg == 2) {
+                    alert('Cannot be deleted as it is already assigned to Tasks.<br>First complete tasks !!');
+                }
             }
         });
     }

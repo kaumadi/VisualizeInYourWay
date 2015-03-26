@@ -47,7 +47,7 @@
                                             <a style="cursor: pointer;"   title="Delete this File" onclick="delete_upload_files <?php echo $upload_file->file_id; ?>">
                                                 <span class="label label-important">Delete</span>
                                             </a>
-<!--                                    
+                                   
                                             <?php
                                         //}
                                         ?>

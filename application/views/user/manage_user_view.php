@@ -255,7 +255,7 @@
      /.modal-dialog 
 </div>-->
 <!-- /.modal -->
-<!--<script type="text/javascript">
+<script type="text/javascript">-->
     $('#user_parent_menu').addClass('active open');
-</script>-->
+</script>
 
