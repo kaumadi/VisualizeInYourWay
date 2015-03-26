@@ -11,8 +11,9 @@ class Upload_files_service extends CI_Model {
 
         $this->db->select('*');
         $this->db->from('upload_files');
-        //$this->db->join('user', 'user.user_id = upload_files.added_by');
+        //$this->db->join('user.user_id=upload_files.user_id');
         $this->db->where('user_id',$user_id);
+        
         //$this->db->order_by("added_date", "ASC");
         $query = $this->db->get();
         return $query->result();
@@ -24,7 +25,7 @@ class Upload_files_service extends CI_Model {
         return $this->db->insert_id();
     }
 
-    function delete_upload_files($file_id) {
+    function delete_files($file_id) {
         $data = array('del_ind' => '0');
         $this->db->where('file_id', $file_id);
         return $this->db->update('upload_files', $data);
@@ -45,7 +46,7 @@ class Upload_files_service extends CI_Model {
 
         $data = array(
             'file_name' => $upload_files_model->get_file_name(),
-            'file_description' => $upload_files_model->get_file_description()
+            'file_desc' => $upload_files_model->get_file_desc()
         );
 
         $this->db->where('file_id', $upload_files_model->get_file_id());

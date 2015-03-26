@@ -109,7 +109,7 @@ $('#edit_upload_files_form').validate({
             required: true
         },
         
-        file_description: {
+        file_desc: {
             required: true
         }
 
@@ -167,26 +167,24 @@ function delete_upload_files(id) {
             success: function(msg) {
                 //alert(msg);
                 if (msg == 1) {
-                    //document.getElementById(trid).style.display='none';
+                    
                     $('#upload_files_' + id).hide();
                 }
-//                else if (msg == 2) {
-//                    alert('Cannot be deleted as it is already assigned to Tasks.<br>First complete tasks !!');
-//                }
+//                
             }
         });
     }
 }
 
 
-// add upload_files sumbit btn action
+// add upload_files save btn action
 $(document).on('click', '#add_upload_files_save_btn', function() {
-    if ($('#add_upload_files_form').valid()) {
+    if ($('#add_upload_files_form').valid()){//check whether the selected form is valid
         $('#add_upload_files_form').submit();
     }
 });
 
-// edit upload_files sumbit btn action
+// edit upload_files save btn action
 $(document).on('click', '#edit_upload_files_save_btn', function() {
     if ($('#edit_upload_files_form').valid()) {
         $('#edit_upload_files_form').submit();
