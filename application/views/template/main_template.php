@@ -360,7 +360,7 @@
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_privilege.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_profile.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_statistics.js" type="text/javascript"></script>
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_dahami.js" type="text/javascript"></script>
+            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_kaumadi.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_upload_files.js" type="text/javascript"></script>
@@ -370,7 +370,7 @@
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_wages.js" type="text/javascript"></script>-->
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_event.js" type="text/javascript"></script>-->
             <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_user_attendance.js" type="text/javascript"></script>-->
-            <script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>
+            <!--<script src="<?php echo base_url(); ?>application_resources/custom_js/custom_file_type.js" type="text/javascript"></script>-->
 <!--             <script src="<?php echo base_url(); ?>application_resources/custom_js/cpexcel.js" type="text/javascript"></script>-->
 <!--            <script src="<?php echo base_url(); ?>application_resources/custom_js/jszip.js" type="text/javascript"></script>
             <script src="<?php echo base_url(); ?>application_resources/custom_js/ods.js" type="text/javascript"></script>
