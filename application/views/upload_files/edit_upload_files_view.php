@@ -21,7 +21,7 @@
 
                                 <div class="input-with-icon  right">                                       
                                     <i class=""></i>
-                                    <input id="file_name" class="form-control" type="text" name="file_name" value="<?php echo $upload_files->file_name; ?>" style="width: 50%">                              
+                                    <input id="file_name" class="form-control" type="text" name="file_name" value="<?php echo $upload_file->file_name; ?>" style="width: 50%">                              
                                 </div>
                             </div>
 
@@ -37,7 +37,7 @@
 
                                 <div class="right">                                       
                                     <i class=""></i>
-                                    <textarea id="file_description" class="form-control" type="text" name="file_description" rows="20"><?php echo $upload_files->file_desc; ?> </textarea>                                       
+                                    <textarea id="file_desc" class="form-control" type="text" name="file_desc" rows="20"><?php echo $upload_file->file_desc; ?> </textarea>                                       
                                 </div>
                             </div>
 
@@ -160,7 +160,7 @@
                                     <!-- The loading indicator is shown during file processing -->
                                     <label><em>Attach file materials.</em></label>
                                     <br>
-                                    <input type="hidden" id="last_file_id" value="<?php echo $upload_files->file_id; ?>" name="last_file_id"/>
+                                    <input type="hidden" id="last_file_id" value="<?php echo $upload_file->file_id; ?>" name="last_file_id"/>
                                     <!-- The table listing the files available for upload/download -->
                                     <table role="presentation" class="table table-striped"><tbody class="files"></tbody></table>
                                 </div>   
@@ -201,7 +201,7 @@
                             </tr>
                             {% } %}
                         </script>
-                        <!-- The template to display files available for download -->
+<!--                         The template to display files available for download 
                         <script id="template-download" type="text/x-tmpl">
                             {% for (var i=0, file; file=o.files[i]; i++) { %}
                             <tr class="template-download fade" >
@@ -243,12 +243,12 @@
                             </td>
                             </tr>
                             {% } %}
-                        </script>
+                        </script>-->
 
                         <form>
                             <div id="edit_upload_files_msg" class="form-row"> </div>
 
-                            <input type="hidden" id="file_id" name="file_id" value="<?php echo $upload_files->file_id; ?>"/>
+                            <input type="hidden" id="file_id" name="file_id" value="<?php echo $upload_file->file_id; ?>"/>
                             <div class="form-actions">
                                 <div class="pull-right">
                                     <button class="btn btn-primary btn-cons" type="submit" id="edit_upload_files_save_btn">

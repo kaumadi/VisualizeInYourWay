@@ -148,7 +148,7 @@
                                             <div class="progress progress-success progress-striped active">
                                                 <div class="bar" style="width:0%;"></div>
                                             </div>
-                                            <!-- The extended global progress information -->
+                                            <!-- The extended global progress information - showing the progress-->
                                             <div class="progress-extended">&nbsp;</div>
                                         </div>
                                     </div>
