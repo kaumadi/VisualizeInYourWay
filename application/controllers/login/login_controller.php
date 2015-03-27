@@ -55,7 +55,7 @@ class Login_controller extends CI_Controller {
 
         $login_option =  $this->config->item('LOGIN_OPTION');
         // 1 = Username & Password
-        /*taking the un and pswd in sign in*/
+        //taking the un and pswd in sign in
         if ($login_option == 1) {
             //  $logged_user_result = '';
             $user_model->set_user_email($email);
