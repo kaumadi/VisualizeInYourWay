@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 26, 2015 at 06:57 PM
+-- Generation Time: Mar 27, 2015 at 08:24 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `statistics` (
   `ip` varchar(300) DEFAULT NULL,
   `browser` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`statistic_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2919 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3065 ;
 
 --
 -- Dumping data for table `statistics`
@@ -3102,7 +3102,154 @@ INSERT INTO `statistics` (`statistic_id`, `user_id`, `action`, `date`, `uri`, `p
 (2915, 0, 'manage_users', 1427391205, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
 (2916, 0, 'manage_users', 1427392006, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
 (2917, 0, 'logout', 1427392405, 'login/login_controller/logout', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
-(2918, 0, 'index', 1427392405, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36');
+(2918, 0, 'index', 1427392405, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2919, 0, 'login_controller', 1427432183, '', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2920, 0, 'authenticate_user', 1427432207, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2921, 0, 'index', 1427432210, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2922, 0, 'index', 1427432210, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2923, 0, '[object%20Object]', 1427432233, 'dashboard/dashboard_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2924, 0, 'manage_upload_files', 1427432254, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2925, 0, '[object%20Object]', 1427432256, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2926, 0, 'edit_upload_files_view', 1427432470, 'upload_files/upload_files_controller/edit_upload_files_view/32', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2927, 0, 'edit_upload_files', 1427432477, 'upload_files/upload_files_controller/edit_upload_files', '{"file_name":"New12","file_desc":"This is New1 "}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2928, 0, 'edit_upload_files_view', 1427432477, 'upload_files/upload_files_controller/edit_upload_files_view/32', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2929, 0, 'manage_upload_files', 1427432477, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2930, 0, '[object%20Object]', 1427432479, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2931, 0, 'edit_upload_files_view', 1427432896, 'upload_files/upload_files_controller/edit_upload_files_view/32', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2932, 0, 'edit_upload_files_view', 1427432903, 'upload_files/upload_files_controller/edit_upload_files_view/32', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2933, 0, 'edit_upload_files', 1427432903, 'upload_files/upload_files_controller/edit_upload_files', '{"file_name":"New111","file_desc":"This is New1 "}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2934, 0, 'edit_upload_files', 1427432921, 'upload_files/upload_files_controller/edit_upload_files', '{"file_name":"New1","file_desc":"This is New1 "}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2935, 0, 'edit_upload_files_view', 1427432921, 'upload_files/upload_files_controller/edit_upload_files_view/32', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2936, 0, 'manage_upload_files', 1427432922, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2937, 0, '[object%20Object]', 1427432924, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2938, 0, 'manage_upload_files', 1427433085, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2939, 0, '[object%20Object]', 1427433088, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2940, 0, 'edit_upload_files_view', 1427433089, 'upload_files/upload_files_controller/edit_upload_files_view/32', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2941, 0, 'edit_upload_files_view', 1427433108, 'upload_files/upload_files_controller/edit_upload_files_view/32', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2942, 0, 'manage_upload_files', 1427433116, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2943, 0, '[object%20Object]', 1427433118, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2944, 0, 'logout', 1427435102, 'login/login_controller/logout', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2945, 0, 'index', 1427435103, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2946, 0, 'authenticate_user', 1427436510, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2947, 0, 'index', 1427436511, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2948, 0, 'index', 1427436511, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2949, 0, '[object%20Object]', 1427436513, 'dashboard/dashboard_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2950, 0, 'manage_upload_files', 1427436678, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2951, 0, '[object%20Object]', 1427436680, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2952, 0, 'add_upload_files_view', 1427436683, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2953, 0, 'index', 1427436685, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2954, 0, 'manage_upload_files', 1427436912, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2955, 0, '[object%20Object]', 1427436913, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36');
+INSERT INTO `statistics` (`statistic_id`, `user_id`, `action`, `date`, `uri`, `post_data`, `ip`, `browser`) VALUES
+(2956, 0, 'manage_upload_files', 1427437190, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2957, 0, '[object%20Object]', 1427437193, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2958, 0, 'add_upload_files_view', 1427437758, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2959, 0, 'index', 1427437760, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2960, 0, 'index', 1427437773, 'upload_files/fileupload/index', '{"last_file_id":"35"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2961, 0, 'add_temp_upload_files_stuff', 1427437774, 'upload_files/upload_files_controller/add_temp_upload_files_stuff', '{"file_name":["Koala (4).jpg"]}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2962, 0, 'manage_upload_files', 1427437779, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2963, 0, '[object%20Object]', 1427437780, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2964, 0, 'view_profile', 1427439452, 'user/user_profile_controller/view_profile', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2965, 0, '[object%20Object]', 1427439454, 'user/user_profile_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2966, 0, 'upload_user_avatar', 1427439499, 'user/user_profile_controller/upload_user_avatar', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2967, 0, 'update_user_avatar', 1427439499, 'user/user_profile_controller/update_user_avatar', '{"user_avatar":"user_avatar1427439499-Hydrangeas.jpg","user_id":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2968, 0, 'view_profile', 1427439502, 'user/user_profile_controller/view_profile', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2969, 0, '[object%20Object]', 1427439506, 'user/user_profile_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2970, 0, 'manage_upload_files', 1427439916, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2971, 0, '[object%20Object]', 1427439918, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2972, 0, 'manage_upload_files', 1427439977, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2973, 0, '[object%20Object]', 1427439981, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2974, 0, 'add_upload_files_view', 1427439983, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2975, 0, 'index', 1427439985, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2976, 0, 'index', 1427440012, 'upload_files/fileupload/index', '{"last_file_id":""}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2977, 0, 'add_temp_upload_files_stuff', 1427440012, 'upload_files/upload_files_controller/add_temp_upload_files_stuff', '{"file_name":["2nd Year_DAA_VIVA_Metro_Schedule (23).xlsx"]}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2978, 0, 'add_new_upload_files', 1427440014, 'upload_files/upload_files_controller/add_new_upload_files', '{"file_name":"File 1","file_description":"This is file 1","_wysihtml5_mode":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2979, 0, 'manage_upload_files', 1427440014, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2980, 0, '[object%20Object]', 1427440015, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2981, 0, 'add_upload_files_view', 1427440018, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2982, 0, 'index', 1427440019, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2983, 0, 'index', 1427440065, 'upload_files/fileupload/index', '{"last_file_id":"36"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2984, 0, 'add_temp_upload_files_stuff', 1427440066, 'upload_files/upload_files_controller/add_temp_upload_files_stuff', '{"file_name":["2010-winter-olympics (2).csv"]}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2985, 0, 'add_new_upload_files', 1427440067, 'upload_files/upload_files_controller/add_new_upload_files', '{"file_name":"File 2","file_description":"This is file 2","_wysihtml5_mode":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2986, 0, 'manage_upload_files', 1427440067, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2987, 0, '[object%20Object]', 1427440069, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2988, 0, 'add_upload_files_view', 1427440077, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2989, 0, 'index', 1427440079, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2990, 0, 'index', 1427440103, 'upload_files/fileupload/index', '{"last_file_id":"37"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2991, 0, 'add_temp_upload_files_stuff', 1427440103, 'upload_files/upload_files_controller/add_temp_upload_files_stuff', '{"file_name":["Assignment plan - 2014 - Sem 2 (19).xlsx"]}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2992, 0, 'add_new_upload_files', 1427440106, 'upload_files/upload_files_controller/add_new_upload_files', '{"file_name":"File 3","file_description":"This is file 3","_wysihtml5_mode":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2993, 0, 'manage_upload_files', 1427440106, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2994, 0, '[object%20Object]', 1427440108, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2995, 0, 'add_upload_files_view', 1427440111, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2996, 0, 'index', 1427440113, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2997, 0, 'add_new_upload_files', 1427440124, 'upload_files/upload_files_controller/add_new_upload_files', '{"file_name":"File 4","file_description":"This is file 4","_wysihtml5_mode":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2998, 0, 'manage_upload_files', 1427440124, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(2999, 0, '[object%20Object]', 1427440125, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3000, 0, 'add_upload_files_view', 1427440129, 'upload_files/upload_files_controller/add_upload_files_view', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3001, 0, 'index', 1427440130, 'upload_files/fileupload/index', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3002, 0, 'add_new_upload_files', 1427440147, 'upload_files/upload_files_controller/add_new_upload_files', '{"file_name":"fh","file_description":"","_wysihtml5_mode":"1"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3003, 0, 'manage_upload_files', 1427440147, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3004, 0, '[object%20Object]', 1427440148, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3005, 0, 'manage_upload_files', 1427440205, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3006, 0, '[object%20Object]', 1427440208, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3007, 0, 'edit_upload_files_view', 1427440217, 'upload_files/upload_files_controller/edit_upload_files_view/35', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3008, 0, 'edit_upload_files', 1427440223, 'upload_files/upload_files_controller/edit_upload_files', '{"file_name":"File 1g","file_desc":"This is file 1 "}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3009, 0, 'edit_upload_files_view', 1427440223, 'upload_files/upload_files_controller/edit_upload_files_view/35', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3010, 0, 'manage_upload_files', 1427440223, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3011, 0, '[object%20Object]', 1427440224, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3012, 0, 'manage_upload_files', 1427440228, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3013, 0, '[object%20Object]', 1427440231, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3014, 0, 'manage_upload_files', 1427440233, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3015, 0, '[object%20Object]', 1427440235, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3016, 0, 'manage_upload_files_stuff', 1427440264, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3017, 0, '[object%20Object]', 1427440266, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3018, 0, 'manage_upload_files_stuff', 1427440303, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3019, 0, '[object%20Object]', 1427440310, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3020, 0, 'manage_upload_files_stuff', 1427440345, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3021, 0, '[object%20Object]', 1427440348, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3022, 0, 'manage_graphs', 1427440407, 'graphs/graphs_controller/manage_graphs', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3023, 0, '[object%20Object]', 1427440408, 'graphs/graphs_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3024, 0, 'manage_upload_files_stuff', 1427440446, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3025, 0, '[object%20Object]', 1427440451, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3026, 0, 'manage_upload_files_stuff', 1427440513, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3027, 0, '[object%20Object]', 1427440516, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3028, 0, 'manage_upload_files_stuff', 1427440561, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3029, 0, '[object%20Object]', 1427440564, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3030, 0, 'manage_upload_files_stuff', 1427440607, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3031, 0, '[object%20Object]', 1427440608, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3032, 0, 'manage_upload_files_stuff', 1427440638, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3033, 0, '[object%20Object]', 1427440640, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3034, 0, 'manage_upload_files_stuff', 1427440682, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3035, 0, '[object%20Object]', 1427440686, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3036, 0, 'manage_upload_files_stuff', 1427440710, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3037, 0, '[object%20Object]', 1427440711, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3038, 0, 'manage_upload_files_stuff', 1427440772, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3039, 0, '[object%20Object]', 1427440775, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3040, 0, 'manage_upload_files_stuff', 1427440805, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3041, 0, '[object%20Object]', 1427440809, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3042, 0, 'manage_upload_files_stuff', 1427440829, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3043, 0, '[object%20Object]', 1427440832, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3044, 0, 'manage_upload_files_stuff', 1427440853, 'file_type/file_type_controller/manage_upload_files_stuff', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3045, 0, '[object%20Object]', 1427440856, 'file_type/file_type_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3046, 0, 'manage_graphs', 1427440877, 'graphs/graphs_controller/manage_graphs', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3047, 0, '[object%20Object]', 1427440878, 'graphs/graphs_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3048, 0, 'manage_users', 1427440884, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3049, 0, 'manage_users', 1427440892, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3050, 0, 'manage_users', 1427440898, 'user/user_controller/manage_users', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3051, 0, 'logout', 1427440915, 'login/login_controller/logout', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3052, 0, 'index', 1427440915, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3053, 0, 'authenticate_user', 1427440929, 'login/login_controller/authenticate_user', '{"login_username":"rachini94perera@gmail.com","login_password":"abc123@#"}', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3054, 0, 'index', 1427440929, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3055, 0, 'index', 1427440929, 'dashboard/dashboard_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3056, 0, '[object%20Object]', 1427440930, 'dashboard/dashboard_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3057, 0, 'manage_upload_files', 1427440943, 'upload_files/upload_files_controller/manage_upload_files', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3058, 0, '[object%20Object]', 1427440944, 'upload_files/upload_files_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3059, 0, 'manage_privilege_masters', 1427440947, 'settings/privilege_master_controller/manage_privilege_masters', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3060, 0, '[object%20Object]', 1427440948, 'settings/privilege_master_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3061, 0, 'manage_privileges', 1427440951, 'settings/privilege_controller/manage_privileges', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3062, 0, '[object%20Object]', 1427440952, 'settings/privilege_controller/[object%20Object]', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3063, 0, 'logout', 1427440960, 'login/login_controller/logout', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36'),
+(3064, 0, 'index', 1427440960, 'login/login_controller', '', '::1', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36');
 
 -- --------------------------------------------------------
 
@@ -3144,17 +3291,17 @@ CREATE TABLE IF NOT EXISTS `upload_files` (
   `added_by` int(11) DEFAULT NULL,
   `added_date` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`file_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=40 ;
 
 --
 -- Dumping data for table `upload_files`
 --
 
 INSERT INTO `upload_files` (`file_id`, `user_id`, `file_name`, `file_desc`, `del_ind`, `added_by`, `added_date`) VALUES
-(31, 0, 'abc', 'This is abc', '1', 0, '2015-03-26 05:33:02'),
-(32, 1, 'New1', 'This is New1', '1', 1, '2015-03-26 06:12:11'),
-(33, 1, 'aaa', 'aaa', '1', 1, '2015-03-26 08:25:41'),
-(34, 1, 'New2', 'This new2', '1', 1, '2015-03-26 12:34:52');
+(35, 1, 'File 1', 'This is file 1', '1', 1, '2015-03-27 02:36:54'),
+(36, 1, 'File 2', 'This is file 2', '1', 1, '2015-03-27 02:37:47'),
+(37, 1, 'File 3', 'This is file 3', '1', 1, '2015-03-27 02:38:26'),
+(38, 1, 'File 4', 'This is file 4', '1', 1, '2015-03-27 02:38:44');
 
 -- --------------------------------------------------------
 
@@ -3246,7 +3393,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `user_email`, `user_avatar`, `user_cover_image`, `account_activation_code`, `user_job`, `user_company_name`, `is_online`, `del_ind`, `added_by`, `added_date`, `updated_by`, `updated_date`) VALUES
-(1, 'Rachini', 'c4961b067d274050e43e26beb9d7d19c', 'rachini94perera@gmail.com', 'user_avatar1427389691-Chrysanthemum.jpg', 'cover_pic1427389704-Penguins.jpg', '', 'Employee', 'ABCd', 'N', '1', NULL, '2015-02-11 18:30:00', NULL, NULL),
+(1, 'Rachini', 'c4961b067d274050e43e26beb9d7d19c', 'rachini94perera@gmail.com', 'user_avatar1427439499-Hydrangeas.jpg', 'cover_pic1427389704-Penguins.jpg', '', 'Employee', 'ABCd', 'N', '1', NULL, '2015-02-11 18:30:00', NULL, NULL),
 (2, 'kaumadi', 'c4961b067d274050e43e26beb9d7d19c', 'kaumadi2014@gmail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'Y', '1', NULL, '2015-02-11 18:30:00', NULL, NULL),
 (3, 'Dahami', 'c4961b067d274050e43e26beb9d7d19c', 'dahamiyh@ymail.com', 'avatar.jpg', 'default_cover_Pic.png', '', 'Employee', 'ABC', 'Y', '1', NULL, '2015-02-11 18:30:00', NULL, NULL),
 (4, 'Dilupa', 'c4961b067d274050e43e26beb9d7d19c', 'dila.june@ymail.com', 'avatar.jpg', 'default_cover_pic.png', '', 'Employee', 'ABC', 'N', '1', NULL, '2015-02-11 18:30:00', NULL, NULL);

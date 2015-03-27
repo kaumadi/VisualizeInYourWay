@@ -50,8 +50,8 @@ class User_controller extends CI_Controller {
         $user_service = new User_service();
         $privilege_master_service = new Privilege_master_service();
         $privilege_service = new Privilege_service();
-        $user_privilege_model = new Employee_privileges_model();
-        $user_privilege_service = new Employee_privileges_service();
+        $user_privilege_model = new User_privileges_model();
+        $user_privilege_service = new User_privileges_service();
 
         $user_model->set_user_name($this->input->post('txtUserName', TRUE));
         $user_model->set_user_email($this->input->post('txtUserEmail', TRUE));

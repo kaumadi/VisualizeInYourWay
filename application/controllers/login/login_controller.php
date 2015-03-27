@@ -49,8 +49,8 @@ class Login_controller extends CI_Controller {
 
         $user_model = new User_model();
         $user_service = new User_service();
-
-        $email = $this->input->post('login_username', TRUE);//assigning the value in login_username to $email if login_type=1
+        //assigning the value in login_username to $email if login_type=1
+        $email = $this->input->post('login_username', TRUE);
           
 
         $login_option =  $this->config->item('LOGIN_OPTION');
@@ -61,7 +61,7 @@ class Login_controller extends CI_Controller {
             $user_model->set_user_email($email);
             $user_model->set_user_password(md5($this->input->post('login_password', TRUE))); // password md 5 change 
 
-            /*if un and paswd is availabe*/
+            
             if (count($user_service->authenticate_user_with_password($user_model)) == 0) {
                 $logged_user_result = false;
             } else {
@@ -103,7 +103,7 @@ class Login_controller extends CI_Controller {
 
 
         
-       /*if logged_in_user=true take user details frm authenticate_user and put it to logged_user_dateils var*/
+       //if logged_in_user=true take user details frm authenticate_user and put it to logged_user_dateils var
         if ($logged_user_result) {// change
           
             $logged_user_details = $user_service->authenticate_user($user_model);
@@ -123,18 +123,14 @@ class Login_controller extends CI_Controller {
                 //setting data to session variables and user_model setters using logged_user_details		
                 $this->session->set_userdata('USER_ID', $logged_user_details->user_id);
 //                                print_r(die);
-//                                echo'user_id';
-//                $this->session->set_userdata('USER_WELCOME', $logged_user_details->preferred_welcome_sys);
+//                                echo'user_id';              
                 $this->session->set_userdata('USER_FIRST', '1'); //check first time log in and redirect to welcome page
-                $this->session->set_userdata('USER_NAME', $logged_user_details->user_name);
-//                $this->session->set_userdata('USER_FNAME', $logged_user_details->user_fname);
-//                $this->session->set_userdata('USER_LNAME', $logged_user_details->user_lname);
+                $this->session->set_userdata('USER_NAME', $logged_user_details->user_name);            
                 $this->session->set_userdata('USER_EMAIL', $logged_user_details->user_email);
-               $this->session->set_userdata('USER_PROPIC', $logged_user_details->user_avatar);
+                $this->session->set_userdata('USER_PROPIC', $logged_user_details->user_avatar);
                 $this->session->set_userdata('USER_COVERPIC', $logged_user_details->user_cover_image);
                 $this->session->set_userdata('USER_JOB', $logged_user_details->user_job);
-                $this->session->set_userdata('USER_COMPANY_NAME', $logged_user_details->user_company_name);
-//                $this->session->set_userdata('USER_TYPE', $logged_user_details->user_type);
+                $this->session->set_userdata('USER_COMPANY_NAME', $logged_user_details->user_company_name);               
                 $this->session->set_userdata('USER_ONLINE', 'Y');
                 $this->session->set_userdata('USER_LOGGED_IN', 'TRUE');
  
@@ -172,18 +168,18 @@ class Login_controller extends CI_Controller {
 
     
 //    function authenticate_user_email($user_model, $mail_box) {
-////
-////        // imap_timeout(IMAP_OPENTIMEOUT,10);
-////        $conn = imap_open($mailbox, $this->getEmailUser($usermodel), $usermodel->getPassword(), null) or die();
-////
-////        if ($conn) {
-////            $result = TRUE;
-////        } else {
-////            $result = FALSE;
-////        }
-////
-////
-////        imap_close($conn);
+//
+        // imap_timeout(IMAP_OPENTIMEOUT,10);
+//        $conn = imap_open($mailbox, $this->getEmailUser($usermodel), $usermodel->getPassword(), null) or die();
+//
+//        if ($conn) {
+//            $result = TRUE;
+//        } else {
+//            $result = FALSE;
+//        }
+//
+//
+//        imap_close($conn);
 //        $result = TRUE;
 //
 //        return $result;

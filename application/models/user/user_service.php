@@ -56,8 +56,8 @@ class User_service extends CI_Model {
         return $this->db->update('user', $data);
     }
 
-    //get user details by user id
-    /* this function use in user controller edit_user_view($user_code)  function */
+    
+  
     function get_user_by_email($user_email) {
 
         $query = $this->db->get_where('user', array('user_email' => $user_email));
@@ -82,7 +82,7 @@ class User_service extends CI_Model {
         return $query->result();
     }
     
-    /*manage users*/
+    //manage users
     public function get_all_user_details() {
 
 

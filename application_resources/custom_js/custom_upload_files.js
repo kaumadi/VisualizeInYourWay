@@ -106,7 +106,7 @@ $('#edit_upload_files_form').validate({
         file_name: {
             required: true
         },
-        file_description: {
+        file_desc: {
             required: true
         }
 
@@ -167,9 +167,9 @@ function delete_upload_files(id) {
                     //document.getElementById(trid).style.display='none';
                     $('#upload_files_' + id).hide();
                 }
-                else if (msg == 2) {
-                    alert('Cannot be deleted as it is already assigned to Tasks.<br>First complete tasks !!');
-                }
+//                else if (msg == 2) {
+//                    alert('Cannot be deleted as it is already assigned to Tasks.<br>First complete tasks !!');
+//                }
             }
         });
     }

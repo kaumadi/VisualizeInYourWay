@@ -7,20 +7,11 @@ class Upload_files_stuff_service extends CI_Model {
         $this->load->model('upload_files_stuff/upload_files_stuff_model');
     }
 
-    public function get_upload_files_stuff_for_upload_files($file_id) {
-
-        $this->db->select('*');
-        $this->db->from('upload_files_stuff');
-        $this->db->where('file_id', $file_id);
-        $this->db->order_by("del_ind", "1");
-        $query = $this->db->get();
-        return $query->result();
-    }
-    //important
+    /*adding a new file*/
     function add_new_upload_files_stuff($upload_files_stuff_model) {
         return $this->db->insert('upload_files_stuff', $upload_files_stuff_model);
     }
-    //important
+    
     function delete_upload_files($file_id) {
         $data = array('del_ind' => '0');
         $this->db->where('file_id', $file_id);
@@ -38,4 +29,14 @@ class Upload_files_stuff_service extends CI_Model {
         $query = $this->db->get();
         return $query->result();
     }
+    
+    //public function get_upload_files_stuff_for_upload_files($file_id) {
+//
+//        $this->db->select('*');
+//        $this->db->from('upload_files_stuff');
+//        $this->db->where('file_id', $file_id);
+//        $this->db->order_by("del_ind", "1");
+//        $query = $this->db->get();
+//        return $query->result();
+//    }
 }

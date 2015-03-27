@@ -25,11 +25,11 @@ Output Format:
 <input type="radio" name="format" value="json"> JSON<br>
 <input type="radio" name="format" value="form"> FORMULAE<br> -->
 
-<div id="drop" class="default">Drop an XLSX / XLSM / XLSB / ODS file here to see sheet data</div>
+<div id="drop" class="default">Drop your file here to see sheet data</div>
 <!--<p><input type="file" name="xlfile" id="xlf"> ... or click here to select a file</p>
 <textarea id="b64data">... or paste a base64-encoding here</textarea>-->
-<input type="button" id="dotext" value="Click here to process the base64 text" onclick="b64it();"><br>
-Advanced Demo Options: <br>
+<!--<input type="button" id="dotext" value="Click here to process the base64 text" onclick="b64it();"><br>-->
+<!--Advanced Demo Options: <br>-->
 Use Web Workers: (when available) <input type="checkbox" name="useworker" checked=""><br>
 Use Transferrables: (when available) <input type="checkbox" name="xferable" checked=""><br>
 Use readAsBinaryString: (when available) <input type="checkbox" name="userabs" checked=""><br>
